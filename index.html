@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KABUTO Inc. | Global Trade & AI Innovation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Oswald:wght@400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --orange: #E67E22;
+      --orange-dark: #D35400;
+      --black: #1a1a1a;
+      --white: #FFFFFF;
+      --gray-bg: #F5F5F3;
+      --gray-light: #E8E8E6;
+      --gray-text: #888;
+      --gray-border: #ddd;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: var(--black);
+      background: var(--gray-bg);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 48px;
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-light);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--orange);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-icon svg {
+      width: 24px;
+      height: 24px;
+      fill: white;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .logo-text .main {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 22px;
+      letter-spacing: 2px;
+    }
+
+    .logo-text .sub {
+      font-size: 10px;
+      color: var(--orange);
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: var(--black);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      margin-left: 28px;
+      letter-spacing: 0.5px;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--orange); }
+
+    /* ===== HERO ===== */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      padding: 80px 48px;
+      max-width: 1400px;
+      margin: 0 auto;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(230, 126, 34, 0.1);
+      color: var(--orange);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 900;
+      font-size: clamp(36px, 5vw, 64px);
+      line-height: 1.2;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 .accent {
+      color: var(--orange);
+    }
+
+    .hero-desc {
+      font-size: 15px;
+      color: #555;
+      margin-bottom: 8px;
+    }
+
+    .hero-sub {
+      font-family: 'Oswald', sans-serif;
+      font-size: 20px;
+      font-weight: 500;
+      color: #333;
+      letter-spacing: 1px;
+    }
+
+    .hero-visual {
+      background: var(--black);
+      border-radius: 20px;
+      padding: 48px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 480px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-visual::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 60% 40%, rgba(230, 126, 34, 0.15), transparent 60%);
+    }
+
+    .robot-icon {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .robot-icon .helmet {
+      width: 120px;
+      height: 60px;
+      background: var(--orange);
+      border-radius: 60px 60px 0 0;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .robot-icon .antenna-left,
+    .robot-icon .antenna-right {
+      position: absolute;
+      top: -20px;
+      width: 4px;
+      height: 30px;
+      background: var(--orange);
+      border-radius: 2px;
+    }
+
+    .robot-icon .antenna-left {
+      left: 20px;
+      transform: rotate(-30deg);
+    }
+
+    .robot-icon .antenna-right {
+      right: 20px;
+      transform: rotate(30deg);
+    }
+
+    .robot-icon .face {
+      width: 100px;
+      height: 50px;
+      background: var(--black);
+      border: 3px solid var(--orange);
+      border-radius: 12px;
+      margin: -5px auto 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .robot-icon .eye {
+      width: 10px;
+      height: 10px;
+      background: var(--orange);
+      border-radius: 50%;
+    }
+
+    .robot-icon .body {
+      width: 0;
+      height: 0;
+      border-left: 70px solid transparent;
+      border-right: 70px solid transparent;
+      border-top: 160px solid var(--orange);
+      margin: 10px auto 0;
+      position: relative;
+      border-radius: 0 0 10px 10px;
+    }
+
+    .hero-tagline {
+      position: relative;
+      z-index: 1;
+      color: var(--gray-light);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 18px;
+      letter-spacing: 8px;
+      margin-top: 32px;
+      text-align: center;
+    }
+
+    .hero-tagline-jp {
+      position: relative;
+      z-index: 1;
+      color: var(--white);
+      font-weight: 900;
+      font-size: 22px;
+      margin-top: 8px;
+      text-align: center;
+    }
+
+    /* ===== SECTION TITLES ===== */
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: var(--orange);
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: clamp(40px, 5vw, 72px);
+      line-height: 1.05;
+      margin-bottom: 16px;
+    }
+
+    .section-title .orange { color: var(--orange); }
+
+    .section-subtitle {
+      font-size: 15px;
+      color: #555;
+      max-width: 700px;
+    }
+
+    /* ===== SERVICES ===== */
+    .services {
+      padding: 100px 48px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .services-header {
+      margin-bottom: 60px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 40px 32px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      border: 1px solid var(--gray-light);
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    }
+
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      color: var(--orange);
+      margin-bottom: 24px;
+    }
+
+    .service-card h3 {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    .service-card .jp-label {
+      font-size: 12px;
+      color: var(--orange);
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .service-card p {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.8;
+    }
+
+    .service-card .tag {
+      display: inline-block;
+      margin-top: 20px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: var(--orange);
+      border-top: 2px solid var(--orange);
+      padding-top: 8px;
+    }
+
+    /* ===== PHILOSOPHY ===== */
+    .philosophy {
+      padding: 100px 48px;
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .philosophy-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .philosophy-img {
+      border-radius: 16px;
+      overflow: hidden;
+      aspect-ratio: 1;
+      position: relative;
+    }
+
+    .philosophy-img.dark {
+      background: var(--black);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .philosophy-img.circuit {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    }
+
+    .philosophy-img.earth {
+      background: linear-gradient(180deg, #0a0a0a 0%, #1a1a2e 100%);
+    }
+
+    .philosophy-img.orange-block {
+      background: var(--orange);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .philosophy-img.orange-block span {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 28px;
+      color: white;
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    .rocket-svg {
+      width: 60px;
+      height: 60px;
+      fill: white;
+    }
+
+    .philosophy-text .section-label {
+      margin-bottom: 12px;
+    }
+
+    .philosophy-text h2 {
+      font-weight: 900;
+      font-size: clamp(32px, 4vw, 52px);
+      line-height: 1.2;
+      margin-bottom: 24px;
+    }
+
+    .philosophy-text h2 .script {
+      font-style: italic;
+      color: var(--orange);
+    }
+
+    .philosophy-text p {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.9;
+      margin-bottom: 12px;
+    }
+
+    /* ===== COMPANY PROFILE ===== */
+    .profile {
+      padding: 100px 48px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .profile-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 60px;
+      border: 1px solid var(--gray-light);
+    }
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 40px;
+      padding-top: 40px;
+      border-top: 1px solid var(--gray-light);
+    }
+
+    .profile-item .label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--orange);
+      margin-bottom: 8px;
+    }
+
+    .profile-item .value {
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1.6;
+    }
+
+    /* ===== LEGAL PAGES ===== */
+    .legal-section {
+      padding: 80px 48px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .legal-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 60px;
+      border: 1px solid var(--gray-light);
+      margin-bottom: 40px;
+    }
+
+    .legal-card h2 {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 28px;
+      margin-bottom: 4px;
+    }
+
+    .legal-card .jp-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #555;
+      margin-bottom: 32px;
+    }
+
+    .legal-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .legal-item .label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--orange);
+      margin-bottom: 8px;
+    }
+
+    .legal-item .value {
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .legal-item.full {
+      grid-column: 1 / -1;
+    }
+
+    .legal-body h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-top: 28px;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--orange);
+      display: inline-block;
+    }
+
+    .legal-body p {
+      font-size: 14px;
+      line-height: 1.9;
+      color: #444;
+      margin-bottom: 12px;
+    }
+
+    .legal-body ul {
+      margin: 8px 0 16px 20px;
+      font-size: 14px;
+      line-height: 1.9;
+      color: #444;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--white);
+      border-top: 1px solid var(--gray-light);
+      padding: 40px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .footer-logo .icon {
+      width: 36px;
+      height: 36px;
+      background: var(--orange);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .footer-logo .icon svg { width: 20px; height: 20px; fill: white; }
+
+    .footer-logo .text {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      letter-spacing: 2px;
+    }
+
+    .footer-logo .text-sub {
+      font-size: 9px;
+      color: var(--gray-text);
+      letter-spacing: 1px;
+    }
+
+    footer nav a {
+      font-size: 12px;
+      color: #555;
+    }
+
+    .footer-copy {
+      width: 100%;
+      text-align: center;
+      font-size: 11px;
+      color: var(--gray-text);
+      margin-top: 12px;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      header { padding: 16px 20px; }
+      .hero { grid-template-columns: 1fr; padding: 40px 20px; gap: 40px; }
+      .services { padding: 60px 20px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .philosophy { grid-template-columns: 1fr; padding: 60px 20px; }
+      .profile { padding: 60px 20px; }
+      .profile-card { padding: 32px 24px; }
+      .profile-grid { grid-template-columns: 1fr; }
+      .legal-section { padding: 40px 20px; }
+      .legal-card { padding: 32px 24px; }
+      .legal-grid { grid-template-columns: 1fr; }
+      footer { padding: 24px 20px; }
+      nav { display: none; }
+    }
+
+    /* Smooth scroll */
+    html { scroll-behavior: smooth; }
+
+    /* Page sections - hidden by default, shown via JS */
+    
+    
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo-area">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24"><polygon points="12,2 22,20 2,20"/></svg>
+      </div>
+      <div class="logo-text">
+        <span class="main">KABUTO</span>
+        <span class="sub">株式会社KABUTO</span>
+      </div>
+    </div>
+    <nav>
+      <a href="#" href="index.html">Home</a>
+      <a href="#" href="tokusho.html">特定商取引法</a>
+      <a href="#" href="privacy.html">Privacy Policy</a>
+      <a href="#" href="terms.html">利用規約</a>
+      <a href="#" href="refund.html">返金ポリシー</a>
+      <a href="mailto:kabuto.co.ltd@gmail.com">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ==================== HOME PAGE ==================== -->
+  <div id="page-home" >
+
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <div class="hero-badge">INNOVATION HUB</div>
+        <h1>テクノロジーと商取引で、<span class="accent">日本と世界を繋ぐ</span></h1>
+        <div class="hero-sub">Global E-commerce & AI Solutions</div>
+        <p class="hero-desc" style="margin-top:16px;">eBay輸出事業とAI開発を通じて、国境を越えた価値の創造とデジタルトランスフォーメーションを推進します。</p>
+      </div>
+      <div class="hero-visual">
+        <div class="robot-icon">
+          <div class="helmet">
+            <div class="antenna-left"></div>
+            <div class="antenna-right"></div>
+          </div>
+          <div class="face">
+            <div class="eye"></div>
+            <div class="eye"></div>
+          </div>
+          <div class="body"></div>
+        </div>
+        <div class="hero-tagline">CHALLENGE THE FUTURE</div>
+        <div class="hero-tagline-jp">未来を切り拓く。</div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services">
+      <div class="services-header">
+        <div class="section-label">OUR CORE BUSINESS PILLARS</div>
+        <div class="section-title">STRATEGIC<br><span class="orange">SERVICES</span></div>
+        <p class="section-subtitle">貿易と知性、そして人間性を融合させた戦略的サービスを提供。</p>
+        <p class="section-subtitle" style="margin-top:4px;">Empowering global trade and intelligence with human-centric innovation.</p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Card 1: E-Commerce -->
+        <div class="service-card">
+          <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M6 12 L12 6 L24 6 L24 18 L18 24 L6 12Z"/>
+            <circle cx="14" cy="14" r="2"/>
+            <path d="M26 22 L42 22 L42 42 L26 42Z"/>
+            <path d="M34 22 L34 16 L40 16"/>
+          </svg>
+          <h3>GLOBAL E-COMMERCE DIVISION</h3>
+          <div class="jp-label">グローバル・コマース事業部</div>
+          <p>Specializing in the export of high-quality Japanese products to global markets via eBay. / 日本の高品質な商品を世界中のユーザーへ届ける輸出事業。</p>
+          <div class="tag">E-COMMERCE EXPORT</div>
+        </div>
+
+        <!-- Card 2: AI Solutions -->
+        <div class="service-card">
+          <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5">
+            <rect x="10" y="14" width="28" height="20" rx="4"/>
+            <circle cx="20" cy="24" r="2" fill="currentColor"/>
+            <circle cx="28" cy="24" r="2" fill="currentColor"/>
+            <path d="M24 6 L24 14"/>
+            <circle cx="24" cy="5" r="2"/>
+            <path d="M16 34 L16 42"/>
+            <path d="M32 34 L32 42"/>
+          </svg>
+          <h3>AI SOLUTIONS DIVISION</h3>
+          <div class="jp-label">AIソリューション事業部</div>
+          <p>Development and operation of AI-powered communication assistance tools leveraging the latest LLM technology. / 最新のLLM技術を活用した、AIコミュニケーション支援ツールの開発・運営。SaaS型Webアプリケーションとして提供。</p>
+          <div class="tag">AI DEVELOPMENT</div>
+        </div>
+
+        <!-- Card 3: Communication Support (MODIFIED) -->
+        <div class="service-card">
+          <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5">
+            <circle cx="24" cy="14" r="6"/>
+            <circle cx="12" cy="20" r="4"/>
+            <circle cx="36" cy="20" r="4"/>
+            <path d="M6 38 C6 30 18 28 24 28 C30 28 42 30 42 38"/>
+          </svg>
+          <h3>COMMUNICATION SUPPORT</h3>
+          <div class="jp-label">コミュニケーション支援事業部</div>
+          <p>Providing AI-powered communication support tools and educational content for improving interpersonal skills. / AIを活用したコミュニケーション支援ツールの提供、および対人スキル向上に関する教育コンテンツの企画・制作。</p>
+          <div class="tag">COMMUNICATION SUPPORT</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHILOSOPHY -->
+    <section class="philosophy">
+      <div class="philosophy-images">
+        <div class="philosophy-img circuit"></div>
+        <div class="philosophy-img dark">
+          <svg class="rocket-svg" viewBox="0 0 48 48"><path d="M24 4 C24 4 36 12 36 28 L28 36 L24 32 L20 36 L12 28 C12 12 24 4 24 4Z"/></svg>
+        </div>
+        <div class="philosophy-img orange-block">
+          <span>TRY<br>NEW<br>THINGS</span>
+        </div>
+        <div class="philosophy-img earth"></div>
+      </div>
+      <div class="philosophy-text">
+        <div class="section-label">PHILOSOPHY / 理念</div>
+        <h2>未知の可能性を、<br><span class="script">形にする。</span></h2>
+        <p>KABUTO's practice is built on the bold philosophy of constant evolution. We believe that innovation is not just about technology, but about a mindset that welcomes the unknown.</p>
+        <p>株式会社KABUTOの活動は、絶え間ない進化という大胆な理念に基づいています。イノベーションとは単なる技術の問題ではなく、未知を歓迎するマインドセットであると考えています。</p>
+      </div>
+    </section>
+
+    <!-- COMPANY PROFILE -->
+    <section class="profile" id="company">
+      <div class="profile-card">
+        <div class="section-label">REGISTRATION INFORMATION</div>
+        <div class="section-title" style="font-size:36px;">COMPANY PROFILE</div>
+        <p style="color:#888; font-size:14px;">会社概要</p>
+
+        <div class="profile-grid">
+          <div class="profile-item">
+            <div class="label">REPRESENTATIVE / 代表者</div>
+            <div class="value">Akihiro Nakayama / 中山 章裕</div>
+          </div>
+          <div class="profile-item">
+            <div class="label">BUSINESS TYPE / 事業形態</div>
+            <div class="value">Global Trade / IT Services / Communication Support</div>
+          </div>
+          <div class="profile-item">
+            <div class="label">OFFICIAL ADDRESS / 本店所在地</div>
+            <div class="value">〒852-8047 長崎県長崎市若竹町40-17<br>40-17 Wakatake-machi, Nagasaki-shi, Nagasaki, 852-8047 JAPAN</div>
+          </div>
+          <div class="profile-item">
+            <div class="label">CONTACT PHONE / 電話番号</div>
+            <div class="value">080-6118-7696</div>
+          </div>
+          <div class="profile-item">
+            <div class="label">CONTACT EMAIL / メールアドレス</div>
+            <div class="value">kabuto.co.ltd@gmail.com</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+          <div class="legal-grid">
+          <div class="legal-item">
+            <div class="label">COMPANY NAME / 販売業者名</div>
+            <div class="value">KABUTO Inc. (株式会社KABUTO)</div>
+          </div>
+          <div class="legal-item">
+            <div class="label">REPRESENTATIVE / 代表責任者</div>
+            <div class="value">Akihiro Nakayama (中山 章裕)</div>
+          </div>
+          <div class="legal-item full">
+            <div class="label">ADDRESS / 所在地</div>
+            <div class="value">〒852-8047 長崎県長崎市若竹町40-17<br>40-17 Wakatake-machi, Nagasaki-shi, Nagasaki, 852-8047 JAPAN</div>
+          </div>
+          <div class="legal-item">
+            <div class="label">CONTACT PHONE / 電話番号</div>
+            <div class="value">080-6118-7696</div>
+          </div>
+          <div class="legal-item">
+            <div class="label">CONTACT EMAIL / メールアドレス</div>
+            <div class="value">kabuto.co.ltd@gmail.com</div>
+          </div>
+          <div class="legal-item full">
+            <div class="label">SERVICE PRICE / 販売価格</div>
+            <div class="value">各サービスページに表示された価格に準じます。表示価格は税込みです。</div>
+          </div>
+          <div class="legal-item full">
+            <div class="label">PAYMENT METHOD / 支払方法</div>
+            <div class="value">クレジットカード決済（Visa, Mastercard, American Express, JCB）<br>決済処理はStripe, Inc.を通じて行われます。</div>
+          </div>
+          <div class="legal-item full">
+            <div class="label">PAYMENT TIMING / 支払時期</div>
+            <div class="value">サブスクリプション：申込時に初回決済、以後毎月自動更新。<br>物品販売（eBay）：eBayのバイヤー保護ガイドラインおよび各出品ページの規定に準じます。</div>
+          </div>
+          <div class="legal-item full">
+            <div class="label">SERVICE DELIVERY / 商品の引渡時期</div>
+            <div class="value">デジタルサービス（SaaS）：決済完了後、即時利用可能。<br>物品販売（eBay）：各出品ページに記載の発送予定日に準じます。</div>
+          </div>
+          <div class="legal-item full">
+            <div class="label">RETURN & REFUND POLICY / 返品・返金について</div>
+            <div class="value">
+              <strong>デジタルサービス（SaaS）：</strong>サブスクリプションはいつでも解約可能です。解約後は現在の請求期間の終了日までサービスをご利用いただけます。デジタルサービスの性質上、既にお支払いいただいた料金の返金は原則として承っておりません。ただし、サービスの重大な不具合等が発生した場合は、個別にご相談を承ります。<br><br>
+              <strong>物品販売（eBay）：</strong>eBayのバイヤー保護ガイドラインおよび各出品ページの規定に準じます。
+            </div>
+          </div>
+          <div class="legal-item full">
+            <div class="label">CANCELLATION / 解約について</div>
+            <div class="value">サブスクリプションの解約は、アカウント設定画面またはカスタマーポータルからいつでも行えます。解約手続き完了後、次回更新日以降の課金は発生しません。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+      </section>
+  </div>
+
+      </section>
+  </div>
+
+      </section>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><polygon points="12,2 22,20 2,20"/></svg>
+      </div>
+      <div>
+        <div class="text">KABUTO</div>
+        <div class="text-sub">KABUTO INC.</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#" href="tokusho.html">特定商取引法に基づく表記</a>
+      <a href="#" href="privacy.html">Privacy Policy</a>
+      <a href="#" href="terms.html">利用規約</a>
+      <a href="#" href="refund.html">返金ポリシー</a>
+    </nav>
+    <div class="footer-copy">&copy; 2026 KABUTO Inc. All rights reserved.</div>
+  </footer>
+
+  
+
+</body>
+</html>
