@@ -1,530 +1,354 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>YORISOI — 結婚相談所カウンセラー向けAI業務支援SaaS | KABUTO株式会社</title>
-  <meta name="description" content="YORASOIは、結婚相談所・カウンセラー向けのAI業務支援SaaSです。AIが下書きを作成し、人間が確認・承認。応援する側の時間を、本来の仕事に取り戻します。">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@400;500&family=Noto+Sans+JP:wght@300;400;500&family=Shippori+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg:           #fbf8f1;
-      --bg-alt:       #f5f0e4;
-      --paper:        #ffffff;
-      --ink:          #1a2236;
-      --ink-2:        #2c3651;
-      --ink-mute:     #6a7388;
-      --rule:         #d9d2c1;
-      --rule-soft:    #ebe5d4;
-      --accent:       #c9a961;
-      --accent-deep:  #a88b48;
-      --accent-soft:  #e8dcb8;
-      --serif-jp: "Shippori Mincho", "Hiragino Mincho ProN", "YuMincho", "Yu Mincho", "Noto Serif JP", serif;
-      --sans-jp:  "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
-      --serif-en: "Cormorant Garamond", "EB Garamond", Georgia, serif;
-      --sans-en:  "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-      --max: 1200px;
-      --gutter: clamp(20px, 4vw, 56px);
-    }
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>YORISOI（よりそい）— 結婚相談所カウンセラーのためのAI業務支援SaaS | KABUTO</title>
+<meta name="description" content="YORISOIは、結婚相談所カウンセラーの返信業務をAIが支援するB2B SaaS。カウンセラーが、一人ひとりの会員と向き合う時間を取り戻すために。" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+<style>
+  /* ============= YORISOI palette tweak — more cream/beige feel ============= */
+  body.yorisoi-page { background: #fbf6e8; }
+  .yorisoi-page .site-header { background: rgba(251, 246, 232, 0.86); }
 
-    * { box-sizing: border-box; }
-    html, body {
-      margin: 0; padding: 0;
-      background: var(--bg); color: var(--ink);
-      font-family: var(--sans-jp); font-size: 16px; line-height: 1.8;
-      -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
-      font-feature-settings: "palt" 1;
-    }
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-    h1, h2, h3, h4 { margin: 0; font-weight: 500; line-height: 1.3; }
-    p { margin: 0; }
+  /* ---- Hero ---- */
+  .y-hero {
+    padding-top: clamp(80px, 11vw, 140px);
+    padding-bottom: clamp(60px, 8vw, 100px);
+    background: linear-gradient(180deg, #fbf6e8 0%, #f5edd6 100%);
+  }
+  .y-hero .container { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 64px; align-items: center; }
+  .y-hero .logo-wrap {
+    display: flex; flex-direction: column; gap: 18px;
+    min-width: 0;
+  }
+  .y-hero .logo-en {
+    font-family: var(--serif-en); font-weight: 600;
+    font-size: clamp(56px, 8vw, 96px);
+    letter-spacing: 0.06em;
+    color: #5b4a2a;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .y-hero .logo-jp {
+    font-family: var(--serif-jp); font-size: 18px;
+    letter-spacing: 0.32em; color: #8b7a55;
+  }
+  .y-hero .stamp { width: 60px; height: 1px; background: #c9a961; margin-top: 8px; }
+  .y-hero h1 {
+    font-family: var(--serif-jp); font-weight: 500;
+    font-size: clamp(26px, 3.4vw, 42px);
+    line-height: 1.6; color: #2c2410;
+    margin: 0 0 28px;
+  }
+  .y-hero .lead-jp {
+    font-family: var(--serif-jp);
+    font-size: clamp(15px, 1.3vw, 18px);
+    line-height: 2.05;
+    color: #5b4a2a;
+  }
+  .y-hero .badges {
+    margin-top: 36px;
+    display: flex; gap: 16px; flex-wrap: wrap;
+  }
+  .y-hero .badge {
+    font-family: var(--sans-jp);
+    font-size: 12px;
+    padding: 8px 16px;
+    border: 1px solid #c9a961;
+    color: #5b4a2a;
+    border-radius: 100px;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+  }
 
-    .container { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
-    .section { padding: clamp(80px, 11vw, 160px) 0; }
-    .section-band { background: var(--bg-alt); }
-    .section-paper { background: var(--paper); }
+  /* ---- Section pattern reuse with cream tone ---- */
+  .yorisoi-page .section { padding: clamp(80px, 10vw, 140px) 0; }
+  .yorisoi-page .section-band { background: #f5edd6; }
+  .yorisoi-page .section-paper { background: #fbf6e8; }
 
-    .h-display { font-family: var(--serif-jp); font-weight: 500; font-size: clamp(34px, 5.4vw, 68px); line-height: 1.45; letter-spacing: 0.02em; }
-    .h-section { font-family: var(--serif-jp); font-weight: 500; font-size: clamp(26px, 3.4vw, 40px); line-height: 1.5; letter-spacing: 0.04em; }
-    .body-jp { font-family: var(--sans-jp); font-size: 15px; line-height: 2; color: var(--ink-2); }
-    .body-en { font-family: var(--serif-en); font-style: italic; font-size: 16px; line-height: 1.7; color: var(--ink-mute); }
-    .eyebrow {
-      font-family: var(--serif-en); font-style: italic; font-size: 13px;
-      letter-spacing: 0.18em; color: var(--accent-deep); text-transform: uppercase;
-      display: inline-flex; align-items: center; gap: 12px;
-    }
-    .eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--accent); display: inline-block; }
+  .y-section-head {
+    text-align: center;
+    margin-bottom: 72px;
+  }
+  .y-section-head .num {
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 13px; color: #a88b48; letter-spacing: 0.08em;
+    display: block; margin-bottom: 10px;
+  }
+  .y-section-head .lab {
+    font-family: var(--serif-en); font-size: 12px;
+    letter-spacing: 0.32em; color: #5b4a2a; text-transform: uppercase;
+    display: block; margin-bottom: 22px;
+  }
+  .y-section-head h2 {
+    font-family: var(--serif-jp); font-weight: 500;
+    font-size: clamp(26px, 3.2vw, 38px);
+    line-height: 1.55; color: #2c2410;
+    letter-spacing: 0.04em;
+  }
 
-    .section-head {
-      display: grid; grid-template-columns: 200px 1fr;
-      gap: 56px; margin-bottom: 72px; align-items: baseline;
-    }
-    .section-head .meta { display: flex; flex-direction: column; gap: 8px; }
-    .section-head .meta .num { font-family: var(--serif-en); font-style: italic; font-size: 14px; color: var(--accent-deep); letter-spacing: 0.05em; }
-    .section-head .meta .lab { font-family: var(--serif-en); font-size: 12px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--ink); }
-    .section-head .meta .lab-jp { font-family: var(--serif-jp); font-size: 11px; letter-spacing: 0.3em; color: var(--ink-mute); }
+  /* ---- About ---- */
+  .y-about {
+    max-width: 760px; margin: 0 auto;
+  }
+  .y-about p {
+    font-family: var(--serif-jp); font-size: clamp(15px, 1.3vw, 18px);
+    line-height: 2.1; color: #4d3f23; text-align: center;
+    margin: 0 0 24px;
+  }
+  .y-about .note {
+    font-family: var(--sans-jp); font-size: 13px;
+    color: #8b7a55;
+    text-align: center;
+    border-top: 1px solid #d8caa6;
+    padding-top: 24px;
+    margin-top: 40px;
+    letter-spacing: 0.06em;
+  }
+  .y-about .note em {
+    font-family: var(--serif-en); font-style: italic;
+    margin-right: 10px; color: #a88b48; letter-spacing: 0.04em;
+  }
 
-    /* Header */
-    .site-header {
-      position: sticky; top: 0; z-index: 50;
-      background: rgba(251,248,241,0.88); backdrop-filter: saturate(140%) blur(12px);
-      -webkit-backdrop-filter: saturate(140%) blur(12px);
-      border-bottom: 1px solid transparent; transition: border-color .3s ease;
-    }
-    .site-header.is-scrolled { border-bottom-color: var(--rule-soft); }
-    .nav { display: flex; align-items: center; justify-content: space-between; height: 76px; }
-    .brand { display: flex; align-items: baseline; gap: 10px; }
-    .brand-mark { font-family: var(--serif-en); font-weight: 500; font-size: 22px; letter-spacing: 0.42em; color: var(--ink); }
-    .brand-jp { font-family: var(--serif-jp); font-size: 11px; letter-spacing: 0.3em; color: var(--ink-mute); }
-    .nav-links { display: flex; align-items: center; gap: 36px; }
-    .nav-links a { font-family: var(--serif-en); font-size: 13px; letter-spacing: 0.22em; color: var(--ink-2); text-transform: uppercase; padding: 6px 0; transition: color .25s; }
-    .nav-links a small { display: block; font-family: var(--sans-jp); font-size: 10px; letter-spacing: 0.2em; color: var(--ink-mute); margin-top: 2px; text-transform: none; }
-    .nav-links a:hover { color: var(--accent-deep); }
-    .nav-links a.is-active { color: var(--accent-deep); }
-    .nav-cta { font-family: var(--serif-en); font-size: 12px; letter-spacing: 0.22em; border: 1px solid var(--ink); padding: 11px 22px; color: var(--ink); text-transform: uppercase; transition: all .25s; }
-    .nav-cta:hover { background: var(--ink); color: var(--bg); }
+  /* ---- Three values ---- */
+  .y-values {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: #d8caa6;
+    border: 1px solid #d8caa6;
+  }
+  .y-values .v {
+    background: #fbf6e8;
+    padding: 56px 36px;
+  }
+  .y-values .v .num {
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 36px; color: #c9a961;
+    line-height: 1;
+    margin-bottom: 24px;
+  }
+  .y-values .v h3 {
+    font-family: var(--serif-jp); font-weight: 500;
+    font-size: 22px; line-height: 1.65;
+    color: #2c2410; margin: 0 0 16px;
+    letter-spacing: 0.04em;
+  }
+  .y-values .v p {
+    font-family: var(--sans-jp); font-size: 13.5px;
+    line-height: 2; color: #5b4a2a; margin: 0;
+  }
+  .y-values .v .en {
+    display: block;
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 12px; color: #a88b48;
+    margin-top: 16px; letter-spacing: 0.04em;
+  }
 
-    /* Buttons */
-    .btn { display: inline-flex; align-items: center; gap: 14px; padding: 16px 28px; font-family: var(--serif-en); font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; border: 1px solid var(--ink); color: var(--ink); background: transparent; transition: all .3s ease; white-space: nowrap; }
-    .btn .arr { transition: transform .3s ease; display: inline-block; }
-    .btn:hover { background: var(--ink); color: var(--bg); }
-    .btn:hover .arr { transform: translateX(4px); }
-    .btn-primary { background: var(--ink); color: var(--bg); }
-    .btn-primary:hover { background: var(--accent-deep); border-color: var(--accent-deep); }
-    .btn-gold { background: var(--accent); border-color: var(--accent); color: var(--ink); }
-    .btn-gold:hover { background: var(--accent-deep); border-color: var(--accent-deep); color: var(--bg); }
+  /* ---- Flow / steps ---- */
+  .y-flow {
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+    position: relative;
+    align-items: start;
+  }
+  .y-flow::before {
+    content: ""; position: absolute;
+    top: 36px; left: 16%; right: 16%;
+    height: 1px; background: #d8caa6;
+    z-index: 0;
+  }
+  .y-flow .step {
+    position: relative; z-index: 1;
+    text-align: center;
+    padding: 0 24px;
+  }
+  .y-flow .step .dot {
+    width: 72px; height: 72px;
+    border-radius: 50%;
+    background: #fbf6e8;
+    border: 1px solid #c9a961;
+    display: inline-flex;
+    align-items: center; justify-content: center;
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 22px; color: #a88b48;
+    margin-bottom: 28px;
+  }
+  .y-flow .step h3 {
+    font-family: var(--serif-jp); font-weight: 500;
+    font-size: 18px; color: #2c2410;
+    margin: 0 0 12px;
+    letter-spacing: 0.04em;
+  }
+  .y-flow .step p {
+    font-family: var(--sans-jp); font-size: 13px;
+    line-height: 1.95; color: #5b4a2a;
+    margin: 0;
+    max-width: 280px;
+    margin-left: auto; margin-right: auto;
+  }
 
-    /* ─── HERO ─── */
-    .page-hero {
-      padding: clamp(80px, 12vw, 160px) 0 clamp(64px, 9vw, 120px);
-      border-bottom: 1px solid var(--rule-soft);
-    }
-    .page-hero-grid { display: grid; grid-template-columns: 200px 1fr; gap: 56px; align-items: end; }
-    .page-hero .meta { display: flex; flex-direction: column; gap: 14px; }
-    .page-hero .meta .label-en { font-family: var(--serif-en); font-style: italic; font-size: 13px; letter-spacing: 0.18em; color: var(--accent-deep); }
-    .page-hero .meta .stamp { width: 56px; height: 1px; background: var(--accent); }
-    .product-hero-name { display: flex; align-items: baseline; gap: 16px; margin-bottom: 24px; }
-    .product-hero-name .en { font-family: var(--serif-en); font-weight: 500; font-size: clamp(48px, 7vw, 88px); letter-spacing: 0.06em; color: var(--ink); line-height: 1; }
-    .product-hero-name .jp { font-family: var(--serif-jp); font-size: 18px; color: var(--ink-mute); letter-spacing: 0.12em; }
-    .page-hero .tagline { font-family: var(--serif-jp); font-size: clamp(18px, 2vw, 24px); line-height: 1.9; color: var(--ink); margin-bottom: 20px; }
-    .page-hero .sub-en { font-family: var(--serif-en); font-style: italic; font-size: clamp(14px, 1.2vw, 17px); line-height: 1.75; color: var(--ink-mute); max-width: 580px; margin-bottom: 36px; }
+  /* ---- CTA ---- */
+  .y-cta {
+    background: #1a2236;
+    color: #fbf8f1;
+    text-align: center;
+  }
+  .y-cta h2 {
+    font-family: var(--serif-jp); font-weight: 500;
+    font-size: clamp(28px, 3.6vw, 44px);
+    line-height: 1.5; color: #fbf8f1;
+    margin: 0 0 24px;
+    letter-spacing: 0.04em;
+  }
+  .y-cta .free {
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 16px; color: #c9a961;
+    margin-bottom: 36px; letter-spacing: 0.06em;
+  }
+  .y-cta .btn {
+    border-color: #c9a961;
+    color: #fbf8f1;
+    background: transparent;
+    padding: 18px 36px;
+    font-size: 14px;
+  }
+  .y-cta .btn:hover {
+    background: #c9a961; border-color: #c9a961; color: #1a2236;
+  }
+  .y-cta .url {
+    margin-top: 20px;
+    font-family: var(--serif-en); font-size: 12px;
+    color: rgba(251,248,241,0.5);
+    letter-spacing: 0.1em;
+  }
 
-    /* ─── PROBLEM ─── */
-    .problem-quote {
-      border-left: 3px solid var(--accent); padding: 0 0 0 28px;
-      margin-bottom: 48px;
-    }
-    .problem-quote p {
-      font-family: var(--serif-jp); font-size: clamp(16px, 1.6vw, 20px);
-      line-height: 1.9; color: var(--ink); font-weight: 500;
-    }
-    .problem-quote cite {
-      display: block; margin-top: 12px;
-      font-family: var(--serif-en); font-style: italic;
-      font-size: 13px; color: var(--ink-mute); letter-spacing: 0.06em;
-    }
-    .problem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--rule-soft); border: 1px solid var(--rule-soft); margin-top: 56px; }
-    .problem-card { background: var(--paper); padding: 40px 32px; }
-    .problem-card .num { font-family: var(--serif-en); font-style: italic; font-size: 13px; color: var(--accent-deep); letter-spacing: 0.06em; margin-bottom: 20px; }
-    .problem-card h3 { font-family: var(--serif-jp); font-size: 17px; font-weight: 500; color: var(--ink); margin-bottom: 14px; letter-spacing: 0.04em; }
-    .problem-card p { font-family: var(--sans-jp); font-size: 13.5px; line-height: 1.95; color: var(--ink-mute); }
-    .problem-card .voice { margin-top: 16px; padding: 14px 16px; background: var(--bg-alt); border-left: 2px solid var(--rule); font-family: var(--serif-jp); font-size: 13px; color: var(--ink-2); line-height: 1.8; }
-
-    /* ─── HOW IT WORKS ─── */
-    .how-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
-    .how-steps { display: grid; gap: 0; }
-    .how-step { display: grid; grid-template-columns: 56px 1fr; gap: 24px; padding: 28px 0; border-bottom: 1px solid var(--rule-soft); align-items: start; }
-    .how-step:first-child { padding-top: 0; }
-    .how-step:last-child { border-bottom: none; }
-    .how-step .step-num { font-family: var(--serif-en); font-style: italic; font-size: 28px; color: var(--accent); line-height: 1; padding-top: 4px; }
-    .how-step h3 { font-family: var(--serif-jp); font-size: 16px; font-weight: 500; color: var(--ink); margin-bottom: 8px; letter-spacing: 0.04em; }
-    .how-step p { font-family: var(--sans-jp); font-size: 13.5px; line-height: 1.9; color: var(--ink-mute); }
-    .how-visual {
-      background: linear-gradient(180deg, #f6efe1 0%, #ede5d0 100%);
-      border: 1px solid var(--rule-soft); border-radius: 4px; padding: 40px;
-    }
-    .how-badge { font-family: var(--serif-en); font-style: italic; font-size: 12px; letter-spacing: 0.12em; color: var(--accent-deep); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
-    .how-badge::before { content: ""; width: 20px; height: 1px; background: var(--accent); display: inline-block; }
-    .how-visual-item { background: var(--paper); border: 1px solid #e2d8c0; border-radius: 2px; padding: 16px 18px; margin-bottom: 12px; font-family: var(--sans-jp); font-size: 13px; color: var(--ink-2); line-height: 1.7; }
-    .how-visual-item:last-child { margin-bottom: 0; }
-    .how-visual-item .item-label { font-family: var(--serif-en); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-mute); margin-bottom: 6px; }
-    .how-visual-item.ai-item { background: #f6efe1; border-color: #dfd0aa; }
-    .how-visual-item.approved { border-left: 3px solid var(--accent); }
-
-    /* ─── FEATURES ─── */
-    .features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--rule-soft); border: 1px solid var(--rule-soft); }
-    .feature-card { background: var(--bg); padding: 48px 40px; }
-    .feature-num { font-family: var(--serif-en); font-style: italic; font-size: 13px; color: var(--accent-deep); letter-spacing: 0.06em; margin-bottom: 20px; }
-    .feature-card h3 { font-family: var(--serif-en); font-weight: 500; font-size: 22px; letter-spacing: 0.04em; color: var(--ink); margin-bottom: 6px; }
-    .feature-card .jp { font-family: var(--serif-jp); font-size: 14px; color: var(--ink-2); margin-bottom: 18px; }
-    .feature-card p { font-family: var(--sans-jp); font-size: 13.5px; line-height: 1.95; color: var(--ink-mute); }
-
-    /* ─── TARGET ─── */
-    .target-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
-    .target-list { list-style: none; padding: 0; margin: 28px 0 0; display: grid; gap: 0; }
-    .target-list li { padding: 18px 0; border-bottom: 1px solid var(--rule-soft); font-family: var(--serif-jp); font-size: 15px; color: var(--ink-2); display: flex; align-items: center; gap: 16px; }
-    .target-list li::before { content: "—"; color: var(--accent); font-family: var(--serif-en); }
-    .target-aside { padding: 40px; background: var(--ink); color: var(--bg); border-radius: 2px; }
-    .target-aside .ta-label { font-family: var(--serif-en); font-style: italic; font-size: 12px; letter-spacing: 0.14em; color: var(--accent); margin-bottom: 28px; display: flex; align-items: center; gap: 10px; }
-    .target-aside .ta-label::before { content: ""; width: 20px; height: 1px; background: var(--accent); }
-    .target-aside .belief { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,0.08); }
-    .target-aside .belief:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
-    .target-aside .belief h4 { font-family: var(--serif-jp); font-size: 15px; font-weight: 500; color: var(--bg); margin-bottom: 6px; }
-    .target-aside .belief p { font-family: var(--serif-en); font-style: italic; font-size: 13px; color: rgba(251,248,241,0.55); letter-spacing: 0.04em; }
-
-    /* ─── CTA ─── */
-    .cta-section { background: var(--ink); color: var(--bg); }
-    .cta-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: end; }
-    .cta-section h2 { font-family: var(--serif-jp); font-weight: 400; color: var(--bg); font-size: clamp(30px, 3.8vw, 50px); line-height: 1.5; letter-spacing: 0.04em; }
-    .cta-section h2 em { font-family: var(--serif-en); font-style: italic; color: var(--accent); font-size: 0.55em; display: block; margin-bottom: 18px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500; }
-    .cta-right p { font-family: var(--sans-jp); font-size: 14px; line-height: 2; color: rgba(251,248,241,0.65); margin: 0 0 28px; }
-    .cta-right .btn { border-color: var(--bg); color: var(--bg); }
-    .cta-right .btn:hover { background: var(--accent); border-color: var(--accent); color: var(--ink); }
-    .cta-right .btn-gold-outline { border-color: var(--accent); color: var(--accent); margin-left: 16px; }
-    .cta-right .btn-gold-outline:hover { background: var(--accent); color: var(--ink); }
-
-    /* Footer */
-    .site-footer { border-top: 1px solid var(--rule-soft); background: var(--bg); padding: 72px 0 40px; font-family: var(--sans-jp); font-size: 13px; color: var(--ink-mute); }
-    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 48px; align-items: start; }
-    .footer-brand .brand-mark { font-size: 24px; }
-    .footer-brand p { margin: 18px 0 0; line-height: 1.9; max-width: 340px; }
-    .footer-col h5 { font-family: var(--serif-en); font-weight: 500; font-size: 11px; letter-spacing: 0.28em; color: var(--ink); text-transform: uppercase; margin: 0 0 18px; }
-    .footer-col ul { list-style: none; padding: 0; margin: 0; }
-    .footer-col li { margin-bottom: 10px; }
-    .footer-col a:hover { color: var(--accent-deep); }
-    .footer-bottom { margin-top: 64px; padding-top: 28px; border-top: 1px solid var(--rule-soft); display: flex; justify-content: space-between; align-items: center; font-family: var(--serif-en); font-size: 12px; letter-spacing: 0.18em; color: var(--ink-mute); }
-    .footer-bottom a:hover { color: var(--accent-deep); }
-
-    /* Responsive */
-    @media (max-width: 880px) {
-      .nav-links { display: none; }
-      .section-head { grid-template-columns: 1fr; gap: 24px; margin-bottom: 48px; }
-      .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
-    }
-    @media (max-width: 640px) {
-      .page-hero-grid { grid-template-columns: 1fr; gap: 24px; }
-      .problem-grid { grid-template-columns: 1fr; }
-      .how-grid { grid-template-columns: 1fr; }
-      .how-visual { display: none; }
-      .features-grid { grid-template-columns: 1fr; }
-      .target-grid { grid-template-columns: 1fr; gap: 40px; }
-      .cta-inner { grid-template-columns: 1fr; gap: 36px; }
-      .footer-grid { grid-template-columns: 1fr; }
-      .footer-bottom { flex-direction: column; gap: 14px; align-items: flex-start; }
-    }
-  </style>
+  /* ---- responsive ---- */
+  @media (max-width: 900px) {
+    .y-hero .container { grid-template-columns: 1fr; gap: 40px; }
+    .y-values { grid-template-columns: 1fr; }
+    .y-flow { grid-template-columns: 1fr; gap: 56px; }
+    .y-flow::before { display: none; }
+  }
+</style>
 </head>
-<body>
+<body class="yorisoi-page">
 
-  <header class="site-header" id="site-header">
+<main>
+
+  <!-- =================== HERO =================== -->
+  <section class="y-hero">
     <div class="container">
-      <nav class="nav">
-        <a href="index.html" class="brand">
-          <span class="brand-mark">KABUTO</span>
-          <span class="brand-jp">株式会社</span>
-        </a>
-        <div class="nav-links">
-          <a href="index.html#business">Services<small>事業内容</small></a>
-          <a href="yorisoi.html" class="is-active">YORISOI</a>
-          <a href="index.html#company">About<small>会社情報</small></a>
-          <a href="representative.html">代表<small>Representative</small></a>
-        </div>
-        <a href="mailto:kabuto.co.ltd@gmail.com" class="nav-cta">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-
-    <!-- HERO -->
-    <section class="page-hero">
-      <div class="container">
-        <div class="page-hero-grid">
-          <div class="meta">
-            <span class="label-en">AI SaaS for Care</span>
-            <div class="stamp"></div>
-            <span class="eyebrow" style="font-size:11px;margin-top:0;">AI × 対人支援</span>
-          </div>
-          <div>
-            <div class="product-hero-name">
-              <span class="en">YORISOI</span>
-              <span class="jp">よりそい</span>
-            </div>
-            <p class="tagline">結婚相談所カウンセラー向け<br>AI業務支援SaaS。</p>
-            <p class="sub-en">AI drafts the reply. The counselor reviews, edits, and decides.<br>Give back the time — and the warmth.</p>
-            <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:36px;">
-              <a href="https://yorisoi-jp.vercel.app" target="_blank" rel="noopener" class="btn btn-primary">サービスサイトへ <span class="arr">→</span></a>
-              <a href="mailto:kabuto.co.ltd@gmail.com" class="btn" style="border-color:var(--rule);">お問い合わせ</a>
-            </div>
-          </div>
-        </div>
+      <div class="logo-wrap">
+        <div class="logo-en">YORISOI</div>
+        <div class="logo-jp">よりそい</div>
+        <div class="stamp"></div>
       </div>
-    </section>
-
-    <!-- PROBLEM -->
-    <section class="section section-band">
-      <div class="container">
-        <div class="section-head">
-          <div class="meta">
-            <span class="num">— 01</span>
-            <span class="lab">Problem</span>
-            <span class="lab-jp">現場の課題</span>
-          </div>
-          <div class="heading">
-            <h2 class="h-section">深夜まで返信に追われ、機械的になっていく自分に気付く──</h2>
-          </div>
+      <div>
+        <h1>結婚相談所カウンセラーのための、<br/>AI業務支援SaaS。</h1>
+        <p class="lead-jp">カウンセラーが、一人ひとりの会員と<br/>向き合う時間を取り戻す。</p>
+        <div class="badges">
+          <span class="badge">B2B SaaS</span>
+          <span class="badge">AI業務支援</span>
+          <span class="badge">対人支援業界向け</span>
         </div>
-        <div class="problem-quote">
-          <p>そんな夜を、私たちはなくしたい。<br>AIは判断を肩代わりする道具ではなく、<br>人が人と向き合うための時間を生む装置であるべきだ。</p>
-          <cite>— KABUTO, Inc. Philosophy</cite>
-        </div>
-        <div class="problem-grid">
-          <div class="problem-card">
-            <div class="num">— 01</div>
-            <h3>返信業務に追われる日々</h3>
-            <p>深夜・早朝の問い合わせに対応しながら、翌日の面談も準備する。24時間稼働が求められる現実が、カウンセラーを消耗させています。</p>
-            <div class="voice">「深夜にメッセージが来ると、返さないわけにもいかなくて…」</div>
-          </div>
-          <div class="problem-card">
-            <div class="num">— 02</div>
-            <h3>返信の質にばらつきが出る</h3>
-            <p>疲弊すると、丁寧な言葉を選ぶ余裕がなくなる。会員への対応が事務的になり、信頼関係の構築に支障をきたすことも。</p>
-            <div class="voice">「ちゃんと向き合いたいのに、時間も気力も足りない…」</div>
-          </div>
-          <div class="problem-card">
-            <div class="num">— 03</div>
-            <h3>記録・管理の工数が重い</h3>
-            <p>面談記録、会員管理、提案文の作成。ケア以外の業務が積み重なり、本来の相談業務に集中できない環境が続いています。</p>
-            <div class="voice">「書類仕事の時間を、もっと会員と向き合う時間に使いたい。」</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- HOW IT WORKS -->
-    <section class="section section-paper">
-      <div class="container">
-        <div class="section-head">
-          <div class="meta">
-            <span class="num">— 02</span>
-            <span class="lab">How It Works</span>
-            <span class="lab-jp">仕組み</span>
-          </div>
-          <div class="heading">
-            <h2 class="h-section">人間が、最終決定する。</h2>
-            <p class="body-jp" style="margin-top:18px;">YORASOIはAIが提案し、必ずカウンセラーが確認・承認します。<br>AIは助言者であり、決定者は常に人間です。</p>
-          </div>
-        </div>
-        <div class="how-grid">
-          <div class="how-steps">
-            <div class="how-step">
-              <div class="step-num">i.</div>
-              <div>
-                <h3>会員からメッセージが届く</h3>
-                <p>深夜・早朝を問わず、会員からのメッセージをシステムが受け取ります。</p>
-              </div>
-            </div>
-            <div class="how-step">
-              <div class="step-num">ii.</div>
-              <div>
-                <h3>AIが文脈を読み、下書きを生成</h3>
-                <p>会話履歴と会員プロフィールをもとに、文脈に沿った返信案をAIが自動生成します。</p>
-              </div>
-            </div>
-            <div class="how-step">
-              <div class="step-num">iii.</div>
-              <div>
-                <h3>カウンセラーが確認・編集・承認</h3>
-                <p>送信前に必ずカウンセラーが確認。修正・加筆のうえ、承認した内容のみが会員に届きます。</p>
-              </div>
-            </div>
-            <div class="how-step">
-              <div class="step-num">iv.</div>
-              <div>
-                <h3>会員に温かみのある返信が届く</h3>
-                <p>AIの効率と、人間の判断・温度感が組み合わさった返信が、会員のもとへ届きます。</p>
-              </div>
-            </div>
-          </div>
-          <div class="how-visual">
-            <div class="how-badge">YORISOI — workflow</div>
-            <div class="how-visual-item">
-              <div class="item-label">会員メッセージ</div>
-              先日のお話、少し不安になってしまって…明日のお見合い、行くべきか迷っています。
-            </div>
-            <div class="how-visual-item ai-item">
-              <div class="item-label">AI下書き（確認待ち）</div>
-              山本さん、夜分にメッセージありがとうございます。不安に感じられるお気持ち、自然なことだと思います。明日の件、まずは深呼吸して、ご自身のペースを大切に──
-            </div>
-            <div class="how-visual-item approved">
-              <div class="item-label">カウンセラー承認済み</div>
-              カウンセラーが確認・編集し、送信しました。
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FEATURES -->
-    <section class="section section-band">
-      <div class="container">
-        <div class="section-head">
-          <div class="meta">
-            <span class="num">— 03</span>
-            <span class="lab">Features</span>
-            <span class="lab-jp">主な機能</span>
-          </div>
-          <div class="heading">
-            <h2 class="h-section">業務を、本来の形に戻す。</h2>
-          </div>
-        </div>
-        <div class="features-grid">
-          <div class="feature-card">
-            <div class="feature-num">— 01</div>
-            <h3>AI Reply Draft</h3>
-            <div class="jp">返信下書きの自動生成</div>
-            <p>会話履歴と会員プロフィールを読み込み、文脈に沿った返信案をAIが自動生成。カウンセラーはゼロから文章を書く必要がなくなります。</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-num">— 02</div>
-            <h3>Human Approval Flow</h3>
-            <div class="jp">確認・編集・承認プロセス</div>
-            <p>AIの下書きはカウンセラーが必ず確認。加筆・修正のうえ承認した内容のみが送信されます。最終判断は、常に人間が行います。</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-num">— 03</div>
-            <h3>Member Management</h3>
-            <div class="jp">会員情報の一元管理</div>
-            <p>会員プロフィール、活動履歴、面談記録をクラウドで一元管理。チームでの共有も容易で、引き継ぎもスムーズです。</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-num">— 04</div>
-            <h3>24h Async Support</h3>
-            <div class="jp">非同期の24時間対応</div>
-            <p>深夜の問い合わせも、翌朝カウンセラーが確認・承認するだけで対応完了。急かされることなく、質の高い返信を届けられます。</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TARGET -->
-    <section class="section section-paper">
-      <div class="container">
-        <div class="section-head">
-          <div class="meta">
-            <span class="num">— 04</span>
-            <span class="lab">For Whom</span>
-            <span class="lab-jp">こんな方に</span>
-          </div>
-          <div class="heading">
-            <h2 class="h-section">応援する側に、余白を。</h2>
-            <p class="body-jp" style="margin-top:18px;">YORASOIは、ケアすることを職業にするすべての人のために設計されています。</p>
-          </div>
-        </div>
-        <div class="target-grid">
-          <div>
-            <ul class="target-list">
-              <li>結婚相談所の経営者・運営スタッフ</li>
-              <li>フリーランスの仲人士・カウンセラー</li>
-              <li>複数名でデータを共有したい相談所</li>
-              <li>デジタル化・業務効率化を検討中の相談所</li>
-              <li>会員へのケアの質を高めたいカウンセラー</li>
-            </ul>
-            <div style="margin-top:40px;">
-              <a href="https://yorisoi-jp.vercel.app" target="_blank" rel="noopener" class="btn btn-primary">サービスサイトへ <span class="arr">→</span></a>
-            </div>
-          </div>
-          <div class="target-aside">
-            <div class="ta-label">Three Beliefs</div>
-            <div class="belief">
-              <h4>応援する側に、余白を。</h4>
-              <p>Make space for those who care.</p>
-            </div>
-            <div class="belief">
-              <h4>最終決定は、必ず人間に。</h4>
-              <p>Humans hold the final say.</p>
-            </div>
-            <div class="belief">
-              <h4>業界の現場から、世界へ。</h4>
-              <p>From the field, to the world.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="section cta-section">
-      <div class="container">
-        <div class="cta-inner">
-          <div>
-            <h2>
-              <em>— Try YORISOI</em>
-              まずは、<br>試してみてください。
-            </h2>
-          </div>
-          <div class="cta-right">
-            <p>サービスサイトから詳細をご確認いただけます。ご質問やデモのご要望は、メールにてお気軽にご連絡ください。</p>
-            <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
-              <a href="https://yorisoi-jp.vercel.app" target="_blank" rel="noopener" class="btn">サービスサイトへ <span class="arr">→</span></a>
-            </div>
-            <p style="margin-top:20px;font-size:13px;">お問い合わせ: <a href="mailto:kabuto.co.ltd@gmail.com" style="color:var(--accent);">kabuto.co.ltd@gmail.com</a></p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col footer-brand">
-          <span class="brand-mark">KABUTO</span>
-          <p>対人支援の現場に、テクノロジーで余白を。長崎発のテクノロジーカンパニー。</p>
-        </div>
-        <div class="footer-col">
-          <h5>Services</h5>
-          <ul>
-            <li><a href="yorisoi.html">YORISOI</a></li>
-            <li><a href="index.html#business">AI Solutions</a></li>
-            <li><a href="index.html#business">Global E-Commerce</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>Company</h5>
-          <ul>
-            <li><a href="index.html#company">会社情報</a></li>
-            <li><a href="representative.html">代表紹介</a></li>
-            <li><a href="index.html#philosophy">理念</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>Legal</h5>
-          <ul>
-            <li><a href="tokusho.html">特定商取引法</a></li>
-            <li><a href="privacy.html">プライバシーポリシー</a></li>
-            <li><a href="terms.html">利用規約</a></li>
-            <li><a href="refund.html">解約・返金ポリシー</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>&copy; 2024 KABUTO Inc. All rights reserved.</span>
-        <a href="mailto:kabuto.co.ltd@gmail.com">kabuto.co.ltd@gmail.com</a>
       </div>
     </div>
-  </footer>
+  </section>
 
-  <script>
-    const header = document.getElementById('site-header');
-    window.addEventListener('scroll', () => {
-      header.classList.toggle('is-scrolled', window.scrollY > 10);
-    }, { passive: true });
-  </script>
+  <!-- =================== ABOUT =================== -->
+  <section class="section section-paper">
+    <div class="container">
+      <div class="y-section-head">
+        <span class="num">— 01</span>
+        <span class="lab">About</span>
+        <h2>YORISOIとは。</h2>
+      </div>
+      <div class="y-about">
+        <p>AIが、カウンセラーの返信下書きを自動生成する。<br/>カウンセラーが、その下書きを確認・編集・承認して、会員に届ける。</p>
+        <p>会員の体験は、これまでと変わらない。<br/>変わるのは、応援する側の余白だけ。</p>
+        <div class="note">
+          <em>Note —</em>会員はAIの存在を意識することなく、これまで通りカウンセラーから返信を受け取ります。
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- =================== 3 VALUES =================== -->
+  <section class="section section-band">
+    <div class="container">
+      <div class="y-section-head">
+        <span class="num">— 02</span>
+        <span class="lab">Three Values</span>
+        <h2>大切にしている、<br/>3つのこと。</h2>
+      </div>
+      <div class="y-values">
+        <div class="v">
+          <div class="num">i.</div>
+          <h3>応援する側に、<br/>余白を。</h3>
+          <p>深夜まで返信に追われる時間を減らし、カウンセラーが本来の仕事──会員一人ひとりと向き合うことに集中できる環境をつくります。</p>
+          <span class="en">— Make space for those who care.</span>
+        </div>
+        <div class="v">
+          <div class="num">ii.</div>
+          <h3>最終決定は、<br/>必ず人間に。</h3>
+          <p>AIは下書きを生成するだけ。会員に届く言葉は、必ずカウンセラーが確認・編集・承認したものです。判断は、人間が手放さない。</p>
+          <span class="en">— Humans hold the final say.</span>
+        </div>
+        <div class="v">
+          <div class="num">iii.</div>
+          <h3>危険を、<br/>見逃さない。</h3>
+          <p>DVや精神的危機など、見過ごしてはいけないサインをAIが検知し、カウンセラーに即座に通知。一人で抱え込ませない仕組み。</p>
+          <span class="en">— Never miss the warning signs.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== FLOW =================== -->
+  <section class="section section-paper">
+    <div class="container">
+      <div class="y-section-head">
+        <span class="num">— 03</span>
+        <span class="lab">How it works</span>
+        <h2>ご利用の流れ。</h2>
+      </div>
+      <div class="y-flow">
+        <div class="step">
+          <div class="dot">i</div>
+          <h3>カウンセラーが登録</h3>
+          <p>YORISOIにアカウントを作成。プロフィールと相談所の情報を設定します。</p>
+        </div>
+        <div class="step">
+          <div class="dot">ii</div>
+          <h3>会員を招待</h3>
+          <p>担当する会員をYORISOIに登録し、これまで通りのチャット運用を継続します。</p>
+        </div>
+        <div class="step">
+          <div class="dot">iii</div>
+          <h3>AIが下書き、人が送信</h3>
+          <p>会員からの相談にAIが返信案を作成。確認・編集して送信。日々の業務が、軽くなる。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== CTA =================== -->
+  <section class="section y-cta">
+    <div class="container">
+      <h2>まずは、<br/>無料でお試しください。</h2>
+      <p class="free">— Free for up to 3 members.</p>
+      <a href="https://yorisoi-jp.vercel.app" class="btn" target="_blank" rel="noopener">YORISOIを試す <span class="arr">→</span></a>
+      <div class="url">yorisoi-jp.vercel.app</div>
+    </div>
+  </section>
+
+</main>
+
+<script src="partials.js"></script>
+<script>KABUTO.mountChrome('yorisoi');</script>
 </body>
 </html>

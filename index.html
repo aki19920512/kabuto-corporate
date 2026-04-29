@@ -1,859 +1,842 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KABUTO株式会社 — 対人支援の現場に、テクノロジーで余白を。</title>
-  <meta name="description" content="KABUTO株式会社は、AIと人間の力を掛け合わせ、ケアする人が本来の仕事に集中できる仕組みをつくる、長崎発のテクノロジー企業です。">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@400;500&family=Noto+Sans+JP:wght@300;400;500&family=Shippori+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    /* =========================================================
-       KABUTO Corporate — shared tokens & base
-       Tone: quiet, restrained, Toranomon-Hills-style Japanese
-       corporate. Navy + warm beige on off-white.
-       ========================================================= */
-    :root {
-      --bg:           #fbf8f1;
-      --bg-alt:       #f5f0e4;
-      --paper:        #ffffff;
-      --ink:          #1a2236;
-      --ink-2:        #2c3651;
-      --ink-mute:     #6a7388;
-      --rule:         #d9d2c1;
-      --rule-soft:    #ebe5d4;
-      --accent:       #c9a961;
-      --accent-deep:  #a88b48;
-      --accent-soft:  #e8dcb8;
-      --serif-jp: "Shippori Mincho", "Hiragino Mincho ProN", "YuMincho", "Yu Mincho", "Noto Serif JP", serif;
-      --sans-jp:  "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
-      --serif-en: "Cormorant Garamond", "EB Garamond", Georgia, serif;
-      --sans-en:  "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-      --max: 1200px;
-      --gutter: clamp(20px, 4vw, 56px);
-      --s-1: 4px;  --s-2: 8px;   --s-3: 12px; --s-4: 16px; --s-5: 24px;
-      --s-6: 32px; --s-7: 48px;  --s-8: 64px; --s-9: 96px; --s-10: 128px; --s-11: 160px;
-    }
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>KABUTO株式会社 — 対人支援の現場に、テクノロジーで余白を。</title>
+<meta name="description" content="KABUTO株式会社は、AIと人間の力を掛け合わせ、ケアする人が本来の仕事に集中できる仕組みをつくる、長崎発のテクノロジー企業です。" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+<style>
+  /* =============== Page-local: index =============== */
 
-    * { box-sizing: border-box; }
+  /* ---- Hero ---- */
+  .hero {
+    padding-top: clamp(80px, 12vw, 160px);
+    padding-bottom: clamp(80px, 11vw, 140px);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 56px;
+    align-items: end;
+  }
+  .hero .meta { display: flex; flex-direction: column; gap: 14px; }
+  .hero .meta .label-en {
+    font-family: var(--serif-en);
+    font-style: italic;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    color: var(--accent-deep);
+  }
+  .hero .meta .stamp {
+    width: 56px; height: 1px; background: var(--accent);
+  }
+  .hero .meta .established {
+    font-family: var(--serif-en);
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    color: var(--ink-mute);
+    text-transform: uppercase;
+    margin-top: 12px;
+  }
+  .hero h1.h-display {
+    margin-bottom: 36px;
+  }
+  .hero h1 .accent { color: var(--accent-deep); font-style: italic; font-family: var(--serif-en); font-weight: 500; }
+  .hero .sub-jp {
+    font-family: var(--serif-jp);
+    font-size: clamp(15px, 1.3vw, 18px);
+    line-height: 2.05;
+    color: var(--ink-2);
+    max-width: 640px;
+    margin: 0 0 20px;
+  }
+  .hero .sub-en {
+    font-family: var(--serif-en);
+    font-style: italic;
+    font-size: clamp(14px, 1.15vw, 17px);
+    line-height: 1.75;
+    color: var(--ink-mute);
+    max-width: 620px;
+  }
+  .hero-meta-bar {
+    margin-top: clamp(60px, 9vw, 110px);
+    border-top: 1px solid var(--rule-soft);
+    padding-top: 28px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+  .hero-meta-bar .item .k {
+    font-family: var(--serif-en);
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    color: var(--ink-mute);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .hero-meta-bar .item .v {
+    font-family: var(--serif-jp);
+    font-size: 14px;
+    color: var(--ink);
+    line-height: 1.6;
+  }
+  .hero-meta-bar .item .v em {
+    font-family: var(--serif-en);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--ink-mute);
+    display: block;
+    margin-top: 2px;
+    letter-spacing: 0.04em;
+  }
 
-    html, body {
-      margin: 0; padding: 0;
-      background: var(--bg);
-      color: var(--ink);
-      font-family: var(--sans-jp);
-      font-size: 16px;
-      line-height: 1.8;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-      font-feature-settings: "palt" 1;
-    }
+  /* ---- Business ---- */
+  .biz-yorisoi {
+    background: var(--paper);
+    border: 1px solid var(--rule-soft);
+    display: grid;
+    grid-template-columns: 1fr 1.05fr;
+    overflow: hidden;
+  }
+  .biz-yorisoi .left {
+    padding: clamp(36px, 5vw, 72px);
+    border-right: 1px solid var(--rule-soft);
+  }
+  .biz-yorisoi .num-tag {
+    font-family: var(--serif-en);
+    font-style: italic;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    color: var(--accent-deep);
+    margin-bottom: 16px;
+  }
+  .biz-yorisoi .product-name {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 22px;
+  }
+  .biz-yorisoi .product-name .en {
+    font-family: var(--serif-en);
+    font-weight: 500;
+    font-size: clamp(40px, 5vw, 60px);
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .biz-yorisoi .product-name .jp {
+    font-family: var(--serif-jp);
+    font-size: 16px;
+    color: var(--ink-mute);
+    letter-spacing: 0.1em;
+  }
+  .biz-yorisoi .tag-line {
+    font-family: var(--serif-jp);
+    font-size: 17px;
+    line-height: 1.9;
+    color: var(--ink);
+    margin-bottom: 24px;
+  }
+  .biz-yorisoi .desc {
+    font-family: var(--sans-jp);
+    font-size: 14px;
+    line-height: 2;
+    color: var(--ink-2);
+    margin-bottom: 32px;
+  }
+  .biz-yorisoi .features {
+    display: grid;
+    gap: 14px;
+    margin-bottom: 36px;
+    border-top: 1px solid var(--rule-soft);
+    padding-top: 28px;
+  }
+  .biz-yorisoi .features .f {
+    display: grid;
+    grid-template-columns: 26px 1fr;
+    gap: 14px;
+    align-items: baseline;
+    font-family: var(--sans-jp);
+    font-size: 14px;
+    color: var(--ink-2);
+  }
+  .biz-yorisoi .features .f span:first-child {
+    font-family: var(--serif-en);
+    font-style: italic;
+    color: var(--accent-deep);
+    font-size: 13px;
+  }
+  .biz-yorisoi .features .f b {
+    font-weight: 500;
+    color: var(--ink);
+    margin-right: 8px;
+  }
 
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-    h1, h2, h3, h4 { margin: 0; font-weight: 500; line-height: 1.3; }
-    p { margin: 0; }
-    ul, ol { list-style: none; padding: 0; margin: 0; }
+  /* product mock — chat */
+  .biz-yorisoi .right {
+    background: linear-gradient(180deg, #f6efe1 0%, #efe6d2 100%);
+    padding: clamp(28px, 4vw, 56px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .browser {
+    width: 100%;
+    max-width: 540px;
+    background: #fbf8f1;
+    border: 1px solid #e2d8c0;
+    box-shadow: 0 30px 60px -30px rgba(26,34,54,0.25),
+                0 4px 14px -4px rgba(26,34,54,0.08);
+    border-radius: 8px;
+    overflow: hidden;
+    font-family: var(--sans-jp);
+  }
+  .browser .bar {
+    height: 36px;
+    background: #f0e8d4;
+    border-bottom: 1px solid #e2d8c0;
+    display: flex;
+    align-items: center;
+    padding: 0 14px;
+    gap: 8px;
+  }
+  .browser .dots { display: flex; gap: 6px; }
+  .browser .dots i {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: #d8caa6; display: inline-block;
+  }
+  .browser .url {
+    margin-left: 12px;
+    flex: 1;
+    background: #fbf8f1;
+    border: 1px solid #e2d8c0;
+    border-radius: 4px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    font-family: var(--serif-en);
+    font-size: 11px;
+    color: #8b8164;
+    letter-spacing: 0.04em;
+  }
+  .browser .url::before {
+    content: "🔒";
+    font-size: 9px;
+    margin-right: 6px;
+    filter: grayscale(1);
+    opacity: 0.5;
+  }
+  .browser .app-head {
+    padding: 14px 22px;
+    border-bottom: 1px solid #ece2c9;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fbf8f1;
+  }
+  .browser .app-head .brand-y {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+  .browser .app-head .brand-y .y-en {
+    font-family: var(--serif-en);
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 0.18em;
+    color: #5b4a2a;
+  }
+  .browser .app-head .brand-y .y-jp {
+    font-family: var(--serif-jp);
+    font-size: 11px;
+    color: #8b7a55;
+    letter-spacing: 0.16em;
+  }
+  .browser .app-head .who {
+    font-size: 11px;
+    color: #8b7a55;
+    font-family: var(--sans-jp);
+  }
+  .browser .chat {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    background: #fdfbf5;
+    min-height: 280px;
+  }
+  .msg {
+    max-width: 78%;
+    padding: 11px 15px;
+    font-size: 13px;
+    line-height: 1.65;
+    border-radius: 14px;
+    font-family: var(--sans-jp);
+  }
+  .msg.member {
+    background: #f0e8d4;
+    color: #4d3f23;
+    border-bottom-left-radius: 4px;
+    align-self: flex-start;
+  }
+  .msg.member .who {
+    display: block;
+    font-size: 10px;
+    color: #8b7a55;
+    margin-bottom: 4px;
+    letter-spacing: 0.06em;
+  }
+  .msg.counselor {
+    background: #1a2236;
+    color: #fbf8f1;
+    border-bottom-right-radius: 4px;
+    align-self: flex-end;
+  }
+  .draft-panel {
+    margin: 4px 0 0;
+    border-top: 1px dashed #d8caa6;
+    padding-top: 14px;
+    font-family: var(--sans-jp);
+  }
+  .draft-panel .draft-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+  .draft-panel .draft-head .lbl {
+    font-family: var(--serif-en);
+    font-style: italic;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: #a88b48;
+    white-space: nowrap;
+  }
+  .draft-panel .draft-head .lbl .dot {
+    display: inline-block; width: 6px; height: 6px; border-radius: 50%;
+    background: #c9a961; margin-right: 6px; vertical-align: middle;
+  }
+  .draft-panel .draft-head .ts {
+    font-size: 9px;
+    color: #8b7a55;
+    font-family: var(--serif-en);
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    margin-left: 12px;
+  }
+  .draft-box {
+    background: #fbf6e8;
+    border: 1px solid #e8dcb8;
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 12.5px;
+    line-height: 1.75;
+    color: #4d3f23;
+  }
+  .draft-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+    justify-content: flex-end;
+  }
+  .draft-actions .a {
+    font-family: var(--sans-jp);
+    font-size: 11px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: 1px solid #d8caa6;
+    color: #5b4a2a;
+    background: transparent;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+  .draft-actions .a.primary {
+    background: #1a2236;
+    color: #fbf8f1;
+    border-color: #1a2236;
+  }
 
-    /* ─── TYPE ─── */
-    .h-display {
-      font-family: var(--serif-jp);
-      font-weight: 500;
-      font-size: clamp(34px, 5.4vw, 68px);
-      line-height: 1.45;
-      letter-spacing: 0.02em;
-      color: var(--ink);
-    }
-    .h-section {
-      font-family: var(--serif-jp);
-      font-weight: 500;
-      font-size: clamp(26px, 3.4vw, 40px);
-      line-height: 1.5;
-      letter-spacing: 0.04em;
-    }
-    .h-en {
-      font-family: var(--serif-en);
-      font-weight: 500;
-      font-style: italic;
-      font-size: clamp(22px, 2.4vw, 30px);
-      line-height: 1.3;
-      letter-spacing: 0.01em;
-      color: var(--ink-2);
-    }
-    .body-jp {
-      font-family: var(--sans-jp);
-      font-size: 15px;
-      line-height: 2;
-      color: var(--ink-2);
-    }
-    .body-en {
-      font-family: var(--serif-en);
-      font-style: italic;
-      font-size: 16px;
-      line-height: 1.7;
-      color: var(--ink-mute);
-    }
-    .lead {
-      font-family: var(--serif-jp);
-      font-size: clamp(17px, 1.5vw, 20px);
-      line-height: 2;
-      color: var(--ink-2);
-    }
-    .eyebrow {
-      font-family: var(--serif-en);
-      font-style: italic;
-      font-weight: 400;
-      letter-spacing: 0.18em;
-      font-size: 13px;
-      color: var(--accent-deep);
-      text-transform: uppercase;
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .eyebrow::before {
-      content: "";
-      width: 28px;
-      height: 1px;
-      background: var(--accent);
-      display: inline-block;
-    }
-    .quote-mark {
-      font-family: var(--serif-en);
-      font-size: 80px;
-      line-height: 1;
-      color: var(--accent-soft);
-      display: block;
-      margin-bottom: -16px;
-    }
+  /* small biz cards */
+  .biz-small {
+    margin-top: 64px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--rule-soft);
+    border: 1px solid var(--rule-soft);
+  }
+  .biz-small .card {
+    background: var(--bg);
+    padding: 44px 40px;
+  }
+  .biz-small .card .num-tag {
+    font-family: var(--serif-en);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--accent-deep);
+    margin-bottom: 14px;
+  }
+  .biz-small .card h3 {
+    font-family: var(--serif-en);
+    font-weight: 500;
+    font-size: 24px;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .biz-small .card .jp {
+    font-family: var(--serif-jp);
+    font-size: 14px;
+    color: var(--ink-2);
+    letter-spacing: 0.06em;
+    margin-bottom: 18px;
+  }
+  .biz-small .card p {
+    font-family: var(--sans-jp);
+    font-size: 13.5px;
+    line-height: 1.95;
+    color: var(--ink-mute);
+    margin: 0;
+  }
 
-    /* ─── LAYOUT ─── */
-    .container {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding-left: var(--gutter);
-      padding-right: var(--gutter);
-    }
-    .section {
-      padding: clamp(80px, 11vw, 160px) 0;
-      position: relative;
-    }
-    .section-band { background: var(--bg-alt); }
-    .section-paper { background: var(--paper); }
-    .section-head {
-      display: grid;
-      grid-template-columns: 200px 1fr;
-      gap: 56px;
-      margin-bottom: 72px;
-      align-items: baseline;
-    }
-    .section-head .meta { display: flex; flex-direction: column; gap: 8px; }
-    .section-head .meta .num {
-      font-family: var(--serif-en); font-style: italic;
-      font-size: 14px; color: var(--accent-deep); letter-spacing: 0.05em;
-    }
-    .section-head .meta .lab {
-      font-family: var(--serif-en); font-size: 12px;
-      letter-spacing: 0.32em; text-transform: uppercase; color: var(--ink);
-    }
-    .section-head .meta .lab-jp {
-      font-family: var(--serif-jp); font-size: 11px;
-      letter-spacing: 0.3em; color: var(--ink-mute);
-    }
-    .section-head .heading h2 { margin-bottom: 18px; }
-    .vrule { width: 1px; background: var(--rule); height: 56px; margin: 0 auto; }
+  /* ---- Philosophy ---- */
+  .philosophy {
+    background: var(--bg-alt);
+    text-align: left;
+  }
+  .philosophy .quote-mark {
+    font-family: var(--serif-en);
+    font-style: italic;
+    font-size: 80px;
+    color: var(--accent);
+    line-height: 1;
+    opacity: 0.7;
+  }
+  .philosophy h2 {
+    font-family: var(--serif-jp);
+    font-weight: 500;
+    font-size: clamp(32px, 4.4vw, 56px);
+    line-height: 1.55;
+    letter-spacing: 0.04em;
+    margin: 24px 0 48px;
+    max-width: 820px;
+  }
+  .philosophy .body-jp {
+    max-width: 640px;
+    font-family: var(--serif-jp);
+    font-size: 17px;
+    line-height: 2.1;
+    color: var(--ink-2);
+  }
+  .philosophy .body-en {
+    margin-top: 24px;
+    max-width: 600px;
+  }
+  .philosophy-grid {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 64px;
+    align-items: start;
+  }
+  .philosophy-grid .aside {
+    border-left: 1px solid var(--rule);
+    padding-left: 32px;
+  }
+  .philosophy-grid .aside h4 {
+    font-family: var(--serif-en);
+    font-style: italic;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    color: var(--accent-deep);
+    margin-bottom: 18px;
+  }
+  .philosophy-grid .aside p {
+    font-family: var(--serif-jp);
+    font-size: 14px;
+    line-height: 2;
+    color: var(--ink-2);
+  }
 
-    /* ─── HEADER ─── */
-    .site-header {
-      position: sticky; top: 0; z-index: 50;
-      background: rgba(251, 248, 241, 0.88);
-      backdrop-filter: saturate(140%) blur(12px);
-      -webkit-backdrop-filter: saturate(140%) blur(12px);
-      border-bottom: 1px solid transparent;
-      transition: border-color .3s ease;
-    }
-    .site-header.is-scrolled { border-bottom-color: var(--rule-soft); }
-    .nav {
-      display: flex; align-items: center;
-      justify-content: space-between; height: 76px;
-    }
-    .brand { display: flex; align-items: baseline; gap: 10px; }
-    .brand-mark {
-      font-family: var(--serif-en); font-weight: 500;
-      font-size: 22px; letter-spacing: 0.42em; color: var(--ink);
-    }
-    .brand-jp {
-      font-family: var(--serif-jp); font-size: 11px;
-      letter-spacing: 0.3em; color: var(--ink-mute);
-    }
-    .nav-links { display: flex; align-items: center; gap: 36px; }
-    .nav-links a {
-      font-family: var(--serif-en); font-size: 13px;
-      letter-spacing: 0.22em; color: var(--ink-2); text-transform: uppercase;
-      position: relative; padding: 6px 0; transition: color .25s;
-    }
-    .nav-links a small {
-      display: block; font-family: var(--sans-jp); font-size: 10px;
-      letter-spacing: 0.2em; color: var(--ink-mute); margin-top: 2px; text-transform: none;
-    }
-    .nav-links a:hover { color: var(--accent-deep); }
-    .nav-cta {
-      font-family: var(--serif-en); font-size: 12px;
-      letter-spacing: 0.22em; border: 1px solid var(--ink);
-      padding: 11px 22px; color: var(--ink); text-transform: uppercase;
-      transition: all .25s;
-    }
-    .nav-cta:hover { background: var(--ink); color: var(--bg); }
+  /* ---- Company ---- */
+  .company-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 96px;
+  }
+  .info-table {
+    width: 100%;
+    border-top: 1px solid var(--rule-soft);
+    border-collapse: collapse;
+  }
+  .info-table tr { border-bottom: 1px solid var(--rule-soft); }
+  .info-table th, .info-table td {
+    text-align: left;
+    padding: 22px 0;
+    font-family: var(--sans-jp);
+    font-size: 14px;
+    vertical-align: top;
+  }
+  .info-table th {
+    width: 200px;
+    font-weight: 500;
+    color: var(--ink);
+    font-family: var(--serif-jp);
+  }
+  .info-table th em {
+    display: block;
+    font-family: var(--serif-en);
+    font-style: italic;
+    font-size: 11px;
+    color: var(--ink-mute);
+    margin-top: 4px;
+    letter-spacing: 0.08em;
+  }
+  .info-table td {
+    color: var(--ink-2);
+    line-height: 1.9;
+  }
+  .info-table td .biz-list {
+    list-style: none; padding: 0; margin: 0;
+    display: grid; gap: 8px;
+  }
+  .info-table td .biz-list li::before {
+    content: "—";
+    color: var(--accent);
+    margin-right: 12px;
+  }
+  .company-cta {
+    align-self: end;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .company-cta .pull {
+    font-family: var(--serif-jp);
+    font-size: 22px;
+    line-height: 1.85;
+    color: var(--ink);
+    margin-bottom: 24px;
+    border-left: 1px solid var(--accent);
+    padding-left: 24px;
+  }
 
-    /* ─── BUTTONS ─── */
-    .btn {
-      display: inline-flex; align-items: center; gap: 14px;
-      padding: 16px 28px; font-family: var(--serif-en);
-      font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase;
-      border: 1px solid var(--ink); color: var(--ink);
-      background: transparent; transition: all .3s ease; white-space: nowrap;
-    }
-    .btn .arr { transition: transform .3s ease; display: inline-block; }
-    .btn:hover { background: var(--ink); color: var(--bg); }
-    .btn:hover .arr { transform: translateX(4px); }
-    .btn-primary { background: var(--ink); color: var(--bg); }
-    .btn-primary:hover { background: var(--accent-deep); border-color: var(--accent-deep); }
-    .btn-ghost { border-color: transparent; padding-left: 0; }
-    .btn-ghost:hover { background: transparent; color: var(--accent-deep); }
+  /* ---- Contact ---- */
+  .contact {
+    background: var(--ink);
+    color: var(--bg);
+  }
+  .contact .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: end;
+  }
+  .contact h2 {
+    font-family: var(--serif-jp);
+    font-weight: 400;
+    color: var(--bg);
+    font-size: clamp(34px, 4.4vw, 54px);
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+  }
+  .contact h2 em {
+    font-family: var(--serif-en);
+    font-style: italic;
+    color: var(--accent);
+    font-size: 0.55em;
+    display: block;
+    margin-bottom: 18px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .contact .right p {
+    font-family: var(--sans-jp);
+    font-size: 14px;
+    line-height: 2;
+    color: rgba(251,248,241,0.7);
+    margin: 0 0 28px;
+  }
+  .contact .btn {
+    border-color: var(--bg);
+    color: var(--bg);
+  }
+  .contact .btn:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--ink);
+  }
 
-    /* ─── HERO ─── */
-    .hero {
-      padding-top: clamp(80px, 12vw, 160px);
-      padding-bottom: clamp(80px, 11vw, 140px);
-    }
-    .hero-grid {
-      display: grid; grid-template-columns: 200px 1fr;
-      gap: 56px; align-items: end;
-    }
-    .hero .meta { display: flex; flex-direction: column; gap: 14px; }
-    .hero .meta .label-en {
-      font-family: var(--serif-en); font-style: italic;
-      font-size: 13px; letter-spacing: 0.18em; color: var(--accent-deep);
-    }
-    .hero .meta .stamp { width: 56px; height: 1px; background: var(--accent); }
-    .hero .meta .established {
-      font-family: var(--serif-en); font-size: 11px;
-      letter-spacing: 0.32em; color: var(--ink-mute);
-      text-transform: uppercase; margin-top: 12px;
-    }
-    .hero h1.h-display { margin-bottom: 36px; }
-    .hero h1 .accent {
-      color: var(--accent-deep); font-style: italic;
-      font-family: var(--serif-en); font-weight: 500;
-    }
-    .hero .sub-jp {
-      font-family: var(--serif-jp); font-size: clamp(15px, 1.3vw, 18px);
-      line-height: 2.05; color: var(--ink-2); max-width: 640px; margin: 0 0 20px;
-    }
-    .hero .sub-en {
-      font-family: var(--serif-en); font-style: italic;
-      font-size: clamp(14px, 1.15vw, 17px); line-height: 1.75;
-      color: var(--ink-mute); max-width: 620px;
-    }
-    .hero-meta-bar {
-      margin-top: clamp(60px, 9vw, 110px);
-      border-top: 1px solid var(--rule-soft); padding-top: 28px;
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px;
-    }
-    .hero-meta-bar .item .k {
-      font-family: var(--serif-en); font-size: 11px;
-      letter-spacing: 0.28em; color: var(--ink-mute);
-      text-transform: uppercase; margin-bottom: 8px;
-    }
-    .hero-meta-bar .item .v {
-      font-family: var(--serif-jp); font-size: 14px;
-      color: var(--ink); line-height: 1.6;
-    }
-    .hero-meta-bar .item .v em {
-      font-family: var(--serif-en); font-style: italic;
-      font-size: 13px; color: var(--ink-mute); display: block;
-      margin-top: 2px; letter-spacing: 0.04em;
-    }
-
-    /* ─── BUSINESS ─── */
-    .biz-yorisoi {
-      background: var(--paper); border: 1px solid var(--rule-soft);
-      display: grid; grid-template-columns: 1fr 1.05fr; overflow: hidden;
-    }
-    .biz-yorisoi .left {
-      padding: clamp(36px, 5vw, 72px); border-right: 1px solid var(--rule-soft);
-    }
-    .biz-yorisoi .num-tag {
-      font-family: var(--serif-en); font-style: italic;
-      font-size: 13px; letter-spacing: 0.06em;
-      color: var(--accent-deep); margin-bottom: 16px;
-    }
-    .biz-yorisoi .product-name {
-      display: flex; align-items: baseline; gap: 16px; margin-bottom: 22px;
-    }
-    .biz-yorisoi .product-name .en {
-      font-family: var(--serif-en); font-weight: 500;
-      font-size: clamp(40px, 5vw, 60px); letter-spacing: 0.04em;
-      color: var(--ink); line-height: 1;
-    }
-    .biz-yorisoi .product-name .jp {
-      font-family: var(--serif-jp); font-size: 16px;
-      color: var(--ink-mute); letter-spacing: 0.1em;
-    }
-    .biz-yorisoi .tag-line {
-      font-family: var(--serif-jp); font-size: 17px;
-      line-height: 1.9; color: var(--ink); margin-bottom: 24px;
-    }
-    .biz-yorisoi .desc {
-      font-family: var(--sans-jp); font-size: 14px;
-      line-height: 2; color: var(--ink-2); margin-bottom: 32px;
-    }
-    .biz-yorisoi .features {
-      display: grid; gap: 14px; margin-bottom: 36px;
-      border-top: 1px solid var(--rule-soft); padding-top: 28px;
-    }
-    .biz-yorisoi .features .f {
-      display: grid; grid-template-columns: 26px 1fr;
-      gap: 14px; align-items: baseline;
-      font-family: var(--sans-jp); font-size: 14px; color: var(--ink-2);
-    }
-    .biz-yorisoi .features .f span:first-child {
-      font-family: var(--serif-en); font-style: italic;
-      color: var(--accent-deep); font-size: 13px;
-    }
-    .biz-yorisoi .features .f b { font-weight: 500; color: var(--ink); margin-right: 8px; }
-    .biz-yorisoi .right {
-      background: linear-gradient(180deg, #f6efe1 0%, #efe6d2 100%);
-      padding: clamp(28px, 4vw, 56px);
-      display: flex; align-items: center; justify-content: center;
-    }
-
-    /* Browser mock */
-    .browser {
-      width: 100%; max-width: 540px;
-      background: #fbf8f1; border: 1px solid #e2d8c0;
-      box-shadow: 0 30px 60px -30px rgba(26,34,54,0.25), 0 4px 14px -4px rgba(26,34,54,0.08);
-      border-radius: 8px; overflow: hidden; font-family: var(--sans-jp);
-    }
-    .browser .bar {
-      height: 36px; background: #f0e8d4;
-      border-bottom: 1px solid #e2d8c0;
-      display: flex; align-items: center; padding: 0 14px; gap: 8px;
-    }
-    .browser .dots { display: flex; gap: 6px; }
-    .browser .dots i {
-      width: 10px; height: 10px; border-radius: 50%;
-      background: #d8caa6; display: inline-block;
-    }
-    .browser .url-bar {
-      margin-left: 12px; flex: 1;
-      background: #fbf8f1; border: 1px solid #e2d8c0;
-      border-radius: 4px; padding: 4px 12px;
-      font-size: 11px; color: var(--ink-mute); letter-spacing: 0.04em;
-    }
-    .browser .chat-ui { padding: 20px 16px; display: grid; gap: 12px; }
-    .chat-msg {
-      font-size: 13px; line-height: 1.7; color: var(--ink-2);
-    }
-    .chat-msg .sender {
-      font-size: 11px; color: var(--ink-mute); margin-bottom: 5px;
-      font-family: var(--serif-en); font-style: italic; letter-spacing: 0.04em;
-    }
-    .chat-bubble {
-      background: #fff; border: 1px solid #e2d8c0;
-      border-radius: 2px 8px 8px 8px; padding: 10px 14px;
-      font-size: 13px; color: var(--ink-2); line-height: 1.75;
-    }
-    .chat-ai { background: #f6efe1; border-color: #e4d5b0; }
-    .chat-label {
-      font-size: 10px; font-family: var(--serif-en); letter-spacing: 0.15em;
-      color: var(--accent-deep); text-transform: uppercase;
-      margin-bottom: 6px; display: flex; align-items: center; gap: 8px;
-    }
-    .chat-label::before { content: ""; width: 16px; height: 1px; background: var(--accent); display: inline-block; }
-    .chat-actions { display: flex; gap: 8px; margin-top: 10px; }
-    .chat-btn {
-      font-size: 11px; font-family: var(--serif-en); letter-spacing: 0.14em;
-      text-transform: uppercase; border: 1px solid #d8c9a0; padding: 7px 14px;
-      color: var(--ink); background: transparent; cursor: pointer;
-      transition: all .2s;
-    }
-    .chat-btn.primary { background: var(--ink); color: var(--bg); border-color: var(--ink); }
-
-    /* Small biz cards */
-    .biz-small {
-      margin-top: 64px; display: grid;
-      grid-template-columns: 1fr 1fr; gap: 1px;
-      background: var(--rule-soft); border: 1px solid var(--rule-soft);
-    }
-    .biz-small .card { background: var(--bg); padding: 44px 40px; }
-    .biz-small .card .num-tag {
-      font-family: var(--serif-en); font-style: italic;
-      font-size: 13px; color: var(--accent-deep); margin-bottom: 14px;
-    }
-    .biz-small .card h3 {
-      font-family: var(--serif-en); font-weight: 500;
-      font-size: 24px; letter-spacing: 0.04em; color: var(--ink); margin-bottom: 4px;
-    }
-    .biz-small .card .jp {
-      font-family: var(--serif-jp); font-size: 14px;
-      color: var(--ink-2); letter-spacing: 0.06em; margin-bottom: 18px;
-    }
-    .biz-small .card p {
-      font-family: var(--sans-jp); font-size: 13.5px;
-      line-height: 1.95; color: var(--ink-mute); margin: 0;
-    }
-
-    /* ─── PHILOSOPHY ─── */
-    .philosophy-grid {
-      display: grid; grid-template-columns: 1fr 320px; gap: 64px; align-items: start;
-    }
-    .philosophy-grid .aside {
-      border-left: 1px solid var(--rule); padding-left: 32px;
-    }
-    .philosophy-grid .aside h4 {
-      font-family: var(--serif-en); font-style: italic;
-      font-size: 14px; letter-spacing: 0.08em;
-      color: var(--accent-deep); margin-bottom: 18px;
-    }
-    .philosophy-grid .aside p {
-      font-family: var(--serif-jp); font-size: 14px;
-      line-height: 2; color: var(--ink-2);
-    }
-
-    /* ─── COMPANY ─── */
-    .company-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 96px; }
-    .info-table { width: 100%; border-top: 1px solid var(--rule-soft); border-collapse: collapse; }
-    .info-table tr { border-bottom: 1px solid var(--rule-soft); }
-    .info-table th, .info-table td {
-      text-align: left; padding: 22px 0;
-      font-family: var(--sans-jp); font-size: 14px; vertical-align: top;
-    }
-    .info-table th {
-      width: 200px; font-weight: 500;
-      color: var(--ink); font-family: var(--serif-jp);
-    }
-    .info-table th em {
-      display: block; font-family: var(--serif-en); font-style: italic;
-      font-size: 11px; color: var(--ink-mute); margin-top: 4px; letter-spacing: 0.08em;
-    }
-    .info-table td { color: var(--ink-2); line-height: 1.9; }
-    .info-table td .biz-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
-    .info-table td .biz-list li::before { content: "—"; color: var(--accent); margin-right: 12px; }
-
-    .company-intro .rep-link {
-      display: inline-flex; align-items: center; gap: 12px;
-      margin-top: 32px; padding: 18px 0;
-      border-top: 1px solid var(--rule-soft);
-    }
-    .company-intro .rep-link .rep-name {
-      font-family: var(--serif-jp); font-size: 13px; color: var(--ink);
-    }
-    .company-intro .rep-link .rep-title {
-      font-family: var(--serif-en); font-style: italic;
-      font-size: 12px; color: var(--ink-mute); margin-top: 2px; display: block;
-    }
-    .company-intro .rep-link .arr {
-      font-family: var(--serif-en); color: var(--accent-deep);
-      font-size: 18px; transition: transform .2s;
-    }
-    .company-intro .rep-link:hover .arr { transform: translateX(4px); }
-
-    /* ─── CONTACT ─── */
-    .contact { background: var(--ink); color: var(--bg); }
-    .contact .container {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 64px; align-items: end;
-    }
-    .contact h2 {
-      font-family: var(--serif-jp); font-weight: 400;
-      color: var(--bg); font-size: clamp(34px, 4.4vw, 54px);
-      line-height: 1.5; letter-spacing: 0.04em;
-    }
-    .contact h2 em {
-      font-family: var(--serif-en); font-style: italic;
-      color: var(--accent); font-size: 0.55em; display: block;
-      margin-bottom: 18px; letter-spacing: 0.18em;
-      text-transform: uppercase; font-weight: 500;
-    }
-    .contact .right p {
-      font-family: var(--sans-jp); font-size: 14px;
-      line-height: 2; color: rgba(251,248,241,0.7); margin: 0 0 28px;
-    }
-    .contact .btn { border-color: var(--bg); color: var(--bg); }
-    .contact .btn:hover {
-      background: var(--accent); border-color: var(--accent); color: var(--ink);
-    }
-
-    /* ─── FOOTER ─── */
-    .site-footer {
-      border-top: 1px solid var(--rule-soft);
-      background: var(--bg); padding: 72px 0 40px;
-      font-family: var(--sans-jp); font-size: 13px; color: var(--ink-mute);
-    }
-    .footer-grid {
-      display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr;
-      gap: 48px; align-items: start;
-    }
-    .footer-brand .brand-mark { font-size: 24px; }
-    .footer-brand p { margin: 18px 0 0; line-height: 1.9; max-width: 340px; }
-    .footer-col h5 {
-      font-family: var(--serif-en); font-weight: 500; font-size: 11px;
-      letter-spacing: 0.28em; color: var(--ink);
-      text-transform: uppercase; margin: 0 0 18px;
-    }
-    .footer-col ul { list-style: none; padding: 0; margin: 0; }
-    .footer-col li { margin-bottom: 10px; }
-    .footer-col a:hover { color: var(--accent-deep); }
-    .footer-bottom {
-      margin-top: 64px; padding-top: 28px;
-      border-top: 1px solid var(--rule-soft);
-      display: flex; justify-content: space-between; align-items: center;
-      font-family: var(--serif-en); font-size: 12px;
-      letter-spacing: 0.18em; color: var(--ink-mute);
-    }
-    .footer-bottom a { transition: color .2s; }
-    .footer-bottom a:hover { color: var(--accent-deep); }
-
-    /* ─── RESPONSIVE ─── */
-    @media (max-width: 880px) {
-      .nav-links { display: none; }
-      .section-head { grid-template-columns: 1fr; gap: 24px; margin-bottom: 48px; }
-      .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
-    }
-    @media (max-width: 640px) {
-      .hero-grid { grid-template-columns: 1fr; gap: 32px; }
-      .hero .meta { flex-direction: row; align-items: center; }
-      .hero .meta .established { display: none; }
-      .hero-meta-bar { grid-template-columns: 1fr 1fr; }
-      .biz-yorisoi { grid-template-columns: 1fr; }
-      .biz-yorisoi .right { display: none; }
-      .biz-small { grid-template-columns: 1fr; }
-      .philosophy-grid { grid-template-columns: 1fr; }
-      .philosophy-grid .aside { border-left: 0; border-top: 1px solid var(--rule); padding-left: 0; padding-top: 24px; }
-      .company-grid { grid-template-columns: 1fr; gap: 48px; }
-      .contact .container { grid-template-columns: 1fr; gap: 32px; }
-      .footer-grid { grid-template-columns: 1fr; }
-      .footer-bottom { flex-direction: column; gap: 14px; align-items: flex-start; }
-    }
-  </style>
+  /* ---- responsive ---- */
+  @media (max-width: 980px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+    .biz-yorisoi { grid-template-columns: 1fr; }
+    .biz-yorisoi .left { border-right: 0; border-bottom: 1px solid var(--rule-soft); }
+    .biz-yorisoi .right { display: none; }
+    .biz-small { grid-template-columns: 1fr; }
+    .philosophy-grid { grid-template-columns: 1fr; }
+    .philosophy-grid .aside { border-left: 0; border-top: 1px solid var(--rule); padding-left: 0; padding-top: 24px; }
+    .company-grid { grid-template-columns: 1fr; gap: 48px; }
+    .contact .container { grid-template-columns: 1fr; gap: 32px; }
+    .hero-meta-bar { grid-template-columns: 1fr 1fr; }
+  }
+</style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="site-header" id="site-header">
+<main>
+
+  <!-- =================== HERO =================== -->
+  <section class="hero">
     <div class="container">
-      <nav class="nav">
-        <a href="index.html" class="brand">
-          <span class="brand-mark">KABUTO</span>
-          <span class="brand-jp">株式会社</span>
-        </a>
-        <div class="nav-links">
-          <a href="#business">Services<small>事業内容</small></a>
-          <a href="yorisoi.html">YORISOI</a>
-          <a href="#company">About<small>会社情報</small></a>
-          <a href="representative.html">代表<small>Representative</small></a>
-        </div>
-        <a href="mailto:kabuto.co.ltd@gmail.com" class="nav-cta">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-
-    <!-- HERO -->
-    <section class="hero section">
-      <div class="container">
-        <div class="hero-grid">
-          <div class="meta">
-            <span class="label-en">Care × Technology</span>
-            <div class="stamp"></div>
-            <span class="eyebrow" style="font-size:11px;margin-top:0;">対人支援 × AI</span>
-            <span class="established">Est. 2024</span>
-          </div>
-          <div>
-            <h1 class="h-display">
-              対人支援の現場に、<br>テクノロジーで<span class="accent">余白</span>を。
-            </h1>
-            <p class="sub-jp">AIと人間の力を掛け合わせ、ケアする人が本来の仕事に<br>集中できる仕組みをつくります。</p>
-            <p class="sub-en">We build AI-powered tools that give care professionals<br>the time to do what they do best — care.</p>
-          </div>
-        </div>
-        <div class="hero-meta-bar">
-          <div class="item">
-            <div class="k">Founded</div>
-            <div class="v">2024年<em>Nagasaki, Japan</em></div>
-          </div>
-          <div class="item">
-            <div class="k">Flagship</div>
-            <div class="v">YORISOI<em>AI SaaS</em></div>
-          </div>
-          <div class="item">
-            <div class="k">Industry</div>
-            <div class="v">対人支援業界<em>Care sector</em></div>
-          </div>
-          <div class="item">
-            <div class="k">Model</div>
-            <div class="v">人間が、最終決定する。<em>Humans decide, AI assists.</em></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- BUSINESS -->
-    <section class="section section-band" id="business">
-      <div class="container">
-        <div class="section-head">
-          <div class="meta">
-            <span class="num">— 01</span>
-            <span class="lab">Business</span>
-            <span class="lab-jp">事業内容</span>
-          </div>
-          <div class="heading">
-            <h2 class="h-section">主力事業のYORISOIを軸に、対人支援業界に特化したAI開発と、越境ECの3事業を展開しています。</h2>
-          </div>
-        </div>
-
-        <!-- YORISOI big card -->
-        <article class="biz-yorisoi">
-          <div class="left">
-            <div class="num-tag">— Flagship Product</div>
-            <div class="product-name">
-              <span class="en">YORISOI</span>
-              <span class="jp">よりそい</span>
-            </div>
-            <p class="tag-line">結婚相談所カウンセラー向け<br>AI業務支援SaaS。</p>
-            <p class="desc">カウンセラーの返信業務をAIが支援し、確認・編集・承認のプロセスを経て会員に届けるB2B SaaSです。応援する側の時間を、本来の仕事に取り戻すために。</p>
-            <div class="features">
-              <div class="f">
-                <span>i.</span>
-                <span><b>AIが下書き作成</b>会話履歴を読み解き、文脈に沿った返信案を自動生成。</span>
-              </div>
-              <div class="f">
-                <span>ii.</span>
-                <span><b>人間が最終判断</b>送信前にカウンセラーが必ず確認・編集・承認。</span>
-              </div>
-              <div class="f">
-                <span>iii.</span>
-                <span><b>24時間対応</b>深夜の問い合わせにも、翌朝までに必ず返事が届く。</span>
-              </div>
-            </div>
-            <a href="yorisoi.html" class="btn btn-primary">YORASOIの詳細 <span class="arr">→</span></a>
-          </div>
-          <div class="right">
-            <!-- Browser-chrome chat mock -->
-            <div class="browser">
-              <div class="bar">
-                <div class="dots"><i></i><i></i><i></i></div>
-                <div class="url-bar">yorisoi-jp.vercel.app</div>
-              </div>
-              <div class="chat-ui">
-                <div class="chat-msg">
-                  <div class="sender">山本さん（55歳・男性会員）</div>
-                  <div class="chat-bubble">
-                    先日のお話、少し不安になってしまって…<br>明日のお見合い、行くべきか迷っています。
-                  </div>
-                  <div style="font-size:11px;color:var(--ink-mute);margin-top:5px;font-family:var(--serif-en);font-style:italic;">山本さんより · 23:42</div>
-                </div>
-                <div class="chat-msg" style="margin-top:8px;">
-                  <div class="chat-label">AIによる下書き生成</div>
-                  <div class="chat-bubble chat-ai">
-                    山本さん、夜分にメッセージありがとうございます。<br>不安に感じられるお気持ち、自然なことだと思います。明日の件、まずは深呼吸して、ご自身のペースを大切に──
-                  </div>
-                  <div style="font-size:11px;color:var(--ink-mute);margin-top:5px;font-family:var(--serif-en);font-style:italic;">23:43 · 確認待ち</div>
-                  <div class="chat-actions">
-                    <button class="chat-btn">編集する</button>
-                    <button class="chat-btn primary">確認して送信</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- Smaller business cards -->
-        <div class="biz-small">
-          <div class="card">
-            <div class="num-tag">— 02</div>
-            <h3>AI Solutions</h3>
-            <div class="jp">対人支援業界向けAI開発</div>
-            <p>結婚相談所、介護、教育、医療など、ケアを職業にする人々のために。現場の声を起点に、業務に溶け込むAIを設計・開発しています。</p>
-          </div>
-          <div class="card">
-            <div class="num-tag">— 03</div>
-            <h3>Global E-Commerce</h3>
-            <div class="jp">越境EC事業</div>
-            <p>日本の良質なプロダクトを、海外市場へ。長崎という地理的特性を活かし、東アジアを中心とした越境EC事業を展開しています。</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PHILOSOPHY -->
-    <section class="section philosophy" id="philosophy">
-      <div class="container">
-        <div class="section-head">
-          <div class="meta">
-            <span class="num">— 02</span>
-            <span class="lab">Philosophy</span>
-            <span class="lab-jp">私たちの考え</span>
-          </div>
-          <div class="heading">
-            <span class="quote-mark">"</span>
-            <h2 class="h-section">未知の可能性を、<br>形にする。</h2>
-          </div>
-        </div>
-        <div class="philosophy-grid">
-          <div>
-            <p class="body-jp">テクノロジーは、人間の温度を奪うためにあるのではなく、取り戻すためにある。</p>
-            <p class="body-jp" style="margin-top:18px;">深夜まで返信に追われ、機械的になっていく自分に気付く──そんな夜を、私たちはなくしたい。AIは判断を肩代わりする道具ではなく、人が人と向き合うための時間を生む装置であるべきだと、私たちは考えています。</p>
-            <p class="body-en" style="margin-top:24px;">Technology should give back the warmth it once seemed to take. We build tools that return time, attention, and care to the humans who do the work.</p>
-            <div style="margin-top:32px;">
-              <a href="representative.html" class="btn btn-ghost">代表挨拶を読む <span class="arr">→</span></a>
-            </div>
-          </div>
-          <aside class="aside">
-            <h4>Three Beliefs</h4>
-            <p><b style="color:var(--ink);font-weight:500;">応援する側に、余白を。</b><br>
-            <span style="opacity:.75;">Make space for those who care.</span></p>
-            <p style="margin-top:24px;"><b style="color:var(--ink);font-weight:500;">最終決定は、必ず人間に。</b><br>
-            <span style="opacity:.75;">Humans hold the final say.</span></p>
-            <p style="margin-top:24px;"><b style="color:var(--ink);font-weight:500;">業界の現場から、世界へ。</b><br>
-            <span style="opacity:.75;">From the field, to the world.</span></p>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <!-- COMPANY -->
-    <section class="section section-paper" id="company">
-      <div class="container">
-        <div class="section-head">
-          <div class="meta">
-            <span class="num">— 03</span>
-            <span class="lab">Company</span>
-            <span class="lab-jp">会社情報</span>
-          </div>
-          <div class="heading">
-            <h2 class="h-section">長崎から、<br>静かに、確かに。</h2>
-          </div>
-        </div>
-        <div class="company-grid">
-          <table class="info-table">
-            <tbody>
-              <tr>
-                <th>会社名<em>Company</em></th>
-                <td>KABUTO株式会社<br><span style="color:var(--ink-mute);font-family:var(--serif-en);font-style:italic;">KABUTO, Inc.</span></td>
-              </tr>
-              <tr>
-                <th>代表取締役<em>CEO</em></th>
-                <td>中山 章裕<br><span style="color:var(--ink-mute);font-family:var(--serif-en);font-style:italic;">Akihiro Nakayama</span></td>
-              </tr>
-              <tr>
-                <th>所在地<em>Location</em></th>
-                <td>長崎県長崎市若竹町40-17<br><span style="color:var(--ink-mute);font-family:var(--serif-en);font-style:italic;">Nagasaki, Japan</span></td>
-              </tr>
-              <tr>
-                <th>事業内容<em>Business</em></th>
-                <td>
-                  <ul class="biz-list">
-                    <li>YORISOI — 結婚相談所カウンセラー向けAI業務支援SaaS</li>
-                    <li>対人支援業界向けAIソリューション開発</li>
-                    <li>越境EC事業</li>
-                  </ul>
-                </td>
-              </tr>
-              <tr>
-                <th>設立<em>Founded</em></th>
-                <td>2024年</td>
-              </tr>
-              <tr>
-                <th>お問い合わせ<em>Contact</em></th>
-                <td><a href="mailto:kabuto.co.ltd@gmail.com" style="color:var(--accent-deep);">kabuto.co.ltd@gmail.com</a></td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="company-intro">
-            <p class="body-jp" style="margin-bottom:20px;">ケアする人を、テクノロジーが、静かに支える。</p>
-            <p class="body-jp">長崎を拠点に、対人支援の現場で働くすべての人のために、AIと人間の力を掛け合わせた仕組みをつくり続けます。</p>
-            <a href="representative.html" class="rep-link">
-              <div>
-                <span class="rep-name">中山 章裕</span>
-                <span class="rep-title">代表取締役 · Representative Director</span>
-              </div>
-              <span class="arr">→</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="section contact">
-      <div class="container">
+      <div class="hero-grid">
+        <aside class="meta">
+          <span class="label-en">Kabuto, Inc.</span>
+          <span class="stamp"></span>
+          <span class="established">Est. Nagasaki, Japan</span>
+        </aside>
         <div>
-          <h2>
-            <em>— Contact</em>
-            ご相談・お問い合わせ。<br>お気軽にどうぞ。
-          </h2>
-        </div>
-        <div class="right">
-          <p>事業に関するお問い合わせ、メディア取材、採用に関するご相談など、まずはメールにてご連絡ください。営業日2日以内に、担当者よりご返信いたします。</p>
-          <a href="mailto:kabuto.co.ltd@gmail.com" class="btn">kabuto.co.ltd@gmail.com <span class="arr">→</span></a>
+          <h1 class="h-display">対人支援の現場に、<br/>テクノロジーで<span class="accent">余白</span>を。</h1>
+          <p class="sub-jp">AIと人間の力を掛け合わせ、ケアする人が本来の仕事に<br/>集中できる仕組みをつくります。</p>
+          <p class="sub-en">We build AI-powered tools that give care professionals the time to do what they do best — care.</p>
         </div>
       </div>
-    </section>
 
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col footer-brand">
-          <span class="brand-mark">KABUTO</span>
-          <p>対人支援の現場に、テクノロジーで余白を。長崎発のテクノロジーカンパニー。</p>
+      <div class="hero-meta-bar">
+        <div class="item">
+          <div class="k">Founded</div>
+          <div class="v">2024<em>Nagasaki, Japan</em></div>
         </div>
-        <div class="footer-col">
-          <h5>Services</h5>
-          <ul>
-            <li><a href="yorisoi.html">YORISOI</a></li>
-            <li><a href="#business">AI Solutions</a></li>
-            <li><a href="#business">Global E-Commerce</a></li>
-          </ul>
+        <div class="item">
+          <div class="k">Focus</div>
+          <div class="v">対人支援 × AI<em>Care × Technology</em></div>
         </div>
-        <div class="footer-col">
-          <h5>Company</h5>
-          <ul>
-            <li><a href="#company">会社情報</a></li>
-            <li><a href="representative.html">代表紹介</a></li>
-            <li><a href="#philosophy">理念</a></li>
-          </ul>
+        <div class="item">
+          <div class="k">Product</div>
+          <div class="v">YORISOI<em>B2B SaaS for counselors</em></div>
         </div>
-        <div class="footer-col">
-          <h5>Legal</h5>
-          <ul>
-            <li><a href="tokusho.html">特定商取引法</a></li>
-            <li><a href="privacy.html">プライバシーポリシー</a></li>
-            <li><a href="terms.html">利用規約</a></li>
-            <li><a href="refund.html">解約・返金ポリシー</a></li>
-          </ul>
+        <div class="item">
+          <div class="k">Approach</div>
+          <div class="v">人間が、最終決定する。<em>Humans decide, AI assists.</em></div>
         </div>
-      </div>
-      <div class="footer-bottom">
-        <span>&copy; 2024 KABUTO Inc. All rights reserved.</span>
-        <a href="mailto:kabuto.co.ltd@gmail.com">kabuto.co.ltd@gmail.com</a>
       </div>
     </div>
-  </footer>
+  </section>
 
-  <script>
-    const header = document.getElementById('site-header');
-    window.addEventListener('scroll', () => {
-      header.classList.toggle('is-scrolled', window.scrollY > 10);
-    }, { passive: true });
-  </script>
+  <!-- =================== BUSINESS =================== -->
+  <section class="section section-band" id="business">
+    <div class="container">
+      <div class="section-head">
+        <div class="meta">
+          <span class="num">— 01</span>
+          <span class="lab">Business</span>
+          <span class="lab-jp">事業内容</span>
+        </div>
+        <div class="heading">
+          <h2 class="h-section">対人支援の現場で、<br/>静かに働くテクノロジー。</h2>
+          <p class="body-jp" style="margin-top:18px;max-width:620px;">主力事業のYORISOIを軸に、対人支援業界に特化したAI開発と、越境ECの3事業を展開しています。</p>
+        </div>
+      </div>
 
+      <!-- YORISOI big card -->
+      <article class="biz-yorisoi">
+        <div class="left">
+          <div class="num-tag">— Flagship Product</div>
+          <div class="product-name">
+            <span class="en">YORISOI</span>
+            <span class="jp">よりそい</span>
+          </div>
+          <p class="tag-line">結婚相談所カウンセラー向け<br/>AI業務支援SaaS。</p>
+          <p class="desc">カウンセラーの返信業務をAIが支援し、確認・編集・承認のプロセスを経て会員に届けるB2B SaaSです。応援する側の時間を、本来の仕事に取り戻すために。</p>
+
+          <div class="features">
+            <div class="f"><span>i.</span><span><b>AIが下書き作成</b>会話履歴を読み解き、文脈に沿った返信案を自動生成。</span></div>
+            <div class="f"><span>ii.</span><span><b>人間が最終判断</b>送信前にカウンセラーが必ず確認・編集・承認。</span></div>
+            <div class="f"><span>iii.</span><span><b>24時間対応</b>深夜の問い合わせにも、翌朝までに必ず返事が届く。</span></div>
+          </div>
+
+          <a href="yorisoi.html" class="btn">View Product <span class="arr">→</span></a>
+        </div>
+
+        <div class="right">
+          <!-- Browser-chrome chat mock -->
+          <div class="browser" role="img" aria-label="YORISOIのチャット画面モックアップ">
+            <div class="bar">
+              <span class="dots"><i></i><i></i><i></i></span>
+              <span class="url">yorisoi-jp.vercel.app/dashboard</span>
+            </div>
+            <div class="app-head">
+              <div class="brand-y">
+                <span class="y-en">YORISOI</span>
+                <span class="y-jp">カウンセラー画面</span>
+              </div>
+              <div class="who">山本さん（55歳・男性会員）</div>
+            </div>
+            <div class="chat">
+              <div class="msg member">
+                <span class="who">山本さんより · 23:42</span>
+                先日のお話、少し不安になってしまって…明日のお見合い、行くべきか迷っています。
+              </div>
+
+              <div class="draft-panel">
+                <div class="draft-head">
+                  <span class="lbl"><span class="dot"></span>AIによる下書き生成</span>
+                  <span class="ts">23:43 · 確認待ち</span>
+                </div>
+                <div class="draft-box">
+                  山本さん、夜分にメッセージありがとうございます。<br/>不安に感じられるお気持ち、自然なことだと思います。明日の件、まずは深呼吸して、ご自身のペースを大切に──
+                </div>
+                <div class="draft-actions">
+                  <button class="a">編集する</button>
+                  <button class="a primary">確認して送信</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Smaller business cards -->
+      <div class="biz-small">
+        <div class="card">
+          <div class="num-tag">— 02</div>
+          <h3>AI Solutions</h3>
+          <div class="jp">対人支援業界向けAI開発</div>
+          <p>結婚相談所、介護、教育、医療など、ケアを職業にする人々のために。現場の声を起点に、業務に溶け込むAIを設計・開発しています。</p>
+        </div>
+        <div class="card">
+          <div class="num-tag">— 03</div>
+          <h3>Global E-Commerce</h3>
+          <div class="jp">越境EC事業</div>
+          <p>日本の良質なプロダクトを、海外市場へ。長崎という地理的特性を活かし、東アジアを中心とした越境EC事業を展開しています。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== PHILOSOPHY =================== -->
+  <section class="section philosophy" id="philosophy">
+    <div class="container">
+      <div class="section-head">
+        <div class="meta">
+          <span class="num">— 02</span>
+          <span class="lab">Philosophy</span>
+          <span class="lab-jp">私たちの考え</span>
+        </div>
+        <div class="heading">
+          <span class="quote-mark">"</span>
+          <h2>未知の可能性を、<br/>形にする。</h2>
+        </div>
+      </div>
+
+      <div class="philosophy-grid">
+        <div>
+          <p class="body-jp">テクノロジーは、人間の温度を奪うためにあるのではなく、取り戻すためにある。</p>
+          <p class="body-jp" style="margin-top:18px;">深夜まで返信に追われ、機械的になっていく自分に気付く──そんな夜を、私たちはなくしたい。AIは判断を肩代わりする道具ではなく、人が人と向き合うための時間を生む装置であるべきだと、私たちは考えています。</p>
+          <p class="body-en">Technology should give back the warmth it once seemed to take. We build tools that return time, attention, and care to the humans who do the work.</p>
+        </div>
+        <aside class="aside">
+          <h4>Three Beliefs</h4>
+          <p>
+            <b style="color:var(--ink);font-weight:500;">応援する側に、余白を。</b><br/>
+            <span style="opacity:.75;">Make space for those who care.</span>
+          </p>
+          <p style="margin-top:24px;">
+            <b style="color:var(--ink);font-weight:500;">最終決定は、必ず人間に。</b><br/>
+            <span style="opacity:.75;">Humans hold the final say.</span>
+          </p>
+          <p style="margin-top:24px;">
+            <b style="color:var(--ink);font-weight:500;">業界の現場から、世界へ。</b><br/>
+            <span style="opacity:.75;">From the field, to the world.</span>
+          </p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== COMPANY =================== -->
+  <section class="section" id="company">
+    <div class="container">
+      <div class="section-head">
+        <div class="meta">
+          <span class="num">— 03</span>
+          <span class="lab">Company</span>
+          <span class="lab-jp">会社情報</span>
+        </div>
+        <div class="heading">
+          <h2 class="h-section">長崎から、<br/>静かに、確かに。</h2>
+        </div>
+      </div>
+
+      <div class="company-grid">
+        <table class="info-table">
+          <tr>
+            <th>会社名<em>Company</em></th>
+            <td>KABUTO株式会社<br/><span style="color:var(--ink-mute);font-family:var(--serif-en);font-style:italic;">KABUTO, Inc.</span></td>
+          </tr>
+          <tr>
+            <th>代表取締役<em>CEO</em></th>
+            <td>中山 章裕<br/><span style="color:var(--ink-mute);font-family:var(--serif-en);font-style:italic;">Akihiro Nakayama</span></td>
+          </tr>
+          <tr>
+            <th>所在地<em>Location</em></th>
+            <td>長崎県長崎市<br/><span style="color:var(--ink-mute);font-family:var(--serif-en);font-style:italic;">Nagasaki, Japan</span></td>
+          </tr>
+          <tr>
+            <th>事業内容<em>Business</em></th>
+            <td>
+              <ul class="biz-list">
+                <li>YORISOI — 結婚相談所カウンセラー向けAI業務支援SaaS</li>
+                <li>対人支援業界向けAIソリューション開発</li>
+                <li>越境EC事業</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th>設立<em>Founded</em></th>
+            <td>2024年</td>
+          </tr>
+        </table>
+
+        <div class="company-cta">
+          <p class="pull">
+            ケアする人を、<br/>テクノロジーが、<br/>静かに支える。
+          </p>
+          <div style="display:flex;flex-direction:column;gap:14px;align-items:flex-start;">
+            <a href="representative.html" class="btn">代表挨拶を読む <span class="arr">→</span></a>
+            <a href="yorisoi.html" class="btn">YORISOIの詳細 <span class="arr">→</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== CONTACT =================== -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="left">
+        <h2>
+          <em>— Contact</em>
+          ご相談・お問い合わせ。<br/>お気軽にどうぞ。
+        </h2>
+      </div>
+      <div class="right">
+        <p>事業に関するお問い合わせ、メディア取材、採用に関するご相談など、まずはメールにてご連絡ください。営業日2日以内に、担当者よりご返信いたします。</p>
+        <a href="mailto:kabuto.co.ltd@gmail.com" class="btn">kabuto.co.ltd@gmail.com <span class="arr">→</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script src="partials.js"></script>
+<script>KABUTO.mountChrome('home');</script>
 </body>
 </html>

@@ -1,648 +1,538 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>代表紹介 — 中山 章裕 | KABUTO株式会社</title>
-  <meta name="description" content="KABUTO株式会社代表取締役・中山章裕のプロフィール。長崎から、テクノロジーと人の繋がりを信じて。">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@400;500&family=Noto+Sans+JP:wght@300;400;500&family=Shippori+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg:           #fbf8f1;
-      --bg-alt:       #f5f0e4;
-      --paper:        #ffffff;
-      --ink:          #1a2236;
-      --ink-2:        #2c3651;
-      --ink-mute:     #6a7388;
-      --rule:         #d9d2c1;
-      --rule-soft:    #ebe5d4;
-      --accent:       #c9a961;
-      --accent-deep:  #a88b48;
-      --accent-soft:  #e8dcb8;
-      --serif-jp: "Shippori Mincho", "Hiragino Mincho ProN", "YuMincho", "Yu Mincho", "Noto Serif JP", serif;
-      --sans-jp:  "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
-      --serif-en: "Cormorant Garamond", "EB Garamond", Georgia, serif;
-      --sans-en:  "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-      --max: 1200px;
-      --gutter: clamp(20px, 4vw, 56px);
-      --s-1: 4px;  --s-2: 8px;   --s-3: 12px; --s-4: 16px; --s-5: 24px;
-      --s-6: 32px; --s-7: 48px;  --s-8: 64px; --s-9: 96px; --s-10: 128px; --s-11: 160px;
-    }
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>代表挨拶 — Message from CEO | KABUTO株式会社</title>
+<meta name="description" content="KABUTO株式会社 代表取締役 中山章裕からのメッセージ。テクノロジーは、人間の温度を奪うのではなく、戻すために。" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+<style>
+  /* ============= Page-local: Representative ============= */
 
-    * { box-sizing: border-box; }
+  /* ---- Hero ---- */
+  .ceo-hero {
+    padding-top: clamp(80px, 12vw, 160px);
+    padding-bottom: clamp(70px, 9vw, 120px);
+  }
+  .ceo-hero .container {
+    display: grid;
+    grid-template-columns: 200px 1fr 280px;
+    gap: 56px;
+    align-items: end;
+  }
+  .ceo-hero .meta {
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .ceo-hero .meta .num {
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 13px; color: var(--accent-deep);
+  }
+  .ceo-hero .meta .lab-en {
+    font-family: var(--serif-en); font-size: 12px;
+    letter-spacing: 0.32em; color: var(--ink); text-transform: uppercase;
+  }
+  .ceo-hero .meta .lab-jp {
+    font-family: var(--serif-jp); font-size: 11px;
+    letter-spacing: 0.3em; color: var(--ink-mute);
+  }
+  .ceo-hero .meta .stamp {
+    width: 56px; height: 1px; background: var(--accent);
+    margin-top: 12px;
+  }
+  .ceo-hero h1 {
+    font-family: var(--serif-jp); font-weight: 500;
+    font-size: clamp(34px, 5vw, 64px);
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    margin: 0 0 32px;
+  }
+  .ceo-hero h1 em {
+    font-style: italic;
+    font-family: var(--serif-en);
+    color: var(--accent-deep);
+    font-weight: 500;
+  }
+  .ceo-hero .sub-en {
+    font-family: var(--serif-en); font-style: italic;
+    font-size: clamp(14px, 1.15vw, 17px);
+    color: var(--ink-mute); line-height: 1.65;
+    max-width: 540px;
+  }
+  .ceo-hero .sig-card {
+    border: 1px solid var(--rule-soft);
+    background: var(--paper);
+    padding: 28px;
+    align-self: end;
+  }
+  .ceo-hero .sig-card .lbl {
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 11px; color: var(--accent-deep);
+    letter-spacing: 0.16em; text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .ceo-hero .sig-card .name-jp {
+    font-family: var(--serif-jp); font-size: 22px;
+    color: var(--ink); margin-bottom: 4px;
+    letter-spacing: 0.08em;
+  }
+  .ceo-hero .sig-card .name-en {
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 14px; color: var(--ink-mute);
+    letter-spacing: 0.06em;
+    margin-bottom: 18px;
+  }
+  .ceo-hero .sig-card .role {
+    font-family: var(--sans-jp); font-size: 12px;
+    color: var(--ink-2); line-height: 1.7;
+    border-top: 1px solid var(--rule-soft);
+    padding-top: 14px;
+  }
+  .ceo-hero .sig-card .role em {
+    display: block;
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 11px;
+    color: var(--ink-mute);
+    margin-top: 4px;
+    letter-spacing: 0.04em;
+  }
 
-    html, body {
-      margin: 0; padding: 0;
-      background: var(--bg);
-      color: var(--ink);
-      font-family: var(--sans-jp);
-      font-size: 16px;
-      line-height: 1.8;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-      font-feature-settings: "palt" 1;
-    }
+  /* ---- Origin ---- */
+  .origin {
+    background: var(--bg-alt);
+  }
+  .origin .container {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 96px;
+    align-items: start;
+  }
+  .origin .side {
+    position: sticky; top: 120px;
+  }
+  .origin .side .num {
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 13px; color: var(--accent-deep);
+    display: block; margin-bottom: 8px;
+  }
+  .origin .side .lab {
+    font-family: var(--serif-en); font-size: 12px;
+    letter-spacing: 0.32em; color: var(--ink); text-transform: uppercase;
+    display: block;
+  }
+  .origin .side .lab-jp {
+    font-family: var(--serif-jp); font-size: 11px;
+    letter-spacing: 0.3em; color: var(--ink-mute);
+    display: block; margin-top: 6px;
+    margin-bottom: 32px;
+  }
+  .origin .side h2 {
+    font-family: var(--serif-jp); font-weight: 500;
+    font-size: clamp(22px, 2.4vw, 28px);
+    line-height: 1.65; color: var(--ink);
+    letter-spacing: 0.04em;
+  }
 
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-    h1, h2, h3, h4 { margin: 0; font-weight: 500; line-height: 1.3; }
-    p { margin: 0; }
-    ul, ol { list-style: none; padding: 0; margin: 0; }
+  .origin .body { display: flex; flex-direction: column; gap: 56px; }
 
-    /* ─── TYPE ─── */
-    .h-display {
-      font-family: var(--serif-jp);
-      font-weight: 500;
-      font-size: clamp(34px, 5.4vw, 68px);
-      line-height: 1.45;
-      letter-spacing: 0.02em;
-      color: var(--ink);
-    }
-    .h-section {
-      font-family: var(--serif-jp);
-      font-weight: 500;
-      font-size: clamp(26px, 3.4vw, 40px);
-      line-height: 1.5;
-      letter-spacing: 0.04em;
-    }
-    .h-en {
-      font-family: var(--serif-en);
-      font-weight: 500;
-      font-style: italic;
-      font-size: clamp(22px, 2.4vw, 30px);
-      line-height: 1.3;
-      letter-spacing: 0.01em;
-      color: var(--ink-2);
-    }
-    .body-jp {
-      font-family: var(--sans-jp);
-      font-size: 15px;
-      line-height: 2;
-      color: var(--ink-2);
-    }
-    .lead {
-      font-family: var(--serif-jp);
-      font-size: clamp(17px, 1.5vw, 20px);
-      line-height: 2;
-      color: var(--ink-2);
-    }
-    .eyebrow {
-      font-family: var(--serif-en);
-      font-style: italic;
-      font-weight: 400;
-      letter-spacing: 0.18em;
-      font-size: 13px;
-      color: var(--accent-deep);
-      text-transform: uppercase;
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .eyebrow::before {
-      content: "";
-      width: 28px;
-      height: 1px;
-      background: var(--accent);
-      display: inline-block;
-    }
-    .quote-mark {
-      font-family: var(--serif-en);
-      font-size: 80px;
-      line-height: 1;
-      color: var(--accent-soft);
-      display: block;
-      margin-bottom: -16px;
-    }
+  .origin .chapter {
+    border-left: 1px solid var(--rule);
+    padding-left: 32px;
+    position: relative;
+  }
+  .origin .chapter .ch-num {
+    position: absolute; left: -10px; top: 6px;
+    width: 18px; height: 18px;
+    background: var(--bg-alt);
+    border: 1px solid var(--accent);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 10px; color: var(--accent-deep);
+  }
+  .origin .chapter h3 {
+    font-family: var(--serif-jp); font-weight: 500;
+    font-size: clamp(18px, 1.7vw, 22px);
+    line-height: 1.65; color: var(--ink);
+    margin: 0 0 18px;
+    letter-spacing: 0.04em;
+  }
+  .origin .chapter p {
+    font-family: var(--sans-jp); font-size: 15px;
+    line-height: 2.15; color: var(--ink-2);
+    margin: 0 0 14px;
+  }
 
-    /* ─── LAYOUT ─── */
-    .container {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding-left: var(--gutter);
-      padding-right: var(--gutter);
-    }
-    .section {
-      padding: clamp(80px, 11vw, 160px) 0;
-      position: relative;
-    }
-    .section-band { background: var(--bg-alt); }
-    .section-paper { background: var(--paper); }
-    .section-head {
-      display: grid;
-      grid-template-columns: 200px 1fr;
-      gap: 56px;
-      margin-bottom: 72px;
-      align-items: baseline;
-    }
-    .section-head .meta { display: flex; flex-direction: column; gap: 8px; }
-    .section-head .meta .num {
-      font-family: var(--serif-en); font-style: italic;
-      font-size: 14px; color: var(--accent-deep); letter-spacing: 0.05em;
-    }
-    .section-head .meta .lab {
-      font-family: var(--serif-en); font-size: 12px;
-      letter-spacing: 0.32em; text-transform: uppercase; color: var(--ink);
-    }
-    .section-head .meta .lab-jp {
-      font-family: var(--serif-jp); font-size: 11px;
-      letter-spacing: 0.3em; color: var(--ink-mute);
-    }
-    .section-head .heading h2 { margin-bottom: 18px; }
+  .origin .pull {
+    margin: 8px 0;
+    border-left: 2px solid var(--accent);
+    padding: 8px 0 8px 22px;
+    margin-left: -32px;
+    font-family: var(--serif-jp); font-weight: 500;
+    font-size: clamp(20px, 2.2vw, 28px);
+    line-height: 1.7; color: var(--ink);
+    letter-spacing: 0.05em;
+  }
+  .origin .pull em {
+    font-family: var(--serif-en); font-style: italic;
+    color: var(--accent-deep);
+    font-weight: 500;
+  }
 
-    /* ─── HEADER ─── */
-    .site-header {
-      position: sticky; top: 0; z-index: 50;
-      background: rgba(251, 248, 241, 0.88);
-      backdrop-filter: saturate(140%) blur(12px);
-      -webkit-backdrop-filter: saturate(140%) blur(12px);
-      border-bottom: 1px solid transparent;
-      transition: border-color .3s ease;
-    }
-    .site-header.is-scrolled { border-bottom-color: var(--rule-soft); }
-    .nav {
-      display: flex; align-items: center;
-      justify-content: space-between; height: 76px;
-    }
-    .brand { display: flex; align-items: baseline; gap: 10px; }
-    .brand-mark {
-      font-family: var(--serif-en); font-weight: 500;
-      font-size: 22px; letter-spacing: 0.42em; color: var(--ink);
-    }
-    .brand-jp {
-      font-family: var(--serif-jp); font-size: 11px;
-      letter-spacing: 0.3em; color: var(--ink-mute);
-    }
-    .nav-links { display: flex; align-items: center; gap: 36px; }
-    .nav-links a {
-      font-family: var(--serif-en); font-size: 13px;
-      letter-spacing: 0.22em; color: var(--ink-2); text-transform: uppercase;
-      position: relative; padding: 6px 0; transition: color .25s;
-    }
-    .nav-links a small {
-      display: block; font-family: var(--sans-jp); font-size: 10px;
-      letter-spacing: 0.2em; color: var(--ink-mute); margin-top: 2px; text-transform: none;
-    }
-    .nav-links a:hover { color: var(--accent-deep); }
-    .nav-cta {
-      font-family: var(--serif-en); font-size: 12px;
-      letter-spacing: 0.22em; border: 1px solid var(--ink);
-      padding: 11px 22px; color: var(--ink); text-transform: uppercase;
-      transition: all .25s;
-    }
-    .nav-cta:hover { background: var(--ink); color: var(--bg); }
+  /* ---- Vision ---- */
+  .vision {
+    background: var(--paper);
+  }
+  .vision .container {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 96px;
+    align-items: start;
+  }
+  .vision .side .num {
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 13px; color: var(--accent-deep);
+    display: block; margin-bottom: 8px;
+  }
+  .vision .side .lab {
+    font-family: var(--serif-en); font-size: 12px;
+    letter-spacing: 0.32em; color: var(--ink); text-transform: uppercase;
+    display: block; margin-bottom: 6px;
+  }
+  .vision .side .lab-jp {
+    font-family: var(--serif-jp); font-size: 11px;
+    letter-spacing: 0.3em; color: var(--ink-mute);
+  }
+  .vision .body { display: grid; gap: 28px; }
+  .vision-item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 32px;
+    padding: 32px 0;
+    border-top: 1px solid var(--rule-soft);
+    align-items: baseline;
+  }
+  .vision-item:last-child { border-bottom: 1px solid var(--rule-soft); }
+  .vision-item .n {
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 28px; color: var(--accent-deep);
+  }
+  .vision-item h3 {
+    font-family: var(--serif-jp); font-weight: 500;
+    font-size: clamp(20px, 2vw, 26px);
+    line-height: 1.6; color: var(--ink);
+    margin: 0 0 8px;
+    letter-spacing: 0.04em;
+  }
+  .vision-item h3 em {
+    display: block;
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 13px; color: var(--ink-mute);
+    margin-top: 8px;
+    letter-spacing: 0.06em;
+    font-weight: 400;
+  }
+  .vision-item p {
+    font-family: var(--sans-jp); font-size: 14px;
+    line-height: 2; color: var(--ink-2);
+    margin: 12px 0 0;
+  }
 
-    /* ─── BUTTONS ─── */
-    .btn {
-      display: inline-flex; align-items: center; gap: 14px;
-      padding: 16px 28px; font-family: var(--serif-en);
-      font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase;
-      border: 1px solid var(--ink); color: var(--ink);
-      background: transparent; transition: all .3s ease; white-space: nowrap;
-    }
-    .btn .arr { transition: transform .3s ease; display: inline-block; }
-    .btn:hover { background: var(--ink); color: var(--bg); }
-    .btn:hover .arr { transform: translateX(4px); }
-    .btn-ghost { border-color: transparent; padding-left: 0; }
-    .btn-ghost:hover { background: transparent; color: var(--accent-deep); }
+  /* ---- Profile ---- */
+  .profile {
+    background: var(--bg-alt);
+  }
+  .profile .container {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 96px;
+    align-items: start;
+  }
+  .profile .side .num {
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 13px; color: var(--accent-deep);
+    display: block; margin-bottom: 8px;
+  }
+  .profile .side .lab {
+    font-family: var(--serif-en); font-size: 12px;
+    letter-spacing: 0.32em; color: var(--ink); text-transform: uppercase;
+    display: block; margin-bottom: 6px;
+  }
+  .profile .side .lab-jp {
+    font-family: var(--serif-jp); font-size: 11px;
+    letter-spacing: 0.3em; color: var(--ink-mute);
+  }
+  .profile-card {
+    background: var(--paper);
+    border: 1px solid var(--rule-soft);
+    padding: 56px;
+  }
+  .profile-card .name-block {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--rule-soft);
+    margin-bottom: 32px;
+  }
+  .profile-card .name-jp {
+    font-family: var(--serif-jp); font-size: clamp(28px, 3vw, 36px);
+    color: var(--ink); letter-spacing: 0.1em;
+  }
+  .profile-card .name-en {
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 18px; color: var(--ink-mute);
+    letter-spacing: 0.06em;
+  }
+  .profile-card dl {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 18px 24px;
+  }
+  .profile-card dt {
+    font-family: var(--serif-jp);
+    font-size: 14px; color: var(--ink);
+    font-weight: 500;
+    letter-spacing: 0.06em;
+  }
+  .profile-card dt em {
+    display: block;
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 11px; color: var(--ink-mute);
+    margin-top: 2px;
+    letter-spacing: 0.04em;
+  }
+  .profile-card dd {
+    margin: 0;
+    font-family: var(--sans-jp);
+    font-size: 14px; color: var(--ink-2);
+    line-height: 1.95;
+  }
 
-    /* ─── HERO ─── */
-    .rep-hero {
-      padding-top: clamp(80px, 12vw, 160px);
-      padding-bottom: clamp(80px, 11vw, 140px);
-      border-bottom: 1px solid var(--rule-soft);
-    }
-    .rep-hero-grid {
-      display: grid; grid-template-columns: 200px 1fr;
-      gap: 56px; align-items: end;
-    }
-    .rep-hero .meta { display: flex; flex-direction: column; gap: 14px; }
-    .rep-hero .meta .label-en {
-      font-family: var(--serif-en); font-style: italic;
-      font-size: 13px; letter-spacing: 0.18em; color: var(--accent-deep);
-    }
-    .rep-hero .meta .stamp { width: 56px; height: 1px; background: var(--accent); }
-    .rep-hero .meta .position {
-      font-family: var(--sans-jp); font-size: 11px;
-      letter-spacing: 0.2em; color: var(--ink-mute); margin-top: 12px;
-    }
-    .rep-hero h1 {
-      font-family: var(--serif-jp); font-weight: 500;
-      font-size: clamp(40px, 6vw, 76px);
-      letter-spacing: 0.08em; line-height: 1.2;
-      color: var(--ink); margin-bottom: 12px;
-    }
-    .rep-hero .name-en {
-      font-family: var(--serif-en); font-style: italic;
-      font-size: clamp(18px, 2vw, 24px); color: var(--ink-mute);
-      letter-spacing: 0.1em; margin-bottom: 36px; display: block;
-    }
-    .rep-hero .lead {
-      font-family: var(--serif-jp);
-      font-size: clamp(16px, 1.4vw, 19px);
-      line-height: 2.1; color: var(--ink-2); max-width: 660px;
-    }
+  /* ---- CTA ---- */
+  .ceo-cta {
+    background: var(--ink);
+    color: var(--bg);
+  }
+  .ceo-cta .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px; align-items: end;
+  }
+  .ceo-cta h2 {
+    font-family: var(--serif-jp); font-weight: 400;
+    color: var(--bg);
+    font-size: clamp(30px, 4vw, 48px);
+    line-height: 1.55; letter-spacing: 0.04em;
+  }
+  .ceo-cta h2 em {
+    font-family: var(--serif-en); font-style: italic;
+    color: var(--accent);
+    font-size: 0.5em;
+    display: block;
+    margin-bottom: 18px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .ceo-cta .right p {
+    font-family: var(--sans-jp); font-size: 14px;
+    line-height: 2; color: rgba(251,248,241,0.7);
+    margin: 0 0 28px;
+  }
+  .ceo-cta .btn {
+    border-color: var(--bg); color: var(--bg);
+  }
+  .ceo-cta .btn:hover {
+    background: var(--accent); border-color: var(--accent); color: var(--ink);
+  }
 
-    /* ─── ORIGIN ─── */
-    .origin-grid {
-      display: grid; grid-template-columns: 1fr 360px; gap: 80px; align-items: start;
-    }
-    .origin-aside {
-      border-left: 1px solid var(--rule); padding-left: 36px;
-      position: sticky; top: 120px;
-    }
-    .origin-aside .aside-label {
-      font-family: var(--serif-en); font-style: italic; font-size: 12px;
-      letter-spacing: 0.2em; color: var(--accent-deep); margin-bottom: 18px;
-      text-transform: uppercase;
-    }
-    .origin-aside .profile-row {
-      padding: 16px 0; border-bottom: 1px solid var(--rule-soft);
-      display: grid; gap: 4px;
-    }
-    .origin-aside .profile-row:first-of-type { border-top: 1px solid var(--rule-soft); }
-    .origin-aside .p-label {
-      font-family: var(--serif-en); font-size: 10px; letter-spacing: 0.28em;
-      text-transform: uppercase; color: var(--ink-mute);
-    }
-    .origin-aside .p-value {
-      font-family: var(--serif-jp); font-size: 14px; color: var(--ink); line-height: 1.7;
-    }
-    .origin-aside .p-value em {
-      font-family: var(--serif-en); font-style: italic;
-      font-size: 12px; color: var(--ink-mute); display: block; margin-top: 2px;
-    }
-
-    .story-block { display: grid; gap: 28px; }
-    .story-block .chapter-label {
-      font-family: var(--serif-en); font-style: italic; font-size: 13px;
-      letter-spacing: 0.16em; color: var(--accent-deep);
-      display: flex; align-items: center; gap: 12px;
-    }
-    .story-block .chapter-label::before {
-      content: ""; width: 24px; height: 1px; background: var(--accent); display: inline-block;
-    }
-    .story-block h3 {
-      font-family: var(--serif-jp); font-weight: 500;
-      font-size: clamp(20px, 2.2vw, 26px); color: var(--ink);
-      line-height: 1.55; letter-spacing: 0.04em; margin-bottom: 16px;
-    }
-    .story-block p {
-      font-family: var(--sans-jp); font-size: 15px; line-height: 2.1;
-      color: var(--ink-2);
-    }
-    .story-chapter {
-      padding: 40px 0; border-top: 1px solid var(--rule-soft);
-    }
-    .story-chapter:first-child { border-top: none; padding-top: 0; }
-    .quote-pull {
-      margin: 24px 0; padding: 24px 28px;
-      border-left: 2px solid var(--accent); background: var(--bg-alt);
-    }
-    .quote-pull p {
-      font-family: var(--serif-jp); font-size: clamp(16px, 1.4vw, 19px);
-      line-height: 1.9; color: var(--ink); font-weight: 500;
-    }
-
-    /* ─── VISION ─── */
-    .vision-pillars {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 1px; background: var(--rule-soft);
-      border: 1px solid var(--rule-soft);
-    }
-    .pillar {
-      background: var(--bg); padding: clamp(36px, 4vw, 56px);
-    }
-    .pillar .num {
-      font-family: var(--serif-en); font-style: italic; font-size: 13px;
-      color: var(--accent-deep); letter-spacing: 0.06em; margin-bottom: 20px;
-      display: block;
-    }
-    .pillar h3 {
-      font-family: var(--serif-jp); font-weight: 500;
-      font-size: clamp(18px, 1.8vw, 22px); line-height: 1.55;
-      color: var(--ink); margin-bottom: 18px; letter-spacing: 0.04em;
-    }
-    .pillar p {
-      font-family: var(--sans-jp); font-size: 14px;
-      line-height: 2; color: var(--ink-mute);
-    }
-
-    .vision-message {
-      margin-top: 64px; padding: 56px;
-      background: var(--paper); border: 1px solid var(--rule-soft);
-    }
-    .vision-message blockquote {
-      font-family: var(--serif-jp); font-weight: 500;
-      font-size: clamp(20px, 2.2vw, 27px); line-height: 1.8;
-      color: var(--ink); letter-spacing: 0.04em; margin: 0 0 28px;
-    }
-    .vision-message .sig {
-      font-family: var(--serif-jp); font-size: 14px;
-      color: var(--ink-mute); display: flex; align-items: baseline; gap: 14px;
-    }
-    .vision-message .sig span {
-      font-family: var(--serif-en); font-style: italic; font-size: 13px;
-    }
-
-    /* ─── CONTACT ─── */
-    .contact { background: var(--ink); color: var(--bg); }
-    .contact .container {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 64px; align-items: end;
-    }
-    .contact h2 {
-      font-family: var(--serif-jp); font-weight: 400;
-      color: var(--bg); font-size: clamp(34px, 4.4vw, 54px);
-      line-height: 1.5; letter-spacing: 0.04em;
-    }
-    .contact h2 em {
-      font-family: var(--serif-en); font-style: italic;
-      color: var(--accent); font-size: 0.55em; display: block;
-      margin-bottom: 18px; letter-spacing: 0.18em;
-      text-transform: uppercase; font-weight: 500;
-    }
-    .contact .right p {
-      font-family: var(--sans-jp); font-size: 14px;
-      line-height: 2; color: rgba(251,248,241,0.7); margin: 0 0 28px;
-    }
-    .contact .btn { border-color: var(--bg); color: var(--bg); }
-    .contact .btn:hover {
-      background: var(--accent); border-color: var(--accent); color: var(--ink);
-    }
-
-    /* ─── FOOTER ─── */
-    .site-footer {
-      border-top: 1px solid var(--rule-soft);
-      background: var(--bg); padding: 72px 0 40px;
-      font-family: var(--sans-jp); font-size: 13px; color: var(--ink-mute);
-    }
-    .footer-grid {
-      display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr;
-      gap: 48px; align-items: start;
-    }
-    .footer-brand .brand-mark { font-size: 24px; }
-    .footer-brand p { margin: 18px 0 0; line-height: 1.9; max-width: 340px; }
-    .footer-col h5 {
-      font-family: var(--serif-en); font-weight: 500; font-size: 11px;
-      letter-spacing: 0.28em; color: var(--ink);
-      text-transform: uppercase; margin: 0 0 18px;
-    }
-    .footer-col ul { list-style: none; padding: 0; margin: 0; }
-    .footer-col li { margin-bottom: 10px; }
-    .footer-col a:hover { color: var(--accent-deep); }
-    .footer-bottom {
-      margin-top: 64px; padding-top: 28px;
-      border-top: 1px solid var(--rule-soft);
-      display: flex; justify-content: space-between; align-items: center;
-      font-family: var(--serif-en); font-size: 12px;
-      letter-spacing: 0.18em; color: var(--ink-mute);
-    }
-    .footer-bottom a { transition: color .2s; }
-    .footer-bottom a:hover { color: var(--accent-deep); }
-
-    /* ─── RESPONSIVE ─── */
-    @media (max-width: 880px) {
-      .nav-links { display: none; }
-      .section-head { grid-template-columns: 1fr; gap: 24px; margin-bottom: 48px; }
-      .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
-      .origin-grid { grid-template-columns: 1fr; gap: 48px; }
-      .origin-aside { position: static; border-left: 0; border-top: 1px solid var(--rule); padding-left: 0; padding-top: 28px; }
-      .vision-pillars { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 640px) {
-      .rep-hero-grid { grid-template-columns: 1fr; gap: 32px; }
-      .rep-hero .meta { flex-direction: row; align-items: center; }
-      .contact .container { grid-template-columns: 1fr; gap: 32px; }
-      .footer-grid { grid-template-columns: 1fr; }
-      .footer-bottom { flex-direction: column; gap: 14px; align-items: flex-start; }
-      .vision-message { padding: 32px 24px; }
-    }
-  </style>
+  /* ---- responsive ---- */
+  @media (max-width: 980px) {
+    .ceo-hero .container { grid-template-columns: 1fr; gap: 32px; }
+    .origin .container,
+    .vision .container,
+    .profile .container { grid-template-columns: 1fr; gap: 40px; }
+    .origin .side { position: static; }
+    .profile-card { padding: 36px 28px; }
+    .profile-card dl { grid-template-columns: 1fr; gap: 6px 0; }
+    .profile-card dt { margin-top: 14px; }
+    .ceo-cta .container { grid-template-columns: 1fr; gap: 32px; }
+    .vision-item { grid-template-columns: 1fr; gap: 8px; }
+  }
+</style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="site-header" id="site-header">
+<main>
+
+  <!-- =================== HERO =================== -->
+  <section class="ceo-hero">
     <div class="container">
-      <nav class="nav">
-        <a href="index.html" class="brand">
-          <span class="brand-mark">KABUTO</span>
-          <span class="brand-jp">株式会社</span>
-        </a>
-        <div class="nav-links">
-          <a href="index.html#business">Services<small>事業内容</small></a>
-          <a href="yorisoi.html">YORISOI</a>
-          <a href="index.html#company">About<small>会社情報</small></a>
-          <a href="representative.html">代表<small>Representative</small></a>
+      <aside class="meta">
+        <span class="num">— 00</span>
+        <span class="lab-en">Message from CEO</span>
+        <span class="lab-jp">代表挨拶</span>
+        <span class="stamp"></span>
+      </aside>
+      <div>
+        <h1>テクノロジーは、人間の<em>温度</em>を<br/>奪うのではなく、戻すために。</h1>
+        <p class="sub-en">Technology is not here to take away human warmth — it is here to return it. That is the conviction at the heart of everything we build.</p>
+      </div>
+      <div class="sig-card">
+        <div class="lbl">— Signed</div>
+        <div class="name-jp">中山 章裕</div>
+        <div class="name-en">Akihiro Nakayama</div>
+        <div class="role">
+          KABUTO株式会社 代表取締役
+          <em>Founder & CEO, KABUTO Inc.</em>
         </div>
-        <a href="mailto:kabuto.co.ltd@gmail.com" class="nav-cta">Contact</a>
-      </nav>
+      </div>
     </div>
-  </header>
+  </section>
 
-  <main>
+  <!-- =================== ORIGIN =================== -->
+  <section class="section origin">
+    <div class="container">
+      <aside class="side">
+        <span class="num">— 01</span>
+        <span class="lab">Origin</span>
+        <span class="lab-jp">原体験</span>
+        <h2>機械的な返信になっていく自分に、<br/>気付いた夜があった。</h2>
+      </aside>
+      <div class="body">
 
-    <!-- HERO -->
-    <section class="rep-hero section">
-      <div class="container">
-        <div class="rep-hero-grid">
-          <div class="meta">
-            <span class="label-en">Representative</span>
-            <div class="stamp"></div>
-            <span class="eyebrow" style="font-size:11px;margin-top:0;">代表取締役</span>
-            <span class="position">KABUTO Inc.</span>
-          </div>
+        <article class="chapter">
+          <div class="ch-num">i</div>
+          <h3>現役の対人支援アドバイザーとして、50名以上を担当していた。</h3>
+          <p>結婚相談所のカウンセラーとして、私はこれまで50名を超える会員を担当してきました。一人ひとりに人生があり、悩みがあり、ためらいがある。その全てに、誠実に向き合いたいと思っていました。</p>
+          <p>けれど、現実は違いました。会員は増え、相談は深夜にも届く。返信は、一日のうちに何十通にもなる。気付けば、深夜2時に画面に向かう日々が、当たり前になっていました。</p>
+        </article>
+
+        <div class="pull">
+          <em>—</em> これは、応援ではなく、<br/>処理になっている。
+        </div>
+
+        <article class="chapter">
+          <div class="ch-num">ii</div>
+          <h3>ある夜、自分の文章が「テンプレートのように」見えた。</h3>
+          <p>夜遅く、何件目かの返信を打ちながら、ふと自分の文面が誰に対しても似たような言葉になっていることに気付きました。会員の名前が違うだけで、内容はほとんど同じ。気持ちを乗せたつもりが、ただ「処理」していただけだった。</p>
+          <p>これは応援ではなく、処理になっている──そう自覚した夜のことを、今もはっきり覚えています。応援する側として、これでは届くものも届かない。</p>
+        </article>
+
+        <article class="chapter">
+          <div class="ch-num">iii</div>
+          <h3>ケアを職業にする人が、構造的に追い込まれている。</h3>
+          <p>これは私一人の問題ではありません。介護、医療、教育、相談業務──ケアを職業にする人々が、業務量と感情労働の二重負担で、構造的に追い込まれている。よりよく支援したいと願う人ほど、疲弊していく。</p>
+          <p>では、どうすればいいのか。判断を機械に渡すのではなく、判断のために必要な「余白」をテクノロジーで取り戻せないか。そう考え始めたのが、YORISOIの出発点です。</p>
+        </article>
+
+        <article class="chapter">
+          <div class="ch-num">iv</div>
+          <h3>そうして、YORISOIが生まれた。</h3>
+          <p>YORISOIは、AIが返信の下書きを作り、カウンセラーがそれを確認・編集・承認して送信する、シンプルなSaaSです。判断は、必ず人間に残す。AIは、その判断のための時間をつくる。それだけです。</p>
+          <p>私たちが届けたいのは「効率化」ではなく、応援する側に戻ってくるはずだった「余白」です。</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== VISION =================== -->
+  <section class="section vision">
+    <div class="container">
+      <aside class="side">
+        <span class="num">— 02</span>
+        <span class="lab">Vision</span>
+        <span class="lab-jp">これからの方向</span>
+      </aside>
+      <div class="body">
+        <div class="vision-item">
+          <div class="n">i.</div>
           <div>
-            <h1>中山 章裕</h1>
-            <span class="name-en">Akihiro Nakayama</span>
-            <p class="lead">長崎から、テクノロジーと人の力を掛け合わせ、<br>ケアに関わるすべての人に余白をつくる。</p>
+            <h3>応援する側に、余白を。<em>— Make space for those who care.</em></h3>
+            <p>ケアする人がケアされる環境を、テクノロジーでつくる。それが、私たちが最初に取り組むべき仕事だと考えています。</p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- ORIGIN -->
-    <section class="section" id="origin">
-      <div class="container">
-        <div class="section-head">
-          <div class="meta">
-            <span class="num">— 01</span>
-            <span class="lab">Origin</span>
-            <span class="lab-jp">原体験</span>
-          </div>
-          <div class="heading">
-            <span class="quote-mark">"</span>
-            <h2 class="h-section">人を支える仕事が、<br>人に支えられていない。</h2>
+        <div class="vision-item">
+          <div class="n">ii.</div>
+          <div>
+            <h3>最終決定は、必ず人間に。<em>— Humans hold the final say.</em></h3>
+            <p>AIに判断を委ねるのではなく、判断のための前提整理と時間創出を担わせる。判断の主体は、いつも人間です。</p>
           </div>
         </div>
-
-        <div class="origin-grid">
-          <div class="story-block">
-            <div class="story-chapter">
-              <span class="chapter-label">Chapter I — 長崎という場所</span>
-              <h3>港と坂と、人の往来。</h3>
-              <p>長崎に生まれ育ちました。異文化が交わり続けてきたこの街では、人と人が繋がり、支え合うことが自然に身に染みつきます。私の原点にあるのは、そうした人と人との距離感です。</p>
-              <p style="margin-top:16px;">子どもの頃から、「誰かを助けている大人」の姿を近くで見てきました。カウンセラー、介護の職員、仲人士——彼らはいつも誰かのために時間を尽くし、それでも笑顔でいた。その姿が、私の中に深く刻まれています。</p>
-            </div>
-
-            <div class="story-chapter">
-              <span class="chapter-label">Chapter II — 気づいた矛盾</span>
-              <h3>ケアする側が、消耗していた。</h3>
-              <p>社会に出て、様々な対人支援の現場に関わるようになると、一つの矛盾に気づきました。人を支えるプロたちが、管理業務・記録・返信・報告書——終わりのない事務作業に追われ、本来やりたい「人と向き合う仕事」の時間を失っていたのです。</p>
-              <div class="quote-pull">
-                <p>「応援する側に、余白がない。」</p>
-              </div>
-              <p>深夜まで返信に追われ、機械的になっていく自分に気付く——そんな声を聞くたびに、テクノロジーで何かできるはずだという確信が強まりました。</p>
-            </div>
-
-            <div class="story-chapter">
-              <span class="chapter-label">Chapter III — KABUTOの誕生</span>
-              <h3>余白を、取り戻すために。</h3>
-              <p>AIと人間の力を掛け合わせれば、事務作業をAIが担い、人が人に向き合う時間を取り戻せる——そう確信し、2024年にKABUTO株式会社を設立しました。</p>
-              <p style="margin-top:16px;">最初のプロダクトである「YORISOI」は、カウンセラーの返信業務をAIが支援するSaaSです。AIが下書きを作成し、最終判断は必ず人間が行う。この設計思想は、テクノロジーへの姿勢そのものでもあります。</p>
-              <p style="margin-top:16px;">長崎から始まったこの挑戦を、少しずつ、着実に広げていきます。</p>
-            </div>
-          </div>
-
-          <!-- Profile aside -->
-          <aside class="origin-aside">
-            <div class="aside-label">Profile</div>
-            <div class="profile-row">
-              <div class="p-label">Name</div>
-              <div class="p-value">中山 章裕<em>Akihiro Nakayama</em></div>
-            </div>
-            <div class="profile-row">
-              <div class="p-label">Position</div>
-              <div class="p-value">代表取締役<em>Representative Director</em></div>
-            </div>
-            <div class="profile-row">
-              <div class="p-label">Based in</div>
-              <div class="p-value">長崎県<em>Nagasaki, Japan</em></div>
-            </div>
-            <div class="profile-row">
-              <div class="p-label">Business</div>
-              <div class="p-value">AI/SaaS 開発<br>対人支援業界向けソリューション<br>越境EC事業<em>AI, SaaS, Cross-border e-commerce</em></div>
-            </div>
-            <div class="profile-row">
-              <div class="p-label">Contact</div>
-              <div class="p-value"><a href="mailto:kabuto.co.ltd@gmail.com" style="color:var(--accent-deep);">kabuto.co.ltd@gmail.com</a></div>
-            </div>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <!-- VISION -->
-    <section class="section section-band" id="vision">
-      <div class="container">
-        <div class="section-head">
-          <div class="meta">
-            <span class="num">— 02</span>
-            <span class="lab">Vision</span>
-            <span class="lab-jp">目指す未来</span>
-          </div>
-          <div class="heading">
-            <h2 class="h-section">3つの柱で、<br>未来をつくる。</h2>
+        <div class="vision-item">
+          <div class="n">iii.</div>
+          <div>
+            <h3>業界の現場から、世界へ。<em>— From the field, to the world.</em></h3>
+            <p>長崎の現場で生まれた仕組みを、対人支援を必要とする世界中の現場へ。地域から世界へ広げていくのが、KABUTOの目指す道筋です。</p>
           </div>
         </div>
-
-        <div class="vision-pillars">
-          <div class="pillar">
-            <span class="num">— Pillar I</span>
-            <h3>テクノロジーで、事業の可能性を拡張する。</h3>
-            <p>AIと人間の力を組み合わせることで、これまで不可能だった事業の形をつくります。テクノロジーは目的ではなく、人の可能性を広げるための手段です。</p>
-          </div>
-          <div class="pillar">
-            <span class="num">— Pillar II</span>
-            <h3>日本と世界市場を繋ぐ、架け橋になる。</h3>
-            <p>長崎という歴史的な港町から、日本の優れた価値を海外へ届けます。越境ECと越境SaaSで、地理的な距離を超えた繋がりを築きます。</p>
-          </div>
-          <div class="pillar">
-            <span class="num">— Pillar III</span>
-            <h3>人の幸福を支えるサービスを、創り続ける。</h3>
-            <p>対人支援のプロが、人と向き合える時間をより多く持てるように。テクノロジーが人の幸福に寄与し続けることが、私たちの存在意義です。</p>
-          </div>
-        </div>
-
-        <div class="vision-message">
-          <blockquote>
-            ケアする人に、余白を。<br>テクノロジーが人の温度を奪うのではなく、<br>人が人らしくある時間を、取り戻すために。
-          </blockquote>
-          <div class="sig">
-            中山 章裕
-            <span>Akihiro Nakayama — Representative Director, KABUTO Inc.</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="section contact">
-      <div class="container">
-        <div>
-          <h2>
-            <em>— Contact</em>
-            ご相談・お問い合わせ。<br>お気軽にどうぞ。
-          </h2>
-        </div>
-        <div class="right">
-          <p>事業に関するご相談、メディア取材、採用に関するお問い合わせなど、まずはメールにてご連絡ください。営業日2日以内に、担当者よりご返信いたします。</p>
-          <a href="mailto:kabuto.co.ltd@gmail.com" class="btn">kabuto.co.ltd@gmail.com <span class="arr">→</span></a>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col footer-brand">
-          <span class="brand-mark">KABUTO</span>
-          <p>対人支援の現場に、テクノロジーで余白を。長崎発のテクノロジーカンパニー。</p>
-        </div>
-        <div class="footer-col">
-          <h5>Services</h5>
-          <ul>
-            <li><a href="yorisoi.html">YORISOI</a></li>
-            <li><a href="index.html#business">AI Solutions</a></li>
-            <li><a href="index.html#business">Global E-Commerce</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>Company</h5>
-          <ul>
-            <li><a href="index.html#company">会社情報</a></li>
-            <li><a href="representative.html">代表紹介</a></li>
-            <li><a href="index.html#philosophy">理念</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>Legal</h5>
-          <ul>
-            <li><a href="tokusho.html">特定商取引法</a></li>
-            <li><a href="privacy.html">プライバシーポリシー</a></li>
-            <li><a href="terms.html">利用規約</a></li>
-            <li><a href="refund.html">解約・返金ポリシー</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>&copy; 2024 KABUTO Inc. All rights reserved.</span>
-        <a href="mailto:kabuto.co.ltd@gmail.com">kabuto.co.ltd@gmail.com</a>
       </div>
     </div>
-  </footer>
+  </section>
 
-  <script>
-    const header = document.getElementById('site-header');
-    window.addEventListener('scroll', () => {
-      header.classList.toggle('is-scrolled', window.scrollY > 10);
-    }, { passive: true });
-  </script>
+  <!-- =================== PROFILE =================== -->
+  <section class="section profile">
+    <div class="container">
+      <aside class="side">
+        <span class="num">— 03</span>
+        <span class="lab">Profile</span>
+        <span class="lab-jp">プロフィール</span>
+      </aside>
+      <div class="profile-card">
+        <div class="name-block">
+          <div>
+            <div class="name-jp">中山 章裕</div>
+            <div class="name-en">Akihiro Nakayama</div>
+          </div>
+          <div style="font-family:var(--serif-en);font-style:italic;font-size:13px;color:var(--accent-deep);letter-spacing:0.18em;text-transform:uppercase;">Founder & CEO</div>
+        </div>
+        <dl>
+          <dt>役職<em>Position</em></dt>
+          <dd>KABUTO株式会社 代表取締役</dd>
 
+          <dt>所在地<em>Based in</em></dt>
+          <dd>長崎県長崎市</dd>
+
+          <dt>専門領域<em>Expertise</em></dt>
+          <dd>
+            対人支援アドバイザリー（現役・50名以上担当）<br/>
+            B2B SaaS事業開発<br/>
+            AIプロダクト設計<br/>
+            越境EC事業
+          </dd>
+
+          <dt>関心領域<em>Focus</em></dt>
+          <dd>ケアを職業にする人々を支える仕組みづくり。判断を残し、時間を取り戻すテクノロジー。</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== CTA =================== -->
+  <section class="section ceo-cta">
+    <div class="container">
+      <h2>
+        <em>— Get in touch</em>
+        ご相談・取材のお問い合わせ。
+      </h2>
+      <div class="right">
+        <p>事業に関するご相談、メディアからの取材依頼、対人支援業界の方々との対話のご希望など、お気軽にご連絡ください。</p>
+        <a href="mailto:kabuto.co.ltd@gmail.com" class="btn">kabuto.co.ltd@gmail.com <span class="arr">→</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script src="partials.js"></script>
+<script>KABUTO.mountChrome('ceo');</script>
 </body>
 </html>
