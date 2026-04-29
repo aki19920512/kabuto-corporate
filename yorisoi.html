@@ -3,424 +3,528 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>YORISOI | 結婚相談所・カウンセラー向けAI業務支援SaaS</title>
-  <meta name="description" content="YORASOIは、結婚相談所とカウンセラーのための AI業務支援SaaSです。面談記録の要約から提案文の自動生成まで、日常業務を効率化します。">
+  <title>YORISOI — 結婚相談所カウンセラー向けAI業務支援SaaS | KABUTO株式会社</title>
+  <meta name="description" content="YORASOIは、結婚相談所・カウンセラー向けのAI業務支援SaaSです。AIが下書きを作成し、人間が確認・承認。応援する側の時間を、本来の仕事に取り戻します。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Oswald:wght@400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@400;500&family=Noto+Sans+JP:wght@300;400;500&family=Shippori+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --orange: #E67E22;
-      --orange-dark: #D35400;
-      --black: #1a1a1a;
-      --white: #FFFFFF;
-      --gray-bg: #F5F5F3;
-      --gray-light: #E8E8E6;
-      --gray-text: #888;
+      --bg:           #fbf8f1;
+      --bg-alt:       #f5f0e4;
+      --paper:        #ffffff;
+      --ink:          #1a2236;
+      --ink-2:        #2c3651;
+      --ink-mute:     #6a7388;
+      --rule:         #d9d2c1;
+      --rule-soft:    #ebe5d4;
+      --accent:       #c9a961;
+      --accent-deep:  #a88b48;
+      --accent-soft:  #e8dcb8;
+      --serif-jp: "Shippori Mincho", "Hiragino Mincho ProN", "YuMincho", "Yu Mincho", "Noto Serif JP", serif;
+      --sans-jp:  "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+      --serif-en: "Cormorant Garamond", "EB Garamond", Georgia, serif;
+      --sans-en:  "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+      --max: 1200px;
+      --gutter: clamp(20px, 4vw, 56px);
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Noto Sans JP', sans-serif; color: var(--black); background: var(--gray-bg); line-height: 1.7; -webkit-font-smoothing: antialiased; }
-    a { text-decoration: none; color: inherit; }
 
-    /* ─── HEADER ─── */
-    header {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 18px 48px;
-      background: rgba(255,255,255,0.96);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--gray-light);
-      position: sticky; top: 0; z-index: 100;
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0; padding: 0;
+      background: var(--bg); color: var(--ink);
+      font-family: var(--sans-jp); font-size: 16px; line-height: 1.8;
+      -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+      font-feature-settings: "palt" 1;
     }
-    .logo-link { display: flex; align-items: center; gap: 12px; }
-    .logo-icon { width: 42px; height: 42px; background: var(--orange); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
-    .logo-icon svg { width: 22px; height: 22px; fill: white; }
-    .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
-    .logo-text .main { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 21px; letter-spacing: 2px; }
-    .logo-text .sub { font-size: 9px; color: var(--orange); font-weight: 700; letter-spacing: 1px; }
-    nav.header-nav a { color: var(--black); font-size: 13px; font-weight: 500; margin-left: 28px; letter-spacing: 0.5px; transition: color 0.2s; }
-    nav.header-nav a:hover { color: var(--orange); }
-    .nav-cta { display: inline-block; margin-left: 28px; background: var(--orange); color: white; padding: 8px 18px; border-radius: 6px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; transition: background 0.2s; }
-    .nav-cta:hover { background: var(--orange-dark); }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    h1, h2, h3, h4 { margin: 0; font-weight: 500; line-height: 1.3; }
+    p { margin: 0; }
+
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+    .section { padding: clamp(80px, 11vw, 160px) 0; }
+    .section-band { background: var(--bg-alt); }
+    .section-paper { background: var(--paper); }
+
+    .h-display { font-family: var(--serif-jp); font-weight: 500; font-size: clamp(34px, 5.4vw, 68px); line-height: 1.45; letter-spacing: 0.02em; }
+    .h-section { font-family: var(--serif-jp); font-weight: 500; font-size: clamp(26px, 3.4vw, 40px); line-height: 1.5; letter-spacing: 0.04em; }
+    .body-jp { font-family: var(--sans-jp); font-size: 15px; line-height: 2; color: var(--ink-2); }
+    .body-en { font-family: var(--serif-en); font-style: italic; font-size: 16px; line-height: 1.7; color: var(--ink-mute); }
+    .eyebrow {
+      font-family: var(--serif-en); font-style: italic; font-size: 13px;
+      letter-spacing: 0.18em; color: var(--accent-deep); text-transform: uppercase;
+      display: inline-flex; align-items: center; gap: 12px;
+    }
+    .eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--accent); display: inline-block; }
+
+    .section-head {
+      display: grid; grid-template-columns: 200px 1fr;
+      gap: 56px; margin-bottom: 72px; align-items: baseline;
+    }
+    .section-head .meta { display: flex; flex-direction: column; gap: 8px; }
+    .section-head .meta .num { font-family: var(--serif-en); font-style: italic; font-size: 14px; color: var(--accent-deep); letter-spacing: 0.05em; }
+    .section-head .meta .lab { font-family: var(--serif-en); font-size: 12px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--ink); }
+    .section-head .meta .lab-jp { font-family: var(--serif-jp); font-size: 11px; letter-spacing: 0.3em; color: var(--ink-mute); }
+
+    /* Header */
+    .site-header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(251,248,241,0.88); backdrop-filter: saturate(140%) blur(12px);
+      -webkit-backdrop-filter: saturate(140%) blur(12px);
+      border-bottom: 1px solid transparent; transition: border-color .3s ease;
+    }
+    .site-header.is-scrolled { border-bottom-color: var(--rule-soft); }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 76px; }
+    .brand { display: flex; align-items: baseline; gap: 10px; }
+    .brand-mark { font-family: var(--serif-en); font-weight: 500; font-size: 22px; letter-spacing: 0.42em; color: var(--ink); }
+    .brand-jp { font-family: var(--serif-jp); font-size: 11px; letter-spacing: 0.3em; color: var(--ink-mute); }
+    .nav-links { display: flex; align-items: center; gap: 36px; }
+    .nav-links a { font-family: var(--serif-en); font-size: 13px; letter-spacing: 0.22em; color: var(--ink-2); text-transform: uppercase; padding: 6px 0; transition: color .25s; }
+    .nav-links a small { display: block; font-family: var(--sans-jp); font-size: 10px; letter-spacing: 0.2em; color: var(--ink-mute); margin-top: 2px; text-transform: none; }
+    .nav-links a:hover { color: var(--accent-deep); }
+    .nav-links a.is-active { color: var(--accent-deep); }
+    .nav-cta { font-family: var(--serif-en); font-size: 12px; letter-spacing: 0.22em; border: 1px solid var(--ink); padding: 11px 22px; color: var(--ink); text-transform: uppercase; transition: all .25s; }
+    .nav-cta:hover { background: var(--ink); color: var(--bg); }
+
+    /* Buttons */
+    .btn { display: inline-flex; align-items: center; gap: 14px; padding: 16px 28px; font-family: var(--serif-en); font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; border: 1px solid var(--ink); color: var(--ink); background: transparent; transition: all .3s ease; white-space: nowrap; }
+    .btn .arr { transition: transform .3s ease; display: inline-block; }
+    .btn:hover { background: var(--ink); color: var(--bg); }
+    .btn:hover .arr { transform: translateX(4px); }
+    .btn-primary { background: var(--ink); color: var(--bg); }
+    .btn-primary:hover { background: var(--accent-deep); border-color: var(--accent-deep); }
+    .btn-gold { background: var(--accent); border-color: var(--accent); color: var(--ink); }
+    .btn-gold:hover { background: var(--accent-deep); border-color: var(--accent-deep); color: var(--bg); }
 
     /* ─── HERO ─── */
-    .hero {
-      background: var(--black); padding: 100px 48px 120px;
-      position: relative; overflow: hidden;
+    .page-hero {
+      padding: clamp(80px, 12vw, 160px) 0 clamp(64px, 9vw, 120px);
+      border-bottom: 1px solid var(--rule-soft);
     }
-    .hero::before {
-      content: 'YORISOI';
-      position: absolute; right: -30px; top: 50%; transform: translateY(-50%);
-      font-family: 'Bebas Neue', sans-serif; font-size: 220px;
-      color: rgba(255,255,255,0.03); line-height: 1; pointer-events: none; white-space: nowrap;
-    }
-    .hero-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(230,126,34,0.15); border: 1px solid rgba(230,126,34,0.3);
-      padding: 6px 14px; border-radius: 20px; margin-bottom: 28px;
-    }
-    .hero-badge span { font-size: 11px; color: var(--orange); font-weight: 700; letter-spacing: 2px; }
-    .hero-badge::before { content: ''; width: 6px; height: 6px; background: var(--orange); border-radius: 50%; }
-    .hero-title {
-      font-family: 'Oswald', sans-serif; font-weight: 700;
-      font-size: clamp(40px, 6vw, 68px);
-      line-height: 1.1; color: white; margin-bottom: 24px;
-    }
-    .hero-title em { color: var(--orange); font-style: normal; }
-    .hero-sub { font-size: 16px; color: #aaa; line-height: 1.8; max-width: 560px; margin-bottom: 48px; }
-    .hero-actions { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
-    .btn-primary {
-      display: inline-flex; align-items: center; gap: 10px;
-      background: var(--orange); color: white;
-      padding: 16px 32px; border-radius: 8px;
-      font-weight: 700; font-size: 14px; letter-spacing: 0.5px;
-      transition: background 0.2s, transform 0.2s;
-    }
-    .btn-primary:hover { background: var(--orange-dark); transform: translateY(-2px); }
-    .btn-primary svg { width: 16px; height: 16px; fill: white; }
-    .btn-ghost {
-      display: inline-flex; align-items: center; gap: 8px;
-      color: #888; font-size: 13px; font-weight: 500;
-      transition: color 0.2s;
-    }
-    .btn-ghost:hover { color: white; }
+    .page-hero-grid { display: grid; grid-template-columns: 200px 1fr; gap: 56px; align-items: end; }
+    .page-hero .meta { display: flex; flex-direction: column; gap: 14px; }
+    .page-hero .meta .label-en { font-family: var(--serif-en); font-style: italic; font-size: 13px; letter-spacing: 0.18em; color: var(--accent-deep); }
+    .page-hero .meta .stamp { width: 56px; height: 1px; background: var(--accent); }
+    .product-hero-name { display: flex; align-items: baseline; gap: 16px; margin-bottom: 24px; }
+    .product-hero-name .en { font-family: var(--serif-en); font-weight: 500; font-size: clamp(48px, 7vw, 88px); letter-spacing: 0.06em; color: var(--ink); line-height: 1; }
+    .product-hero-name .jp { font-family: var(--serif-jp); font-size: 18px; color: var(--ink-mute); letter-spacing: 0.12em; }
+    .page-hero .tagline { font-family: var(--serif-jp); font-size: clamp(18px, 2vw, 24px); line-height: 1.9; color: var(--ink); margin-bottom: 20px; }
+    .page-hero .sub-en { font-family: var(--serif-en); font-style: italic; font-size: clamp(14px, 1.2vw, 17px); line-height: 1.75; color: var(--ink-mute); max-width: 580px; margin-bottom: 36px; }
 
-    /* ─── SECTION COMMON ─── */
-    .section-eyebrow { font-family: 'Oswald', sans-serif; font-size: 11px; letter-spacing: 4px; color: var(--orange); font-weight: 600; margin-bottom: 12px; }
-    .section-title { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: clamp(26px, 3.5vw, 40px); line-height: 1.15; margin-bottom: 16px; }
-    .section-sub { font-size: 14px; color: var(--gray-text); line-height: 1.8; }
+    /* ─── PROBLEM ─── */
+    .problem-quote {
+      border-left: 3px solid var(--accent); padding: 0 0 0 28px;
+      margin-bottom: 48px;
+    }
+    .problem-quote p {
+      font-family: var(--serif-jp); font-size: clamp(16px, 1.6vw, 20px);
+      line-height: 1.9; color: var(--ink); font-weight: 500;
+    }
+    .problem-quote cite {
+      display: block; margin-top: 12px;
+      font-family: var(--serif-en); font-style: italic;
+      font-size: 13px; color: var(--ink-mute); letter-spacing: 0.06em;
+    }
+    .problem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--rule-soft); border: 1px solid var(--rule-soft); margin-top: 56px; }
+    .problem-card { background: var(--paper); padding: 40px 32px; }
+    .problem-card .num { font-family: var(--serif-en); font-style: italic; font-size: 13px; color: var(--accent-deep); letter-spacing: 0.06em; margin-bottom: 20px; }
+    .problem-card h3 { font-family: var(--serif-jp); font-size: 17px; font-weight: 500; color: var(--ink); margin-bottom: 14px; letter-spacing: 0.04em; }
+    .problem-card p { font-family: var(--sans-jp); font-size: 13.5px; line-height: 1.95; color: var(--ink-mute); }
+    .problem-card .voice { margin-top: 16px; padding: 14px 16px; background: var(--bg-alt); border-left: 2px solid var(--rule); font-family: var(--serif-jp); font-size: 13px; color: var(--ink-2); line-height: 1.8; }
 
-    /* ─── PAIN POINTS ─── */
-    .pain { padding: 100px 48px; background: var(--white); }
-    .pain-inner { max-width: 1200px; margin: 0 auto; }
-    .pain-head { max-width: 640px; margin-bottom: 56px; }
-    .pain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .pain-card {
-      padding: 36px 28px; background: var(--gray-bg);
-      border-radius: 16px; border: 1px solid var(--gray-light);
-      border-top: 3px solid #ddd; position: relative;
+    /* ─── HOW IT WORKS ─── */
+    .how-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .how-steps { display: grid; gap: 0; }
+    .how-step { display: grid; grid-template-columns: 56px 1fr; gap: 24px; padding: 28px 0; border-bottom: 1px solid var(--rule-soft); align-items: start; }
+    .how-step:first-child { padding-top: 0; }
+    .how-step:last-child { border-bottom: none; }
+    .how-step .step-num { font-family: var(--serif-en); font-style: italic; font-size: 28px; color: var(--accent); line-height: 1; padding-top: 4px; }
+    .how-step h3 { font-family: var(--serif-jp); font-size: 16px; font-weight: 500; color: var(--ink); margin-bottom: 8px; letter-spacing: 0.04em; }
+    .how-step p { font-family: var(--sans-jp); font-size: 13.5px; line-height: 1.9; color: var(--ink-mute); }
+    .how-visual {
+      background: linear-gradient(180deg, #f6efe1 0%, #ede5d0 100%);
+      border: 1px solid var(--rule-soft); border-radius: 4px; padding: 40px;
     }
-    .pain-card-num {
-      font-family: 'Bebas Neue', sans-serif; font-size: 48px;
-      color: var(--gray-light); line-height: 1; margin-bottom: 16px;
-    }
-    .pain-icon { font-size: 28px; margin-bottom: 14px; }
-    .pain-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 10px; color: var(--black); }
-    .pain-card p { font-size: 13px; color: #666; line-height: 1.8; }
-    .pain-card .pain-quote {
-      margin-top: 16px; padding: 12px 14px;
-      background: white; border-radius: 8px; border-left: 3px solid var(--gray-light);
-      font-size: 12px; color: #888; line-height: 1.7; font-style: italic;
-    }
+    .how-badge { font-family: var(--serif-en); font-style: italic; font-size: 12px; letter-spacing: 0.12em; color: var(--accent-deep); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+    .how-badge::before { content: ""; width: 20px; height: 1px; background: var(--accent); display: inline-block; }
+    .how-visual-item { background: var(--paper); border: 1px solid #e2d8c0; border-radius: 2px; padding: 16px 18px; margin-bottom: 12px; font-family: var(--sans-jp); font-size: 13px; color: var(--ink-2); line-height: 1.7; }
+    .how-visual-item:last-child { margin-bottom: 0; }
+    .how-visual-item .item-label { font-family: var(--serif-en); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-mute); margin-bottom: 6px; }
+    .how-visual-item.ai-item { background: #f6efe1; border-color: #dfd0aa; }
+    .how-visual-item.approved { border-left: 3px solid var(--accent); }
 
     /* ─── FEATURES ─── */
-    .features { padding: 100px 48px; background: var(--black); }
-    .features-inner { max-width: 1200px; margin: 0 auto; }
-    .features-head { margin-bottom: 64px; }
-    .features-head .section-title { color: white; }
-    .features-head .section-sub { color: #777; }
-    .features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-    .feature-card {
-      padding: 40px 36px; background: #222;
-      border-radius: 16px; border: 1px solid #2a2a2a;
-      transition: border-color 0.25s, transform 0.25s;
-    }
-    .feature-card:hover { border-color: var(--orange); transform: translateY(-3px); }
-    .feature-num { font-family: 'Bebas Neue', sans-serif; font-size: 48px; color: #333; line-height: 1; margin-bottom: 16px; }
-    .feature-icon {
-      width: 52px; height: 52px; border-radius: 12px;
-      background: rgba(230,126,34,0.15); border: 1px solid rgba(230,126,34,0.2);
-      display: flex; align-items: center; justify-content: center; margin-bottom: 20px;
-    }
-    .feature-icon svg { width: 26px; height: 26px; fill: var(--orange); }
-    .feature-card h3 { font-size: 18px; font-weight: 700; color: white; margin-bottom: 12px; }
-    .feature-card p { font-size: 13px; color: #888; line-height: 1.8; }
-    .feature-tag {
-      display: inline-block; margin-top: 16px;
-      padding: 4px 10px; background: rgba(230,126,34,0.1);
-      border-radius: 4px; font-size: 10px; font-weight: 700;
-      color: var(--orange); letter-spacing: 1px;
-    }
+    .features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--rule-soft); border: 1px solid var(--rule-soft); }
+    .feature-card { background: var(--bg); padding: 48px 40px; }
+    .feature-num { font-family: var(--serif-en); font-style: italic; font-size: 13px; color: var(--accent-deep); letter-spacing: 0.06em; margin-bottom: 20px; }
+    .feature-card h3 { font-family: var(--serif-en); font-weight: 500; font-size: 22px; letter-spacing: 0.04em; color: var(--ink); margin-bottom: 6px; }
+    .feature-card .jp { font-family: var(--serif-jp); font-size: 14px; color: var(--ink-2); margin-bottom: 18px; }
+    .feature-card p { font-family: var(--sans-jp); font-size: 13.5px; line-height: 1.95; color: var(--ink-mute); }
 
     /* ─── TARGET ─── */
-    .target { padding: 100px 48px; background: var(--gray-bg); }
-    .target-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-    .target-content .section-title { margin-bottom: 20px; }
-    .target-content p { font-size: 14px; color: #555; line-height: 1.9; margin-bottom: 16px; }
-    .target-list { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-top: 28px; }
-    .target-list li {
-      display: flex; align-items: center; gap: 12px;
-      padding: 14px 18px; background: white; border-radius: 10px;
-      font-size: 13px; font-weight: 500;
-    }
-    .target-list li::before {
-      content: ''; width: 8px; height: 8px;
-      background: var(--orange); border-radius: 50%; flex-shrink: 0;
-    }
-    .target-visual {
-      background: var(--black); border-radius: 20px;
-      padding: 40px 36px;
-    }
-    .tv-label { font-family: 'Oswald', sans-serif; font-size: 11px; letter-spacing: 3px; color: var(--orange); margin-bottom: 24px; }
-    .tv-stat { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid #2a2a2a; }
-    .tv-stat:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
-    .tv-stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 48px; color: var(--orange); line-height: 1; }
-    .tv-stat-text { font-size: 12px; color: #666; margin-top: 4px; }
+    .target-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    .target-list { list-style: none; padding: 0; margin: 28px 0 0; display: grid; gap: 0; }
+    .target-list li { padding: 18px 0; border-bottom: 1px solid var(--rule-soft); font-family: var(--serif-jp); font-size: 15px; color: var(--ink-2); display: flex; align-items: center; gap: 16px; }
+    .target-list li::before { content: "—"; color: var(--accent); font-family: var(--serif-en); }
+    .target-aside { padding: 40px; background: var(--ink); color: var(--bg); border-radius: 2px; }
+    .target-aside .ta-label { font-family: var(--serif-en); font-style: italic; font-size: 12px; letter-spacing: 0.14em; color: var(--accent); margin-bottom: 28px; display: flex; align-items: center; gap: 10px; }
+    .target-aside .ta-label::before { content: ""; width: 20px; height: 1px; background: var(--accent); }
+    .target-aside .belief { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .target-aside .belief:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+    .target-aside .belief h4 { font-family: var(--serif-jp); font-size: 15px; font-weight: 500; color: var(--bg); margin-bottom: 6px; }
+    .target-aside .belief p { font-family: var(--serif-en); font-style: italic; font-size: 13px; color: rgba(251,248,241,0.55); letter-spacing: 0.04em; }
 
     /* ─── CTA ─── */
-    .cta-section { padding: 100px 48px; background: var(--white); text-align: center; }
-    .cta-inner { max-width: 680px; margin: 0 auto; }
-    .cta-badge { display: inline-block; margin-bottom: 24px; padding: 6px 16px; background: rgba(230,126,34,0.1); border-radius: 20px; font-size: 11px; font-weight: 700; color: var(--orange); letter-spacing: 2px; }
-    .cta-section h2 { font-family: 'Oswald', sans-serif; font-size: clamp(28px, 4vw, 44px); font-weight: 700; margin-bottom: 20px; line-height: 1.2; }
-    .cta-section p { font-size: 14px; color: #777; line-height: 1.8; margin-bottom: 40px; }
-    .cta-main-btn {
-      display: inline-flex; align-items: center; gap: 12px;
-      background: var(--orange); color: white;
-      padding: 20px 48px; border-radius: 10px;
-      font-weight: 700; font-size: 16px; letter-spacing: 0.5px;
-      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 8px 24px rgba(230,126,34,0.3);
+    .cta-section { background: var(--ink); color: var(--bg); }
+    .cta-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: end; }
+    .cta-section h2 { font-family: var(--serif-jp); font-weight: 400; color: var(--bg); font-size: clamp(30px, 3.8vw, 50px); line-height: 1.5; letter-spacing: 0.04em; }
+    .cta-section h2 em { font-family: var(--serif-en); font-style: italic; color: var(--accent); font-size: 0.55em; display: block; margin-bottom: 18px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500; }
+    .cta-right p { font-family: var(--sans-jp); font-size: 14px; line-height: 2; color: rgba(251,248,241,0.65); margin: 0 0 28px; }
+    .cta-right .btn { border-color: var(--bg); color: var(--bg); }
+    .cta-right .btn:hover { background: var(--accent); border-color: var(--accent); color: var(--ink); }
+    .cta-right .btn-gold-outline { border-color: var(--accent); color: var(--accent); margin-left: 16px; }
+    .cta-right .btn-gold-outline:hover { background: var(--accent); color: var(--ink); }
+
+    /* Footer */
+    .site-footer { border-top: 1px solid var(--rule-soft); background: var(--bg); padding: 72px 0 40px; font-family: var(--sans-jp); font-size: 13px; color: var(--ink-mute); }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 48px; align-items: start; }
+    .footer-brand .brand-mark { font-size: 24px; }
+    .footer-brand p { margin: 18px 0 0; line-height: 1.9; max-width: 340px; }
+    .footer-col h5 { font-family: var(--serif-en); font-weight: 500; font-size: 11px; letter-spacing: 0.28em; color: var(--ink); text-transform: uppercase; margin: 0 0 18px; }
+    .footer-col ul { list-style: none; padding: 0; margin: 0; }
+    .footer-col li { margin-bottom: 10px; }
+    .footer-col a:hover { color: var(--accent-deep); }
+    .footer-bottom { margin-top: 64px; padding-top: 28px; border-top: 1px solid var(--rule-soft); display: flex; justify-content: space-between; align-items: center; font-family: var(--serif-en); font-size: 12px; letter-spacing: 0.18em; color: var(--ink-mute); }
+    .footer-bottom a:hover { color: var(--accent-deep); }
+
+    /* Responsive */
+    @media (max-width: 880px) {
+      .nav-links { display: none; }
+      .section-head { grid-template-columns: 1fr; gap: 24px; margin-bottom: 48px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
     }
-    .cta-main-btn:hover { background: var(--orange-dark); transform: translateY(-3px); box-shadow: 0 12px 32px rgba(230,126,34,0.4); }
-    .cta-main-btn svg { width: 18px; height: 18px; fill: white; }
-    .cta-note { margin-top: 16px; font-size: 12px; color: #bbb; }
-
-    /* ─── FOOTER ─── */
-    footer { background: #111; color: #999; padding: 56px 48px 32px; }
-    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 40px; }
-    .footer-brand { display: flex; align-items: center; gap: 12px; }
-    .footer-brand .icon { width: 36px; height: 36px; background: var(--orange); border-radius: 6px; display: flex; align-items: center; justify-content: center; }
-    .footer-brand .icon svg { width: 20px; height: 20px; fill: white; }
-    .footer-brand .name { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 2px; color: white; }
-    .footer-brand .name-sub { font-size: 9px; color: #555; letter-spacing: 1px; }
-    .footer-links { display: flex; flex-direction: column; gap: 10px; }
-    .footer-links a { color: #777; font-size: 12px; transition: color 0.2s; }
-    .footer-links a:hover { color: var(--orange); }
-    .footer-copy { max-width: 1200px; margin: 32px auto 0; text-align: center; font-size: 11px; color: #444; padding-top: 24px; border-top: 1px solid #222; }
-
-    /* ─── MOBILE ─── */
-    @media (max-width: 768px) {
-      header { padding: 14px 20px; }
-      nav.header-nav { display: none; }
-      .hero { padding: 64px 20px 80px; }
-      .hero::before { font-size: 80px; }
-      .pain { padding: 64px 20px; }
-      .pain-grid { grid-template-columns: 1fr; }
-      .features { padding: 64px 20px; }
+    @media (max-width: 640px) {
+      .page-hero-grid { grid-template-columns: 1fr; gap: 24px; }
+      .problem-grid { grid-template-columns: 1fr; }
+      .how-grid { grid-template-columns: 1fr; }
+      .how-visual { display: none; }
       .features-grid { grid-template-columns: 1fr; }
-      .target { padding: 64px 20px; }
-      .target-inner { grid-template-columns: 1fr; gap: 40px; }
-      .cta-section { padding: 64px 20px; }
-      footer { padding: 40px 20px 24px; }
-      .footer-inner { flex-direction: column; gap: 28px; }
+      .target-grid { grid-template-columns: 1fr; gap: 40px; }
+      .cta-inner { grid-template-columns: 1fr; gap: 36px; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 14px; align-items: flex-start; }
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <a href="index.html" class="logo-link">
-      <div class="logo-icon">
-        <svg viewBox="0 0 24 24"><polygon points="12,2 22,20 2,20"/></svg>
-      </div>
-      <div class="logo-text">
-        <span class="main">KABUTO</span>
-        <span class="sub">株式会社KABUTO</span>
-      </div>
-    </a>
-    <nav class="header-nav">
-      <a href="index.html">Home</a>
-      <a href="representative.html">代表</a>
-      <a href="mailto:kabuto.co.ltd@gmail.com" class="nav-cta">Contact</a>
-    </nav>
+  <header class="site-header" id="site-header">
+    <div class="container">
+      <nav class="nav">
+        <a href="index.html" class="brand">
+          <span class="brand-mark">KABUTO</span>
+          <span class="brand-jp">株式会社</span>
+        </a>
+        <div class="nav-links">
+          <a href="index.html#business">Services<small>事業内容</small></a>
+          <a href="yorisoi.html" class="is-active">YORISOI</a>
+          <a href="index.html#company">About<small>会社情報</small></a>
+          <a href="representative.html">代表<small>Representative</small></a>
+        </div>
+        <a href="mailto:kabuto.co.ltd@gmail.com" class="nav-cta">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-badge"><span>AI SaaS FOR COUNSELORS</span></div>
-      <h1 class="hero-title">
-        カウンセラーの業務を、<br><em>AIがサポートする。</em>
-      </h1>
-      <p class="hero-sub">
-        結婚相談所・カウンセラー向けのAI業務支援SaaS「YORISOI」。<br>
-        面談記録の要約から提案文の自動生成まで、<br>
-        本来の相談業務に集中できる環境を提供します。
-      </p>
-      <div class="hero-actions">
-        <a href="https://yorisoi-jp.vercel.app" target="_blank" rel="noopener" class="btn-primary">
-          YORASOIを試してみる
-          <svg viewBox="0 0 24 24"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
-        </a>
-        <a href="mailto:kabuto.co.ltd@gmail.com" class="btn-ghost">
-          お問い合わせ →
-        </a>
-      </div>
-    </div>
-  </section>
+  <main>
 
-  <!-- PAIN POINTS -->
-  <section class="pain">
-    <div class="pain-inner">
-      <div class="pain-head">
-        <div class="section-eyebrow">THE PROBLEM</div>
-        <h2 class="section-title">相談所運営の<br>よくある課題</h2>
-        <p class="section-sub">カウンセラーの時間と労力を奪う、3つの業務負担。</p>
-      </div>
-      <div class="pain-grid">
-
-        <div class="pain-card">
-          <div class="pain-card-num">01</div>
-          <div class="pain-icon">📝</div>
-          <h3>面談記録に時間がかかる</h3>
-          <p>毎回の面談後、記録の作成・整理に30〜60分。本来の相談業務に集中できない。</p>
-          <div class="pain-quote">「記録を書いている時間の方が、面談より長いこともある…」</div>
-        </div>
-
-        <div class="pain-card">
-          <div class="pain-card-num">02</div>
-          <div class="pain-icon">✉️</div>
-          <h3>提案文の作成が煩雑</h3>
-          <p>会員ごとにカスタマイズした提案文を毎回ゼロから作成。クオリティにもばらつきが出る。</p>
-          <div class="pain-quote">「同じような内容でも、文章を考えるのに毎回時間がかかる…」</div>
-        </div>
-
-        <div class="pain-card">
-          <div class="pain-card-num">03</div>
-          <div class="pain-icon">📊</div>
-          <h3>データ管理が属人化する</h3>
-          <p>ExcelやメモでのデータMの管理が多く、引き継ぎや傾向分析が困難になりがち。</p>
-          <div class="pain-quote">「担当が変わると、過去の経緯がわからなくなってしまう…」</div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- FEATURES -->
-  <section class="features">
-    <div class="features-inner">
-      <div class="features-head">
-        <div class="section-eyebrow">YORISOI FEATURES</div>
-        <h2 class="section-title">YORASOIが解決する<br>4つの機能</h2>
-        <p class="section-sub">AIの力で、カウンセラーの業務を根本から効率化します。</p>
-      </div>
-      <div class="features-grid">
-
-        <div class="feature-card">
-          <div class="feature-num">01</div>
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24"><path d="M14 17H4v2h10v-2zm6-8H4v2h16V9zM4 15h16v-2H4v2zM4 5v2h16V5H4z"/></svg>
+    <!-- HERO -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="page-hero-grid">
+          <div class="meta">
+            <span class="label-en">AI SaaS for Care</span>
+            <div class="stamp"></div>
+            <span class="eyebrow" style="font-size:11px;margin-top:0;">AI × 対人支援</span>
           </div>
-          <h3>AI面談サマリー</h3>
-          <p>面談内容を入力するだけで、要点を自動要約。次回面談の準備も素早くできます。記録作成時間を大幅に削減します。</p>
-          <span class="feature-tag">TIME SAVING</span>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-num">02</div>
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          <div>
+            <div class="product-hero-name">
+              <span class="en">YORISOI</span>
+              <span class="jp">よりそい</span>
+            </div>
+            <p class="tagline">結婚相談所カウンセラー向け<br>AI業務支援SaaS。</p>
+            <p class="sub-en">AI drafts the reply. The counselor reviews, edits, and decides.<br>Give back the time — and the warmth.</p>
+            <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:36px;">
+              <a href="https://yorisoi-jp.vercel.app" target="_blank" rel="noopener" class="btn btn-primary">サービスサイトへ <span class="arr">→</span></a>
+              <a href="mailto:kabuto.co.ltd@gmail.com" class="btn" style="border-color:var(--rule);">お問い合わせ</a>
+            </div>
           </div>
-          <h3>提案文の自動生成</h3>
-          <p>会員プロフィールと希望条件をもとに、AIが最適な提案文を自動生成。個別最適化された文章を素早く作成できます。</p>
-          <span class="feature-tag">AI GENERATION</span>
         </div>
+      </div>
+    </section>
 
-        <div class="feature-card">
-          <div class="feature-num">03</div>
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+    <!-- PROBLEM -->
+    <section class="section section-band">
+      <div class="container">
+        <div class="section-head">
+          <div class="meta">
+            <span class="num">— 01</span>
+            <span class="lab">Problem</span>
+            <span class="lab-jp">現場の課題</span>
           </div>
-          <h3>会員管理の一元化</h3>
-          <p>会員情報・活動履歴・面談記録をクラウドで集約管理。チームでの共有も簡単で、引き継ぎもスムーズです。</p>
-          <span class="feature-tag">CLOUD MANAGEMENT</span>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-num">04</div>
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg>
+          <div class="heading">
+            <h2 class="h-section">深夜まで返信に追われ、機械的になっていく自分に気付く──</h2>
           </div>
-          <h3>活動データの分析</h3>
-          <p>活動データをもとに傾向を可視化。より効果的なカウンセリングへの改善点を数字で把握できます。</p>
-          <span class="feature-tag">DATA ANALYTICS</span>
         </div>
+        <div class="problem-quote">
+          <p>そんな夜を、私たちはなくしたい。<br>AIは判断を肩代わりする道具ではなく、<br>人が人と向き合うための時間を生む装置であるべきだ。</p>
+          <cite>— KABUTO, Inc. Philosophy</cite>
+        </div>
+        <div class="problem-grid">
+          <div class="problem-card">
+            <div class="num">— 01</div>
+            <h3>返信業務に追われる日々</h3>
+            <p>深夜・早朝の問い合わせに対応しながら、翌日の面談も準備する。24時間稼働が求められる現実が、カウンセラーを消耗させています。</p>
+            <div class="voice">「深夜にメッセージが来ると、返さないわけにもいかなくて…」</div>
+          </div>
+          <div class="problem-card">
+            <div class="num">— 02</div>
+            <h3>返信の質にばらつきが出る</h3>
+            <p>疲弊すると、丁寧な言葉を選ぶ余裕がなくなる。会員への対応が事務的になり、信頼関係の構築に支障をきたすことも。</p>
+            <div class="voice">「ちゃんと向き合いたいのに、時間も気力も足りない…」</div>
+          </div>
+          <div class="problem-card">
+            <div class="num">— 03</div>
+            <h3>記録・管理の工数が重い</h3>
+            <p>面談記録、会員管理、提案文の作成。ケア以外の業務が積み重なり、本来の相談業務に集中できない環境が続いています。</p>
+            <div class="voice">「書類仕事の時間を、もっと会員と向き合う時間に使いたい。」</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- HOW IT WORKS -->
+    <section class="section section-paper">
+      <div class="container">
+        <div class="section-head">
+          <div class="meta">
+            <span class="num">— 02</span>
+            <span class="lab">How It Works</span>
+            <span class="lab-jp">仕組み</span>
+          </div>
+          <div class="heading">
+            <h2 class="h-section">人間が、最終決定する。</h2>
+            <p class="body-jp" style="margin-top:18px;">YORASOIはAIが提案し、必ずカウンセラーが確認・承認します。<br>AIは助言者であり、決定者は常に人間です。</p>
+          </div>
+        </div>
+        <div class="how-grid">
+          <div class="how-steps">
+            <div class="how-step">
+              <div class="step-num">i.</div>
+              <div>
+                <h3>会員からメッセージが届く</h3>
+                <p>深夜・早朝を問わず、会員からのメッセージをシステムが受け取ります。</p>
+              </div>
+            </div>
+            <div class="how-step">
+              <div class="step-num">ii.</div>
+              <div>
+                <h3>AIが文脈を読み、下書きを生成</h3>
+                <p>会話履歴と会員プロフィールをもとに、文脈に沿った返信案をAIが自動生成します。</p>
+              </div>
+            </div>
+            <div class="how-step">
+              <div class="step-num">iii.</div>
+              <div>
+                <h3>カウンセラーが確認・編集・承認</h3>
+                <p>送信前に必ずカウンセラーが確認。修正・加筆のうえ、承認した内容のみが会員に届きます。</p>
+              </div>
+            </div>
+            <div class="how-step">
+              <div class="step-num">iv.</div>
+              <div>
+                <h3>会員に温かみのある返信が届く</h3>
+                <p>AIの効率と、人間の判断・温度感が組み合わさった返信が、会員のもとへ届きます。</p>
+              </div>
+            </div>
+          </div>
+          <div class="how-visual">
+            <div class="how-badge">YORISOI — workflow</div>
+            <div class="how-visual-item">
+              <div class="item-label">会員メッセージ</div>
+              先日のお話、少し不安になってしまって…明日のお見合い、行くべきか迷っています。
+            </div>
+            <div class="how-visual-item ai-item">
+              <div class="item-label">AI下書き（確認待ち）</div>
+              山本さん、夜分にメッセージありがとうございます。不安に感じられるお気持ち、自然なことだと思います。明日の件、まずは深呼吸して、ご自身のペースを大切に──
+            </div>
+            <div class="how-visual-item approved">
+              <div class="item-label">カウンセラー承認済み</div>
+              カウンセラーが確認・編集し、送信しました。
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section section-band">
+      <div class="container">
+        <div class="section-head">
+          <div class="meta">
+            <span class="num">— 03</span>
+            <span class="lab">Features</span>
+            <span class="lab-jp">主な機能</span>
+          </div>
+          <div class="heading">
+            <h2 class="h-section">業務を、本来の形に戻す。</h2>
+          </div>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-num">— 01</div>
+            <h3>AI Reply Draft</h3>
+            <div class="jp">返信下書きの自動生成</div>
+            <p>会話履歴と会員プロフィールを読み込み、文脈に沿った返信案をAIが自動生成。カウンセラーはゼロから文章を書く必要がなくなります。</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-num">— 02</div>
+            <h3>Human Approval Flow</h3>
+            <div class="jp">確認・編集・承認プロセス</div>
+            <p>AIの下書きはカウンセラーが必ず確認。加筆・修正のうえ承認した内容のみが送信されます。最終判断は、常に人間が行います。</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-num">— 03</div>
+            <h3>Member Management</h3>
+            <div class="jp">会員情報の一元管理</div>
+            <p>会員プロフィール、活動履歴、面談記録をクラウドで一元管理。チームでの共有も容易で、引き継ぎもスムーズです。</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-num">— 04</div>
+            <h3>24h Async Support</h3>
+            <div class="jp">非同期の24時間対応</div>
+            <p>深夜の問い合わせも、翌朝カウンセラーが確認・承認するだけで対応完了。急かされることなく、質の高い返信を届けられます。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TARGET -->
+    <section class="section section-paper">
+      <div class="container">
+        <div class="section-head">
+          <div class="meta">
+            <span class="num">— 04</span>
+            <span class="lab">For Whom</span>
+            <span class="lab-jp">こんな方に</span>
+          </div>
+          <div class="heading">
+            <h2 class="h-section">応援する側に、余白を。</h2>
+            <p class="body-jp" style="margin-top:18px;">YORASOIは、ケアすることを職業にするすべての人のために設計されています。</p>
+          </div>
+        </div>
+        <div class="target-grid">
+          <div>
+            <ul class="target-list">
+              <li>結婚相談所の経営者・運営スタッフ</li>
+              <li>フリーランスの仲人士・カウンセラー</li>
+              <li>複数名でデータを共有したい相談所</li>
+              <li>デジタル化・業務効率化を検討中の相談所</li>
+              <li>会員へのケアの質を高めたいカウンセラー</li>
+            </ul>
+            <div style="margin-top:40px;">
+              <a href="https://yorisoi-jp.vercel.app" target="_blank" rel="noopener" class="btn btn-primary">サービスサイトへ <span class="arr">→</span></a>
+            </div>
+          </div>
+          <div class="target-aside">
+            <div class="ta-label">Three Beliefs</div>
+            <div class="belief">
+              <h4>応援する側に、余白を。</h4>
+              <p>Make space for those who care.</p>
+            </div>
+            <div class="belief">
+              <h4>最終決定は、必ず人間に。</h4>
+              <p>Humans hold the final say.</p>
+            </div>
+            <div class="belief">
+              <h4>業界の現場から、世界へ。</h4>
+              <p>From the field, to the world.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta-section">
+      <div class="container">
+        <div class="cta-inner">
+          <div>
+            <h2>
+              <em>— Try YORISOI</em>
+              まずは、<br>試してみてください。
+            </h2>
+          </div>
+          <div class="cta-right">
+            <p>サービスサイトから詳細をご確認いただけます。ご質問やデモのご要望は、メールにてお気軽にご連絡ください。</p>
+            <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+              <a href="https://yorisoi-jp.vercel.app" target="_blank" rel="noopener" class="btn">サービスサイトへ <span class="arr">→</span></a>
+            </div>
+            <p style="margin-top:20px;font-size:13px;">お問い合わせ: <a href="mailto:kabuto.co.ltd@gmail.com" style="color:var(--accent);">kabuto.co.ltd@gmail.com</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <span class="brand-mark">KABUTO</span>
+          <p>対人支援の現場に、テクノロジーで余白を。長崎発のテクノロジーカンパニー。</p>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="yorisoi.html">YORISOI</a></li>
+            <li><a href="index.html#business">AI Solutions</a></li>
+            <li><a href="index.html#business">Global E-Commerce</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="index.html#company">会社情報</a></li>
+            <li><a href="representative.html">代表紹介</a></li>
+            <li><a href="index.html#philosophy">理念</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Legal</h5>
+          <ul>
+            <li><a href="tokusho.html">特定商取引法</a></li>
+            <li><a href="privacy.html">プライバシーポリシー</a></li>
+            <li><a href="terms.html">利用規約</a></li>
+            <li><a href="refund.html">解約・返金ポリシー</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2024 KABUTO Inc. All rights reserved.</span>
+        <a href="mailto:kabuto.co.ltd@gmail.com">kabuto.co.ltd@gmail.com</a>
       </div>
     </div>
-  </section>
-
-  <!-- TARGET -->
-  <section class="target">
-    <div class="target-inner">
-      <div class="target-content">
-        <div class="section-eyebrow">WHO IS IT FOR</div>
-        <h2 class="section-title">こんな方に<br>おすすめです</h2>
-        <p>YORASOIは、現場のカウンセラーが本来の仕事——人と向き合うこと——に集中できるよう設計されています。</p>
-        <ul class="target-list">
-          <li>結婚相談所の経営者・運営スタッフ</li>
-          <li>フリーランスの仲人士・カウンセラー</li>
-          <li>複数の担当者でデータを共有したい相談所</li>
-          <li>業務効率化・デジタル化を検討中の相談所</li>
-        </ul>
-      </div>
-      <div class="target-visual">
-        <div class="tv-label">YORISOI BENEFITS</div>
-        <div class="tv-stat">
-          <div class="tv-stat-num">60%</div>
-          <div class="tv-stat-text">記録・書類作成の時間削減（目安）</div>
-        </div>
-        <div class="tv-stat">
-          <div class="tv-stat-num">24/7</div>
-          <div class="tv-stat-text">クラウドでいつでもどこでもアクセス可能</div>
-        </div>
-        <div class="tv-stat">
-          <div class="tv-stat-num">AI</div>
-          <div class="tv-stat-text">最新の大規模言語モデルを活用</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="cta-section">
-    <div class="cta-inner">
-      <div class="cta-badge">START FOR FREE</div>
-      <h2>業務効率化を、<br>今日から始めよう。</h2>
-      <p>YORASOIは今すぐお試しいただけます。<br>詳細はサービスサイトよりご確認ください。</p>
-      <a href="https://yorisoi-jp.vercel.app" target="_blank" rel="noopener" class="cta-main-btn">
-        YORASOIを試してみる
-        <svg viewBox="0 0 24 24"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
-      </a>
-      <div class="cta-note">ご質問は <a href="mailto:kabuto.co.ltd@gmail.com" style="color:var(--orange)">kabuto.co.ltd@gmail.com</a> まで</div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <div class="icon"><svg viewBox="0 0 24 24"><polygon points="12,2 22,20 2,20"/></svg></div>
-        <div>
-          <div class="name">KABUTO</div>
-          <div class="name-sub">KABUTO INC.</div>
-        </div>
-      </div>
-      <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="representative.html">代表紹介</a>
-        <a href="tokusho.html">特定商取引法に基づく表記</a>
-        <a href="privacy.html">プライバシーポリシー</a>
-        <a href="terms.html">利用規約</a>
-        <a href="refund.html">解約・返金ポリシー</a>
-        <a href="mailto:kabuto.co.ltd@gmail.com">お問い合わせ</a>
-      </div>
-    </div>
-    <div class="footer-copy">&copy; 2024 KABUTO Inc. All rights reserved.</div>
   </footer>
+
+  <script>
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('is-scrolled', window.scrollY > 10);
+    }, { passive: true });
+  </script>
 
 </body>
 </html>

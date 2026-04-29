@@ -3,402 +3,646 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>代表紹介 | 中山 章裕 — 株式会社KABUTO</title>
-  <meta name="description" content="株式会社KABUTO代表取締役 中山章裕のプロフィール。原体験・ビジョン・事業への想いをご紹介します。">
+  <title>代表紹介 — 中山 章裕 | KABUTO株式会社</title>
+  <meta name="description" content="KABUTO株式会社代表取締役・中山章裕のプロフィール。長崎から、テクノロジーと人の繋がりを信じて。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Oswald:wght@400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@400;500&family=Noto+Sans+JP:wght@300;400;500&family=Shippori+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --orange: #E67E22;
-      --orange-dark: #D35400;
-      --black: #1a1a1a;
-      --white: #FFFFFF;
-      --gray-bg: #F5F5F3;
-      --gray-light: #E8E8E6;
-      --gray-text: #888;
+      --bg:           #fbf8f1;
+      --bg-alt:       #f5f0e4;
+      --paper:        #ffffff;
+      --ink:          #1a2236;
+      --ink-2:        #2c3651;
+      --ink-mute:     #6a7388;
+      --rule:         #d9d2c1;
+      --rule-soft:    #ebe5d4;
+      --accent:       #c9a961;
+      --accent-deep:  #a88b48;
+      --accent-soft:  #e8dcb8;
+      --serif-jp: "Shippori Mincho", "Hiragino Mincho ProN", "YuMincho", "Yu Mincho", "Noto Serif JP", serif;
+      --sans-jp:  "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+      --serif-en: "Cormorant Garamond", "EB Garamond", Georgia, serif;
+      --sans-en:  "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+      --max: 1200px;
+      --gutter: clamp(20px, 4vw, 56px);
+      --s-1: 4px;  --s-2: 8px;   --s-3: 12px; --s-4: 16px; --s-5: 24px;
+      --s-6: 32px; --s-7: 48px;  --s-8: 64px; --s-9: 96px; --s-10: 128px; --s-11: 160px;
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Noto Sans JP', sans-serif; color: var(--black); background: var(--gray-bg); line-height: 1.7; -webkit-font-smoothing: antialiased; }
-    a { text-decoration: none; color: inherit; }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0; padding: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans-jp);
+      font-size: 16px;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      font-feature-settings: "palt" 1;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    h1, h2, h3, h4 { margin: 0; font-weight: 500; line-height: 1.3; }
+    p { margin: 0; }
+    ul, ol { list-style: none; padding: 0; margin: 0; }
+
+    /* ─── TYPE ─── */
+    .h-display {
+      font-family: var(--serif-jp);
+      font-weight: 500;
+      font-size: clamp(34px, 5.4vw, 68px);
+      line-height: 1.45;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+    }
+    .h-section {
+      font-family: var(--serif-jp);
+      font-weight: 500;
+      font-size: clamp(26px, 3.4vw, 40px);
+      line-height: 1.5;
+      letter-spacing: 0.04em;
+    }
+    .h-en {
+      font-family: var(--serif-en);
+      font-weight: 500;
+      font-style: italic;
+      font-size: clamp(22px, 2.4vw, 30px);
+      line-height: 1.3;
+      letter-spacing: 0.01em;
+      color: var(--ink-2);
+    }
+    .body-jp {
+      font-family: var(--sans-jp);
+      font-size: 15px;
+      line-height: 2;
+      color: var(--ink-2);
+    }
+    .lead {
+      font-family: var(--serif-jp);
+      font-size: clamp(17px, 1.5vw, 20px);
+      line-height: 2;
+      color: var(--ink-2);
+    }
+    .eyebrow {
+      font-family: var(--serif-en);
+      font-style: italic;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      font-size: 13px;
+      color: var(--accent-deep);
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: var(--accent);
+      display: inline-block;
+    }
+    .quote-mark {
+      font-family: var(--serif-en);
+      font-size: 80px;
+      line-height: 1;
+      color: var(--accent-soft);
+      display: block;
+      margin-bottom: -16px;
+    }
+
+    /* ─── LAYOUT ─── */
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding-left: var(--gutter);
+      padding-right: var(--gutter);
+    }
+    .section {
+      padding: clamp(80px, 11vw, 160px) 0;
+      position: relative;
+    }
+    .section-band { background: var(--bg-alt); }
+    .section-paper { background: var(--paper); }
+    .section-head {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 56px;
+      margin-bottom: 72px;
+      align-items: baseline;
+    }
+    .section-head .meta { display: flex; flex-direction: column; gap: 8px; }
+    .section-head .meta .num {
+      font-family: var(--serif-en); font-style: italic;
+      font-size: 14px; color: var(--accent-deep); letter-spacing: 0.05em;
+    }
+    .section-head .meta .lab {
+      font-family: var(--serif-en); font-size: 12px;
+      letter-spacing: 0.32em; text-transform: uppercase; color: var(--ink);
+    }
+    .section-head .meta .lab-jp {
+      font-family: var(--serif-jp); font-size: 11px;
+      letter-spacing: 0.3em; color: var(--ink-mute);
+    }
+    .section-head .heading h2 { margin-bottom: 18px; }
 
     /* ─── HEADER ─── */
-    header {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 18px 48px;
-      background: rgba(255,255,255,0.96);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--gray-light);
-      position: sticky; top: 0; z-index: 100;
+    .site-header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(251, 248, 241, 0.88);
+      backdrop-filter: saturate(140%) blur(12px);
+      -webkit-backdrop-filter: saturate(140%) blur(12px);
+      border-bottom: 1px solid transparent;
+      transition: border-color .3s ease;
     }
-    .logo-link { display: flex; align-items: center; gap: 12px; }
-    .logo-icon { width: 42px; height: 42px; background: var(--orange); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
-    .logo-icon svg { width: 22px; height: 22px; fill: white; }
-    .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
-    .logo-text .main { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 21px; letter-spacing: 2px; }
-    .logo-text .sub { font-size: 9px; color: var(--orange); font-weight: 700; letter-spacing: 1px; }
-    nav.header-nav a { color: var(--black); font-size: 13px; font-weight: 500; margin-left: 28px; letter-spacing: 0.5px; transition: color 0.2s; }
-    nav.header-nav a:hover { color: var(--orange); }
-    .nav-cta { display: inline-block; margin-left: 28px; background: var(--orange); color: white; padding: 8px 18px; border-radius: 6px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; transition: background 0.2s; }
-    .nav-cta:hover { background: var(--orange-dark); }
+    .site-header.is-scrolled { border-bottom-color: var(--rule-soft); }
+    .nav {
+      display: flex; align-items: center;
+      justify-content: space-between; height: 76px;
+    }
+    .brand { display: flex; align-items: baseline; gap: 10px; }
+    .brand-mark {
+      font-family: var(--serif-en); font-weight: 500;
+      font-size: 22px; letter-spacing: 0.42em; color: var(--ink);
+    }
+    .brand-jp {
+      font-family: var(--serif-jp); font-size: 11px;
+      letter-spacing: 0.3em; color: var(--ink-mute);
+    }
+    .nav-links { display: flex; align-items: center; gap: 36px; }
+    .nav-links a {
+      font-family: var(--serif-en); font-size: 13px;
+      letter-spacing: 0.22em; color: var(--ink-2); text-transform: uppercase;
+      position: relative; padding: 6px 0; transition: color .25s;
+    }
+    .nav-links a small {
+      display: block; font-family: var(--sans-jp); font-size: 10px;
+      letter-spacing: 0.2em; color: var(--ink-mute); margin-top: 2px; text-transform: none;
+    }
+    .nav-links a:hover { color: var(--accent-deep); }
+    .nav-cta {
+      font-family: var(--serif-en); font-size: 12px;
+      letter-spacing: 0.22em; border: 1px solid var(--ink);
+      padding: 11px 22px; color: var(--ink); text-transform: uppercase;
+      transition: all .25s;
+    }
+    .nav-cta:hover { background: var(--ink); color: var(--bg); }
 
-    /* ─── PAGE HERO ─── */
-    .page-hero {
-      background: var(--black); padding: 80px 48px 100px;
-      position: relative; overflow: hidden;
+    /* ─── BUTTONS ─── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 14px;
+      padding: 16px 28px; font-family: var(--serif-en);
+      font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase;
+      border: 1px solid var(--ink); color: var(--ink);
+      background: transparent; transition: all .3s ease; white-space: nowrap;
     }
-    .page-hero::before {
-      content: 'REPRESENT';
-      position: absolute; right: -20px; bottom: -10px;
-      font-family: 'Bebas Neue', sans-serif; font-size: 180px;
-      color: rgba(255,255,255,0.025); line-height: 1; pointer-events: none; white-space: nowrap;
-    }
-    .page-hero-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
-    .page-eyebrow { font-family: 'Oswald', sans-serif; font-size: 11px; letter-spacing: 4px; color: var(--orange); font-weight: 600; margin-bottom: 16px; }
-    .page-hero h1 { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: clamp(36px, 5vw, 60px); color: white; line-height: 1.1; margin-bottom: 16px; }
-    .page-hero-sub { font-size: 15px; color: #888; max-width: 480px; }
+    .btn .arr { transition: transform .3s ease; display: inline-block; }
+    .btn:hover { background: var(--ink); color: var(--bg); }
+    .btn:hover .arr { transform: translateX(4px); }
+    .btn-ghost { border-color: transparent; padding-left: 0; }
+    .btn-ghost:hover { background: transparent; color: var(--accent-deep); }
 
-    /* ─── SECTION COMMON ─── */
-    .section-eyebrow { font-family: 'Oswald', sans-serif; font-size: 11px; letter-spacing: 4px; color: var(--orange); font-weight: 600; margin-bottom: 12px; }
-    .section-title { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: clamp(26px, 3.5vw, 40px); line-height: 1.15; margin-bottom: 16px; }
+    /* ─── HERO ─── */
+    .rep-hero {
+      padding-top: clamp(80px, 12vw, 160px);
+      padding-bottom: clamp(80px, 11vw, 140px);
+      border-bottom: 1px solid var(--rule-soft);
+    }
+    .rep-hero-grid {
+      display: grid; grid-template-columns: 200px 1fr;
+      gap: 56px; align-items: end;
+    }
+    .rep-hero .meta { display: flex; flex-direction: column; gap: 14px; }
+    .rep-hero .meta .label-en {
+      font-family: var(--serif-en); font-style: italic;
+      font-size: 13px; letter-spacing: 0.18em; color: var(--accent-deep);
+    }
+    .rep-hero .meta .stamp { width: 56px; height: 1px; background: var(--accent); }
+    .rep-hero .meta .position {
+      font-family: var(--sans-jp); font-size: 11px;
+      letter-spacing: 0.2em; color: var(--ink-mute); margin-top: 12px;
+    }
+    .rep-hero h1 {
+      font-family: var(--serif-jp); font-weight: 500;
+      font-size: clamp(40px, 6vw, 76px);
+      letter-spacing: 0.08em; line-height: 1.2;
+      color: var(--ink); margin-bottom: 12px;
+    }
+    .rep-hero .name-en {
+      font-family: var(--serif-en); font-style: italic;
+      font-size: clamp(18px, 2vw, 24px); color: var(--ink-mute);
+      letter-spacing: 0.1em; margin-bottom: 36px; display: block;
+    }
+    .rep-hero .lead {
+      font-family: var(--serif-jp);
+      font-size: clamp(16px, 1.4vw, 19px);
+      line-height: 2.1; color: var(--ink-2); max-width: 660px;
+    }
 
     /* ─── ORIGIN ─── */
-    .origin { padding: 100px 48px; background: var(--white); }
-    .origin-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 80px; align-items: start; }
-    .origin-label {
-      font-family: 'Bebas Neue', sans-serif; font-size: 100px;
-      line-height: 0.85; color: var(--gray-light); letter-spacing: -2px;
+    .origin-grid {
+      display: grid; grid-template-columns: 1fr 360px; gap: 80px; align-items: start;
+    }
+    .origin-aside {
+      border-left: 1px solid var(--rule); padding-left: 36px;
       position: sticky; top: 120px;
     }
-    .origin-content {}
-    .origin-content .section-title { margin-bottom: 32px; }
-    .origin-block { margin-bottom: 40px; }
-    .origin-block h3 {
-      font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 13px;
-      letter-spacing: 3px; color: var(--orange); margin-bottom: 14px;
+    .origin-aside .aside-label {
+      font-family: var(--serif-en); font-style: italic; font-size: 12px;
+      letter-spacing: 0.2em; color: var(--accent-deep); margin-bottom: 18px;
+      text-transform: uppercase;
     }
-    .origin-block p { font-size: 14px; color: #444; line-height: 1.95; margin-bottom: 14px; }
-    .origin-quote {
-      margin: 28px 0; padding: 24px 28px;
-      background: var(--gray-bg); border-radius: 12px;
-      border-left: 4px solid var(--orange);
+    .origin-aside .profile-row {
+      padding: 16px 0; border-bottom: 1px solid var(--rule-soft);
+      display: grid; gap: 4px;
     }
-    .origin-quote p {
-      font-size: 16px; font-weight: 700; color: var(--black); line-height: 1.7;
-      margin-bottom: 0;
+    .origin-aside .profile-row:first-of-type { border-top: 1px solid var(--rule-soft); }
+    .origin-aside .p-label {
+      font-family: var(--serif-en); font-size: 10px; letter-spacing: 0.28em;
+      text-transform: uppercase; color: var(--ink-mute);
     }
-    .origin-quote cite { display: block; margin-top: 10px; font-size: 12px; color: var(--gray-text); font-style: normal; }
+    .origin-aside .p-value {
+      font-family: var(--serif-jp); font-size: 14px; color: var(--ink); line-height: 1.7;
+    }
+    .origin-aside .p-value em {
+      font-family: var(--serif-en); font-style: italic;
+      font-size: 12px; color: var(--ink-mute); display: block; margin-top: 2px;
+    }
+
+    .story-block { display: grid; gap: 28px; }
+    .story-block .chapter-label {
+      font-family: var(--serif-en); font-style: italic; font-size: 13px;
+      letter-spacing: 0.16em; color: var(--accent-deep);
+      display: flex; align-items: center; gap: 12px;
+    }
+    .story-block .chapter-label::before {
+      content: ""; width: 24px; height: 1px; background: var(--accent); display: inline-block;
+    }
+    .story-block h3 {
+      font-family: var(--serif-jp); font-weight: 500;
+      font-size: clamp(20px, 2.2vw, 26px); color: var(--ink);
+      line-height: 1.55; letter-spacing: 0.04em; margin-bottom: 16px;
+    }
+    .story-block p {
+      font-family: var(--sans-jp); font-size: 15px; line-height: 2.1;
+      color: var(--ink-2);
+    }
+    .story-chapter {
+      padding: 40px 0; border-top: 1px solid var(--rule-soft);
+    }
+    .story-chapter:first-child { border-top: none; padding-top: 0; }
+    .quote-pull {
+      margin: 24px 0; padding: 24px 28px;
+      border-left: 2px solid var(--accent); background: var(--bg-alt);
+    }
+    .quote-pull p {
+      font-family: var(--serif-jp); font-size: clamp(16px, 1.4vw, 19px);
+      line-height: 1.9; color: var(--ink); font-weight: 500;
+    }
 
     /* ─── VISION ─── */
-    .vision { padding: 100px 48px; background: var(--black); }
-    .vision-inner { max-width: 1200px; margin: 0 auto; }
-    .vision-head { margin-bottom: 64px; }
-    .vision-head .section-title { color: white; }
-    .vision-head .section-eyebrow { color: var(--orange); }
-    .vision-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .vision-card {
-      padding: 40px 32px; background: #1e1e1e;
-      border-radius: 16px; border: 1px solid #2a2a2a;
-      position: relative; overflow: hidden;
-      transition: border-color 0.25s;
+    .vision-pillars {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; background: var(--rule-soft);
+      border: 1px solid var(--rule-soft);
     }
-    .vision-card:hover { border-color: var(--orange); }
-    .vision-card::before {
-      content: attr(data-num);
-      position: absolute; right: 20px; top: 16px;
-      font-family: 'Bebas Neue', sans-serif; font-size: 80px;
-      color: rgba(255,255,255,0.04); line-height: 1; pointer-events: none;
+    .pillar {
+      background: var(--bg); padding: clamp(36px, 4vw, 56px);
     }
-    .vision-card-icon {
-      width: 52px; height: 52px; border-radius: 12px;
-      background: rgba(230,126,34,0.12); border: 1px solid rgba(230,126,34,0.2);
-      display: flex; align-items: center; justify-content: center; margin-bottom: 24px;
+    .pillar .num {
+      font-family: var(--serif-en); font-style: italic; font-size: 13px;
+      color: var(--accent-deep); letter-spacing: 0.06em; margin-bottom: 20px;
+      display: block;
     }
-    .vision-card-icon svg { width: 26px; height: 26px; fill: var(--orange); }
-    .vision-card-en {
-      font-family: 'Oswald', sans-serif; font-size: 11px; letter-spacing: 3px;
-      color: var(--orange); font-weight: 600; margin-bottom: 10px;
+    .pillar h3 {
+      font-family: var(--serif-jp); font-weight: 500;
+      font-size: clamp(18px, 1.8vw, 22px); line-height: 1.55;
+      color: var(--ink); margin-bottom: 18px; letter-spacing: 0.04em;
     }
-    .vision-card h3 { font-size: 17px; font-weight: 700; color: white; margin-bottom: 14px; line-height: 1.5; }
-    .vision-card p { font-size: 13px; color: #777; line-height: 1.8; }
+    .pillar p {
+      font-family: var(--sans-jp); font-size: 14px;
+      line-height: 2; color: var(--ink-mute);
+    }
 
-    /* ─── PROFILE TABLE ─── */
-    .profile { padding: 100px 48px; background: var(--gray-bg); }
-    .profile-inner { max-width: 1200px; margin: 0 auto; }
-    .profile-head { margin-bottom: 56px; }
-    .profile-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
-    .profile-intro p { font-size: 14px; color: #555; line-height: 1.9; margin-bottom: 16px; }
-    .profile-table-wrap {
-      background: var(--white); border-radius: 16px; overflow: hidden;
-      border: 1px solid var(--gray-light); box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+    .vision-message {
+      margin-top: 64px; padding: 56px;
+      background: var(--paper); border: 1px solid var(--rule-soft);
     }
-    .profile-table { width: 100%; border-collapse: collapse; }
-    .profile-table tr { border-bottom: 1px solid var(--gray-light); }
-    .profile-table tr:last-child { border-bottom: none; }
-    .profile-table th {
-      text-align: left; padding: 18px 24px;
-      font-size: 10px; font-weight: 700; letter-spacing: 2px;
-      color: var(--orange); width: 38%; background: #fafaf8;
-      vertical-align: top;
+    .vision-message blockquote {
+      font-family: var(--serif-jp); font-weight: 500;
+      font-size: clamp(20px, 2.2vw, 27px); line-height: 1.8;
+      color: var(--ink); letter-spacing: 0.04em; margin: 0 0 28px;
     }
-    .profile-table td { padding: 18px 24px; font-size: 13px; color: #444; line-height: 1.7; }
-    .profile-table td a { color: var(--orange); }
+    .vision-message .sig {
+      font-family: var(--serif-jp); font-size: 14px;
+      color: var(--ink-mute); display: flex; align-items: baseline; gap: 14px;
+    }
+    .vision-message .sig span {
+      font-family: var(--serif-en); font-style: italic; font-size: 13px;
+    }
 
-    /* ─── MESSAGE ─── */
-    .message { padding: 100px 48px; background: var(--white); }
-    .message-inner { max-width: 800px; margin: 0 auto; text-align: center; }
-    .message-inner .section-eyebrow { margin-bottom: 16px; }
-    .message-inner .section-title { margin-bottom: 40px; }
-    .message-body {
-      background: var(--gray-bg); border-radius: 20px;
-      padding: 48px 56px; text-align: left;
-      border: 1px solid var(--gray-light); position: relative;
+    /* ─── CONTACT ─── */
+    .contact { background: var(--ink); color: var(--bg); }
+    .contact .container {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 64px; align-items: end;
     }
-    .message-body::before {
-      content: '\201C';
-      position: absolute; top: 20px; left: 32px;
-      font-family: 'Oswald', sans-serif; font-size: 80px;
-      color: var(--orange); opacity: 0.2; line-height: 1;
+    .contact h2 {
+      font-family: var(--serif-jp); font-weight: 400;
+      color: var(--bg); font-size: clamp(34px, 4.4vw, 54px);
+      line-height: 1.5; letter-spacing: 0.04em;
     }
-    .message-body p { font-size: 14px; color: #444; line-height: 2; margin-bottom: 20px; }
-    .message-body p:last-child { margin-bottom: 0; }
-    .message-sig { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--gray-light); display: flex; align-items: center; gap: 16px; }
-    .message-sig-avatar { width: 44px; height: 44px; background: var(--black); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
-    .message-sig-avatar svg { width: 22px; height: 22px; fill: var(--orange); }
-    .message-sig-name { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 1px; }
-    .message-sig-title { font-size: 11px; color: var(--gray-text); }
+    .contact h2 em {
+      font-family: var(--serif-en); font-style: italic;
+      color: var(--accent); font-size: 0.55em; display: block;
+      margin-bottom: 18px; letter-spacing: 0.18em;
+      text-transform: uppercase; font-weight: 500;
+    }
+    .contact .right p {
+      font-family: var(--sans-jp); font-size: 14px;
+      line-height: 2; color: rgba(251,248,241,0.7); margin: 0 0 28px;
+    }
+    .contact .btn { border-color: var(--bg); color: var(--bg); }
+    .contact .btn:hover {
+      background: var(--accent); border-color: var(--accent); color: var(--ink);
+    }
 
     /* ─── FOOTER ─── */
-    footer { background: #111; color: #999; padding: 56px 48px 32px; }
-    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 40px; }
-    .footer-brand { display: flex; align-items: center; gap: 12px; }
-    .footer-brand .icon { width: 36px; height: 36px; background: var(--orange); border-radius: 6px; display: flex; align-items: center; justify-content: center; }
-    .footer-brand .icon svg { width: 20px; height: 20px; fill: white; }
-    .footer-brand .name { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 2px; color: white; }
-    .footer-brand .name-sub { font-size: 9px; color: #555; letter-spacing: 1px; }
-    .footer-links { display: flex; flex-direction: column; gap: 10px; }
-    .footer-links a { color: #777; font-size: 12px; transition: color 0.2s; }
-    .footer-links a:hover { color: var(--orange); }
-    .footer-copy { max-width: 1200px; margin: 32px auto 0; text-align: center; font-size: 11px; color: #444; padding-top: 24px; border-top: 1px solid #222; }
+    .site-footer {
+      border-top: 1px solid var(--rule-soft);
+      background: var(--bg); padding: 72px 0 40px;
+      font-family: var(--sans-jp); font-size: 13px; color: var(--ink-mute);
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 48px; align-items: start;
+    }
+    .footer-brand .brand-mark { font-size: 24px; }
+    .footer-brand p { margin: 18px 0 0; line-height: 1.9; max-width: 340px; }
+    .footer-col h5 {
+      font-family: var(--serif-en); font-weight: 500; font-size: 11px;
+      letter-spacing: 0.28em; color: var(--ink);
+      text-transform: uppercase; margin: 0 0 18px;
+    }
+    .footer-col ul { list-style: none; padding: 0; margin: 0; }
+    .footer-col li { margin-bottom: 10px; }
+    .footer-col a:hover { color: var(--accent-deep); }
+    .footer-bottom {
+      margin-top: 64px; padding-top: 28px;
+      border-top: 1px solid var(--rule-soft);
+      display: flex; justify-content: space-between; align-items: center;
+      font-family: var(--serif-en); font-size: 12px;
+      letter-spacing: 0.18em; color: var(--ink-mute);
+    }
+    .footer-bottom a { transition: color .2s; }
+    .footer-bottom a:hover { color: var(--accent-deep); }
 
-    /* ─── MOBILE ─── */
-    @media (max-width: 768px) {
-      header { padding: 14px 20px; }
-      nav.header-nav { display: none; }
-      .page-hero { padding: 56px 20px 72px; }
-      .page-hero::before { display: none; }
-      .origin { padding: 64px 20px; }
-      .origin-inner { grid-template-columns: 1fr; gap: 32px; }
-      .origin-label { font-size: 64px; position: static; }
-      .vision { padding: 64px 20px; }
-      .vision-grid { grid-template-columns: 1fr; }
-      .profile { padding: 64px 20px; }
-      .profile-layout { grid-template-columns: 1fr; gap: 36px; }
-      .message { padding: 64px 20px; }
-      .message-body { padding: 32px 24px; }
-      footer { padding: 40px 20px 24px; }
-      .footer-inner { flex-direction: column; gap: 28px; }
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 880px) {
+      .nav-links { display: none; }
+      .section-head { grid-template-columns: 1fr; gap: 24px; margin-bottom: 48px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+      .origin-grid { grid-template-columns: 1fr; gap: 48px; }
+      .origin-aside { position: static; border-left: 0; border-top: 1px solid var(--rule); padding-left: 0; padding-top: 28px; }
+      .vision-pillars { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .rep-hero-grid { grid-template-columns: 1fr; gap: 32px; }
+      .rep-hero .meta { flex-direction: row; align-items: center; }
+      .contact .container { grid-template-columns: 1fr; gap: 32px; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 14px; align-items: flex-start; }
+      .vision-message { padding: 32px 24px; }
     }
   </style>
 </head>
 <body>
 
   <!-- HEADER -->
-  <header>
-    <a href="index.html" class="logo-link">
-      <div class="logo-icon">
-        <svg viewBox="0 0 24 24"><polygon points="12,2 22,20 2,20"/></svg>
-      </div>
-      <div class="logo-text">
-        <span class="main">KABUTO</span>
-        <span class="sub">株式会社KABUTO</span>
-      </div>
-    </a>
-    <nav class="header-nav">
-      <a href="index.html">Home</a>
-      <a href="yorisoi.html">YORISOI</a>
-      <a href="mailto:kabuto.co.ltd@gmail.com" class="nav-cta">Contact</a>
-    </nav>
+  <header class="site-header" id="site-header">
+    <div class="container">
+      <nav class="nav">
+        <a href="index.html" class="brand">
+          <span class="brand-mark">KABUTO</span>
+          <span class="brand-jp">株式会社</span>
+        </a>
+        <div class="nav-links">
+          <a href="index.html#business">Services<small>事業内容</small></a>
+          <a href="yorisoi.html">YORISOI</a>
+          <a href="index.html#company">About<small>会社情報</small></a>
+          <a href="representative.html">代表<small>Representative</small></a>
+        </div>
+        <a href="mailto:kabuto.co.ltd@gmail.com" class="nav-cta">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <!-- PAGE HERO -->
-  <section class="page-hero">
-    <div class="page-hero-inner">
-      <div class="page-eyebrow">REPRESENTATIVE</div>
-      <h1>代表紹介<br>AKIHIRO NAKAYAMA</h1>
-      <p class="page-hero-sub">株式会社KABUTO 代表取締役<br>中山 章裕のプロフィール</p>
-    </div>
-  </section>
+  <main>
 
-  <!-- ORIGIN -->
-  <section class="origin">
-    <div class="origin-inner">
-      <div>
-        <div class="origin-label">ORI<br>GIN</div>
-      </div>
-      <div class="origin-content">
-        <div class="section-eyebrow">MY ORIGIN</div>
-        <h2 class="section-title">原体験</h2>
-
-        <div class="origin-block">
-          <h3>STARTING POINT</h3>
-          <p>長崎で生まれ育った私は、幼い頃から「外の世界」への強い関心を持っていました。地方にいながらも、インターネットを通じて世界中の人々と繋がれることの可能性を肌で感じていました。</p>
-          <p>学生時代にeBayで海外取引を始めたことが、すべての原点です。長崎の小さな部屋から、世界中のバイヤーに商品を届けられる——この体験が、「テクノロジーは地理的な壁を溶かす」という確信に変わりました。</p>
-        </div>
-
-        <div class="origin-quote">
-          <p>「場所は関係ない。テクノロジーがあれば、どこにいても世界と繋がれる。」</p>
-          <cite>— 中山 章裕</cite>
-        </div>
-
-        <div class="origin-block">
-          <h3>THE TURNING POINT</h3>
-          <p>越境ECの経験を重ねるなかで、AIの急速な進化を目の当たりにしました。単純作業の自動化だけでなく、人の思考や提案を支援できるAIの可能性に気づき、「これは産業の構造を変える」と直感しました。</p>
-          <p>特に強く感じたのは、AIが「人と人の間に立つ仕事」に革命をもたらすということ。相談業務・カウンセリング・コーディネーターといった職種に、テクノロジーの恩恵が届いていない現状を変えたいと思い、YORASOIの開発へと舵を切りました。</p>
-        </div>
-
-        <div class="origin-block">
-          <h3>FOUNDING KABUTO</h3>
-          <p>2024年、株式会社KABUTOを設立。社名の「KABUTO（兜）」には、武士が戦場で身を守り、前線に立ち続けるという意志を込めています。ビジネスの最前線で挑戦し続け、テクノロジーで新しい価値を生み出すという決意の表れです。</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- VISION -->
-  <section class="vision">
-    <div class="vision-inner">
-      <div class="vision-head">
-        <div class="section-eyebrow">MY VISION</div>
-        <h2 class="section-title">ビジョン — 3つの柱</h2>
-      </div>
-      <div class="vision-grid">
-
-        <div class="vision-card" data-num="01">
-          <div class="vision-card-icon">
-            <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h3l-1 1v2h12v-2l-1-1h3c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 13H5V5h14v11z"/></svg>
-          </div>
-          <div class="vision-card-en">PILLAR 01</div>
-          <h3>テクノロジーで事業の可能性を拡張する</h3>
-          <p>AIやWebテクノロジーを活用し、既存のビジネスが持つ潜在的な可能性を最大限に引き出す。テクノロジーは目的ではなく、人の可能性を広げるための手段であるべきだと考えています。</p>
-        </div>
-
-        <div class="vision-card" data-num="02">
-          <div class="vision-card-icon">
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-          </div>
-          <div class="vision-card-en">PILLAR 02</div>
-          <h3>日本と世界市場を繋ぐ架け橋になる</h3>
-          <p>日本が持つ品質・文化・技術を世界に届け、逆に世界のトレンドやチャンスを日本にもたらす。グローバルECで培った知見を活かし、国境を超えた価値の流通を加速します。</p>
-        </div>
-
-        <div class="vision-card" data-num="03">
-          <div class="vision-card-icon">
-            <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.27 2 8.5 2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.53L12 21.35z"/></svg>
-          </div>
-          <div class="vision-card-en">PILLAR 03</div>
-          <h3>人の幸福を支えるサービスを創り続ける</h3>
-          <p>最終的にテクノロジーが向かうべき先は、人の幸せです。YORASOIのようなサービスを通じて、人と人が繋がり、支え合う場をより豊かにしていく。それが私たちの使命だと考えています。</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- PROFILE TABLE -->
-  <section class="profile">
-    <div class="profile-inner">
-      <div class="profile-head">
-        <div class="section-eyebrow">PROFILE</div>
-        <h2 class="section-title">プロフィール</h2>
-      </div>
-      <div class="profile-layout">
-        <div class="profile-intro">
-          <p>長崎県出身。越境ECおよびAI・Webサービス開発を軸に、株式会社KABUTOを2024年に設立。</p>
-          <p>eBayを通じたグローバルEC事業の実績を持ちながら、AI技術の事業応用を積極的に推進。結婚相談所・カウンセラー向けAI業務支援SaaS「YORISOI」を開発・運営しています。</p>
-          <p>「テクノロジーで人を支える」という信念のもと、長崎から日本と世界を繋ぐ事業を展開しています。</p>
-        </div>
-        <div class="profile-table-wrap">
-          <table class="profile-table">
-            <tr>
-              <th>NAME</th>
-              <td>中山 章裕<br><span style="font-size:11px;color:#aaa">Akihiro Nakayama</span></td>
-            </tr>
-            <tr>
-              <th>TITLE</th>
-              <td>代表取締役<br><span style="font-size:11px;color:#aaa">Representative Director</span></td>
-            </tr>
-            <tr>
-              <th>COMPANY</th>
-              <td>株式会社KABUTO（KABUTO Inc.）</td>
-            </tr>
-            <tr>
-              <th>ESTABLISHED</th>
-              <td>2024年</td>
-            </tr>
-            <tr>
-              <th>LOCATION</th>
-              <td>長崎県長崎市</td>
-            </tr>
-            <tr>
-              <th>BUSINESS</th>
-              <td>グローバルEC事業（eBay輸出）<br>AI・Webサービス開発<br>業務支援SaaS（YORISOI）</td>
-            </tr>
-            <tr>
-              <th>EMAIL</th>
-              <td><a href="mailto:kabuto.co.ltd@gmail.com">kabuto.co.ltd@gmail.com</a></td>
-            </tr>
-          </table>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MESSAGE -->
-  <section class="message">
-    <div class="message-inner">
-      <div class="section-eyebrow">MESSAGE</div>
-      <h2 class="section-title">代表メッセージ</h2>
-      <div class="message-body">
-        <p>テクノロジーが急速に進化するこの時代において、大切なのは「何のために使うか」だと私は考えています。私たちKABUTOは、技術を追い求めるのではなく、人の生活をより豊かにするための手段としてテクノロジーを捉えています。</p>
-        <p>eBay輸出事業で世界市場と日本を繋ぎ、AIサービス開発で人の可能性を拡張し、YORASOIでカウンセラーの方々を支援する——それぞれの事業に共通しているのは、「人と人の間にある価値」を大切にするという姿勢です。</p>
-        <p>長崎という地方から、世界と繋がる事業を作り続けることで、「場所は関係ない」という証明をしていきたい。そして、テクノロジーの恩恵が届いていない産業や人々に、新しい可能性をお届けしていきます。</p>
-        <div class="message-sig">
-          <div class="message-sig-avatar">
-            <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+    <!-- HERO -->
+    <section class="rep-hero section">
+      <div class="container">
+        <div class="rep-hero-grid">
+          <div class="meta">
+            <span class="label-en">Representative</span>
+            <div class="stamp"></div>
+            <span class="eyebrow" style="font-size:11px;margin-top:0;">代表取締役</span>
+            <span class="position">KABUTO Inc.</span>
           </div>
           <div>
-            <div class="message-sig-name">AKIHIRO NAKAYAMA / 中山 章裕</div>
-            <div class="message-sig-title">代表取締役 — 株式会社KABUTO</div>
+            <h1>中山 章裕</h1>
+            <span class="name-en">Akihiro Nakayama</span>
+            <p class="lead">長崎から、テクノロジーと人の力を掛け合わせ、<br>ケアに関わるすべての人に余白をつくる。</p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <div class="icon"><svg viewBox="0 0 24 24"><polygon points="12,2 22,20 2,20"/></svg></div>
-        <div>
-          <div class="name">KABUTO</div>
-          <div class="name-sub">KABUTO INC.</div>
+    <!-- ORIGIN -->
+    <section class="section" id="origin">
+      <div class="container">
+        <div class="section-head">
+          <div class="meta">
+            <span class="num">— 01</span>
+            <span class="lab">Origin</span>
+            <span class="lab-jp">原体験</span>
+          </div>
+          <div class="heading">
+            <span class="quote-mark">"</span>
+            <h2 class="h-section">人を支える仕事が、<br>人に支えられていない。</h2>
+          </div>
+        </div>
+
+        <div class="origin-grid">
+          <div class="story-block">
+            <div class="story-chapter">
+              <span class="chapter-label">Chapter I — 長崎という場所</span>
+              <h3>港と坂と、人の往来。</h3>
+              <p>長崎に生まれ育ちました。異文化が交わり続けてきたこの街では、人と人が繋がり、支え合うことが自然に身に染みつきます。私の原点にあるのは、そうした人と人との距離感です。</p>
+              <p style="margin-top:16px;">子どもの頃から、「誰かを助けている大人」の姿を近くで見てきました。カウンセラー、介護の職員、仲人士——彼らはいつも誰かのために時間を尽くし、それでも笑顔でいた。その姿が、私の中に深く刻まれています。</p>
+            </div>
+
+            <div class="story-chapter">
+              <span class="chapter-label">Chapter II — 気づいた矛盾</span>
+              <h3>ケアする側が、消耗していた。</h3>
+              <p>社会に出て、様々な対人支援の現場に関わるようになると、一つの矛盾に気づきました。人を支えるプロたちが、管理業務・記録・返信・報告書——終わりのない事務作業に追われ、本来やりたい「人と向き合う仕事」の時間を失っていたのです。</p>
+              <div class="quote-pull">
+                <p>「応援する側に、余白がない。」</p>
+              </div>
+              <p>深夜まで返信に追われ、機械的になっていく自分に気付く——そんな声を聞くたびに、テクノロジーで何かできるはずだという確信が強まりました。</p>
+            </div>
+
+            <div class="story-chapter">
+              <span class="chapter-label">Chapter III — KABUTOの誕生</span>
+              <h3>余白を、取り戻すために。</h3>
+              <p>AIと人間の力を掛け合わせれば、事務作業をAIが担い、人が人に向き合う時間を取り戻せる——そう確信し、2024年にKABUTO株式会社を設立しました。</p>
+              <p style="margin-top:16px;">最初のプロダクトである「YORISOI」は、カウンセラーの返信業務をAIが支援するSaaSです。AIが下書きを作成し、最終判断は必ず人間が行う。この設計思想は、テクノロジーへの姿勢そのものでもあります。</p>
+              <p style="margin-top:16px;">長崎から始まったこの挑戦を、少しずつ、着実に広げていきます。</p>
+            </div>
+          </div>
+
+          <!-- Profile aside -->
+          <aside class="origin-aside">
+            <div class="aside-label">Profile</div>
+            <div class="profile-row">
+              <div class="p-label">Name</div>
+              <div class="p-value">中山 章裕<em>Akihiro Nakayama</em></div>
+            </div>
+            <div class="profile-row">
+              <div class="p-label">Position</div>
+              <div class="p-value">代表取締役<em>Representative Director</em></div>
+            </div>
+            <div class="profile-row">
+              <div class="p-label">Based in</div>
+              <div class="p-value">長崎県<em>Nagasaki, Japan</em></div>
+            </div>
+            <div class="profile-row">
+              <div class="p-label">Business</div>
+              <div class="p-value">AI/SaaS 開発<br>対人支援業界向けソリューション<br>越境EC事業<em>AI, SaaS, Cross-border e-commerce</em></div>
+            </div>
+            <div class="profile-row">
+              <div class="p-label">Contact</div>
+              <div class="p-value"><a href="mailto:kabuto.co.ltd@gmail.com" style="color:var(--accent-deep);">kabuto.co.ltd@gmail.com</a></div>
+            </div>
+          </aside>
         </div>
       </div>
-      <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="yorisoi.html">YORISOI</a>
-        <a href="tokusho.html">特定商取引法に基づく表記</a>
-        <a href="privacy.html">プライバシーポリシー</a>
-        <a href="terms.html">利用規約</a>
-        <a href="refund.html">解約・返金ポリシー</a>
-        <a href="mailto:kabuto.co.ltd@gmail.com">お問い合わせ</a>
+    </section>
+
+    <!-- VISION -->
+    <section class="section section-band" id="vision">
+      <div class="container">
+        <div class="section-head">
+          <div class="meta">
+            <span class="num">— 02</span>
+            <span class="lab">Vision</span>
+            <span class="lab-jp">目指す未来</span>
+          </div>
+          <div class="heading">
+            <h2 class="h-section">3つの柱で、<br>未来をつくる。</h2>
+          </div>
+        </div>
+
+        <div class="vision-pillars">
+          <div class="pillar">
+            <span class="num">— Pillar I</span>
+            <h3>テクノロジーで、事業の可能性を拡張する。</h3>
+            <p>AIと人間の力を組み合わせることで、これまで不可能だった事業の形をつくります。テクノロジーは目的ではなく、人の可能性を広げるための手段です。</p>
+          </div>
+          <div class="pillar">
+            <span class="num">— Pillar II</span>
+            <h3>日本と世界市場を繋ぐ、架け橋になる。</h3>
+            <p>長崎という歴史的な港町から、日本の優れた価値を海外へ届けます。越境ECと越境SaaSで、地理的な距離を超えた繋がりを築きます。</p>
+          </div>
+          <div class="pillar">
+            <span class="num">— Pillar III</span>
+            <h3>人の幸福を支えるサービスを、創り続ける。</h3>
+            <p>対人支援のプロが、人と向き合える時間をより多く持てるように。テクノロジーが人の幸福に寄与し続けることが、私たちの存在意義です。</p>
+          </div>
+        </div>
+
+        <div class="vision-message">
+          <blockquote>
+            ケアする人に、余白を。<br>テクノロジーが人の温度を奪うのではなく、<br>人が人らしくある時間を、取り戻すために。
+          </blockquote>
+          <div class="sig">
+            中山 章裕
+            <span>Akihiro Nakayama — Representative Director, KABUTO Inc.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact">
+      <div class="container">
+        <div>
+          <h2>
+            <em>— Contact</em>
+            ご相談・お問い合わせ。<br>お気軽にどうぞ。
+          </h2>
+        </div>
+        <div class="right">
+          <p>事業に関するご相談、メディア取材、採用に関するお問い合わせなど、まずはメールにてご連絡ください。営業日2日以内に、担当者よりご返信いたします。</p>
+          <a href="mailto:kabuto.co.ltd@gmail.com" class="btn">kabuto.co.ltd@gmail.com <span class="arr">→</span></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <span class="brand-mark">KABUTO</span>
+          <p>対人支援の現場に、テクノロジーで余白を。長崎発のテクノロジーカンパニー。</p>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="yorisoi.html">YORISOI</a></li>
+            <li><a href="index.html#business">AI Solutions</a></li>
+            <li><a href="index.html#business">Global E-Commerce</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="index.html#company">会社情報</a></li>
+            <li><a href="representative.html">代表紹介</a></li>
+            <li><a href="index.html#philosophy">理念</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Legal</h5>
+          <ul>
+            <li><a href="tokusho.html">特定商取引法</a></li>
+            <li><a href="privacy.html">プライバシーポリシー</a></li>
+            <li><a href="terms.html">利用規約</a></li>
+            <li><a href="refund.html">解約・返金ポリシー</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2024 KABUTO Inc. All rights reserved.</span>
+        <a href="mailto:kabuto.co.ltd@gmail.com">kabuto.co.ltd@gmail.com</a>
       </div>
     </div>
-    <div class="footer-copy">&copy; 2024 KABUTO Inc. All rights reserved.</div>
   </footer>
+
+  <script>
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('is-scrolled', window.scrollY > 10);
+    }, { passive: true });
+  </script>
 
 </body>
 </html>
