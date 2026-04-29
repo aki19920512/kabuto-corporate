@@ -3,213 +3,472 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>株式会社KABUTO | テクノロジーと商取引で、日本と世界を繋ぐ</title>
+  <meta name="description" content="株式会社KABUTOは、eBay輸出事業・AI＆Webサービス開発・業務支援SaaS（YORISOI）を展開するテクノロジーカンパニーです。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Oswald:wght@400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
-  <title>KABUTO Inc. | Global Trade & AI Innovation</title>
   <style>
-    :root { --orange: #E67E22; --orange-dark: #D35400; --black: #1a1a1a; --white: #FFFFFF; --gray-bg: #F5F5F3; --gray-light: #E8E8E6; --gray-text: #888; }
+    :root {
+      --orange: #E67E22;
+      --orange-dark: #D35400;
+      --black: #1a1a1a;
+      --white: #FFFFFF;
+      --gray-bg: #F5F5F3;
+      --gray-light: #E8E8E6;
+      --gray-text: #888;
+    }
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body { font-family: 'Noto Sans JP', sans-serif; color: var(--black); background: var(--gray-bg); line-height: 1.7; -webkit-font-smoothing: antialiased; }
     a { text-decoration: none; color: inherit; }
-    header { display: flex; align-items: center; justify-content: space-between; padding: 20px 48px; background: var(--white); border-bottom: 1px solid var(--gray-light); position: sticky; top: 0; z-index: 100; }
-    .logo-area { display: flex; align-items: center; gap: 12px; }
-    .logo-link { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-    .logo-icon { width: 44px; height: 44px; background: var(--orange); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
-    .logo-icon svg { width: 24px; height: 24px; fill: white; }
+
+    /* ─── HEADER ─── */
+    header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 48px;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--gray-light);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .logo-link { display: flex; align-items: center; gap: 12px; }
+    .logo-icon {
+      width: 42px; height: 42px;
+      background: var(--orange); border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .logo-icon svg { width: 22px; height: 22px; fill: white; }
     .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
-    .logo-text .main { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: 2px; color: var(--black); }
-    .logo-text .sub { font-size: 10px; color: var(--orange); font-weight: 700; letter-spacing: 1px; }
-    nav.header-nav a { color: var(--black); text-decoration: none; font-size: 13px; font-weight: 500; margin-left: 28px; letter-spacing: 0.5px; transition: color 0.2s; }
+    .logo-text .main { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 21px; letter-spacing: 2px; }
+    .logo-text .sub { font-size: 9px; color: var(--orange); font-weight: 700; letter-spacing: 1px; }
+    nav.header-nav a {
+      color: var(--black); font-size: 13px; font-weight: 500;
+      margin-left: 28px; letter-spacing: 0.5px; transition: color 0.2s;
+    }
     nav.header-nav a:hover { color: var(--orange); }
-    footer { background: var(--black); color: #999; padding: 48px; }
-    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 32px; }
+    .nav-cta {
+      display: inline-block; margin-left: 28px;
+      background: var(--orange); color: white;
+      padding: 8px 18px; border-radius: 6px;
+      font-size: 12px; font-weight: 700; letter-spacing: 0.5px;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--orange-dark); }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: var(--black);
+      padding: 100px 48px 120px;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: 'KABUTO';
+      position: absolute; right: -20px; top: 50%; transform: translateY(-50%);
+      font-family: 'Bebas Neue', sans-serif; font-size: 280px;
+      color: rgba(255,255,255,0.03); line-height: 1; pointer-events: none;
+      white-space: nowrap;
+    }
+    .hero-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+    .hero-eyebrow {
+      font-family: 'Oswald', sans-serif; font-size: 13px; letter-spacing: 4px;
+      color: var(--orange); font-weight: 500; margin-bottom: 24px;
+    }
+    .hero-title {
+      font-family: 'Oswald', sans-serif; font-weight: 700;
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: 1.1; color: white; margin-bottom: 28px;
+    }
+    .hero-title em { color: var(--orange); font-style: normal; }
+    .hero-sub {
+      font-size: 16px; color: #aaa; line-height: 1.8;
+      max-width: 540px; margin-bottom: 48px; font-weight: 400;
+    }
+    .hero-cta {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--orange); color: white;
+      padding: 16px 32px; border-radius: 8px;
+      font-weight: 700; font-size: 14px; letter-spacing: 0.5px;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .hero-cta:hover { background: var(--orange-dark); transform: translateY(-2px); }
+    .hero-cta svg { width: 16px; height: 16px; fill: white; }
+    .hero-stats {
+      display: flex; gap: 48px; margin-top: 72px;
+      padding-top: 40px; border-top: 1px solid #333;
+    }
+    .hero-stat-num {
+      font-family: 'Bebas Neue', sans-serif; font-size: 42px;
+      color: var(--orange); line-height: 1;
+    }
+    .hero-stat-label { font-size: 11px; color: #666; letter-spacing: 1px; margin-top: 4px; }
+
+    /* ─── SECTION COMMON ─── */
+    .section-eyebrow {
+      font-family: 'Oswald', sans-serif; font-size: 11px; letter-spacing: 4px;
+      color: var(--orange); font-weight: 600; margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: 'Oswald', sans-serif; font-weight: 700;
+      font-size: clamp(28px, 4vw, 42px); line-height: 1.15; margin-bottom: 16px;
+    }
+    .section-sub { font-size: 14px; color: var(--gray-text); line-height: 1.8; }
+
+    /* ─── SERVICES ─── */
+    .services { padding: 100px 48px; background: var(--white); }
+    .services-inner { max-width: 1200px; margin: 0 auto; }
+    .services-head { margin-bottom: 56px; }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .service-card {
+      background: var(--gray-bg); border-radius: 16px;
+      padding: 40px 32px; border: 1px solid var(--gray-light);
+      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+      position: relative; overflow: hidden;
+    }
+    .service-card::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+      height: 3px; background: var(--orange);
+      transform: scaleX(0); transition: transform 0.3s;
+    }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.08); border-color: #ddd; }
+    .service-card:hover::after { transform: scaleX(1); }
+    .service-num { font-family: 'Bebas Neue', sans-serif; font-size: 56px; color: #e0e0de; line-height: 1; margin-bottom: 20px; }
+    .service-icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      background: var(--orange); display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+    }
+    .service-icon svg { width: 24px; height: 24px; fill: white; }
+    .service-tag { font-family: 'Oswald', sans-serif; font-size: 11px; letter-spacing: 3px; color: var(--orange); font-weight: 600; margin-bottom: 8px; }
+    .service-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 12px; }
+    .service-card p { font-size: 13px; color: #555; line-height: 1.8; margin-bottom: 24px; }
+    .service-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 12px; font-weight: 700; color: var(--orange); letter-spacing: 0.5px;
+    }
+    .service-link svg { width: 14px; height: 14px; fill: var(--orange); transition: transform 0.2s; }
+    .service-card:hover .service-link svg { transform: translateX(4px); }
+    .service-card.featured { background: var(--black); border-color: transparent; }
+    .service-card.featured .service-num { color: #333; }
+    .service-card.featured h3 { color: white; }
+    .service-card.featured p { color: #888; }
+    .service-card.featured .service-tag { color: var(--orange); }
+    .service-card.featured::after { background: var(--orange); }
+
+    /* ─── PHILOSOPHY ─── */
+    .philosophy { padding: 100px 48px; background: var(--gray-bg); }
+    .philosophy-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .phil-label { font-family: 'Bebas Neue', sans-serif; font-size: 120px; line-height: 0.85; color: var(--gray-light); letter-spacing: -2px; }
+    .phil-content .section-title { margin-bottom: 24px; }
+    .phil-content p { font-size: 14px; color: #555; line-height: 1.9; margin-bottom: 20px; }
+    .phil-values { display: flex; flex-direction: column; gap: 16px; margin-top: 32px; }
+    .phil-value {
+      display: flex; align-items: flex-start; gap: 16px;
+      padding: 20px; background: white; border-radius: 12px;
+      border-left: 3px solid var(--orange);
+    }
+    .phil-value-num { font-family: 'Oswald', sans-serif; font-size: 20px; font-weight: 700; color: var(--orange); min-width: 32px; line-height: 1; }
+    .phil-value-text { font-size: 13px; font-weight: 700; color: var(--black); line-height: 1.5; }
+    .phil-value-sub { font-size: 11px; color: #888; font-weight: 400; margin-top: 2px; }
+
+    /* ─── COMPANY ─── */
+    .company { padding: 100px 48px; background: var(--white); }
+    .company-inner { max-width: 1200px; margin: 0 auto; }
+    .company-head { margin-bottom: 56px; }
+    .company-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    .company-intro p { font-size: 14px; color: #555; line-height: 1.9; margin-bottom: 16px; }
+    .company-rep {
+      display: inline-flex; align-items: center; gap: 12px; margin-top: 24px;
+      background: var(--gray-bg); padding: 16px 20px; border-radius: 12px;
+    }
+    .company-rep:hover .rep-arrow { transform: translateX(4px); }
+    .rep-avatar {
+      width: 48px; height: 48px; background: var(--black); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .rep-avatar svg { width: 24px; height: 24px; fill: var(--orange); }
+    .rep-name-en { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 1px; }
+    .rep-name-jp { font-size: 11px; color: var(--gray-text); }
+    .rep-arrow { font-size: 13px; color: var(--orange); margin-left: 8px; transition: transform 0.2s; }
+    .company-table { width: 100%; border-collapse: collapse; }
+    .company-table tr { border-bottom: 1px solid var(--gray-light); }
+    .company-table tr:first-child { border-top: 1px solid var(--gray-light); }
+    .company-table th { text-align: left; padding: 14px 0; font-size: 10px; font-weight: 700; letter-spacing: 2px; color: var(--orange); width: 40%; vertical-align: top; }
+    .company-table td { padding: 14px 0; font-size: 13px; color: #444; line-height: 1.7; }
+
+    /* ─── CONTACT BAND ─── */
+    .contact-band { background: var(--black); padding: 80px 48px; text-align: center; }
+    .contact-band-inner { max-width: 640px; margin: 0 auto; }
+    .contact-band h2 { font-family: 'Oswald', sans-serif; font-size: clamp(28px, 4vw, 42px); color: white; font-weight: 700; margin-bottom: 16px; }
+    .contact-band p { font-size: 14px; color: #888; margin-bottom: 36px; line-height: 1.8; }
+    .contact-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--orange); color: white;
+      padding: 16px 36px; border-radius: 8px;
+      font-weight: 700; font-size: 14px; letter-spacing: 0.5px;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .contact-btn:hover { background: var(--orange-dark); transform: translateY(-2px); }
+    .contact-btn svg { width: 16px; height: 16px; fill: white; }
+
+    /* ─── FOOTER ─── */
+    footer { background: #111; color: #999; padding: 56px 48px 32px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 40px; }
     .footer-brand { display: flex; align-items: center; gap: 12px; }
     .footer-brand .icon { width: 36px; height: 36px; background: var(--orange); border-radius: 6px; display: flex; align-items: center; justify-content: center; }
     .footer-brand .icon svg { width: 20px; height: 20px; fill: white; }
     .footer-brand .name { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 2px; color: white; }
-    .footer-brand .name-sub { font-size: 9px; color: #666; letter-spacing: 1px; }
-    .footer-links { display: flex; flex-direction: column; gap: 8px; }
-    .footer-links a { color: #888; font-size: 12px; transition: color 0.2s; }
+    .footer-brand .name-sub { font-size: 9px; color: #555; letter-spacing: 1px; }
+    .footer-links { display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a { color: #777; font-size: 12px; transition: color 0.2s; }
     .footer-links a:hover { color: var(--orange); }
-    .footer-copy { width: 100%; text-align: center; font-size: 11px; color: #555; margin-top: 24px; padding-top: 24px; border-top: 1px solid #333; }
-    /* Legal page styles */
-    .legal-section { padding: 80px 48px; max-width: 900px; margin: 0 auto; }
-    .legal-card { background: var(--white); border-radius: 16px; padding: 48px; border: 1px solid var(--gray-light); box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
-    .legal-card h2 { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 24px; margin-bottom: 2px; }
-    .legal-card .jp-title { font-size: 14px; font-weight: 500; color: var(--gray-text); margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px solid var(--gray-light); }
-    .legal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-    .legal-item .label { font-size: 10px; font-weight: 700; letter-spacing: 2px; color: var(--orange); margin-bottom: 4px; }
-    .legal-item .value { font-size: 13px; line-height: 1.7; color: #444; }
-    .legal-item.full { grid-column: 1 / -1; }
-    .legal-body h3 { font-size: 15px; font-weight: 700; margin-top: 24px; margin-bottom: 8px; color: var(--black); }
-    .legal-body p { font-size: 13px; line-height: 1.8; color: #555; margin-bottom: 10px; }
-    .legal-body ul { margin: 6px 0 12px 18px; font-size: 13px; line-height: 1.8; color: #555; }
-    .back-link { display: inline-block; margin-bottom: 24px; font-size: 13px; color: var(--orange); font-weight: 500; }
-    .back-link:hover { text-decoration: underline; }
-    @media (max-width: 900px) {
-      header { padding: 16px 20px; } nav.header-nav { display: none; }
-      .legal-section { padding: 40px 16px; } .legal-card { padding: 28px 20px; }
-      .legal-grid { grid-template-columns: 1fr; } footer { padding: 32px 20px; }
+    .footer-copy { max-width: 1200px; margin: 32px auto 0; text-align: center; font-size: 11px; color: #444; padding-top: 24px; border-top: 1px solid #222; }
+
+    /* ─── MOBILE ─── */
+    @media (max-width: 768px) {
+      header { padding: 14px 20px; }
+      nav.header-nav { display: none; }
+      .hero { padding: 64px 20px 80px; }
+      .hero::before { font-size: 100px; }
+      .hero-stats { gap: 28px; flex-wrap: wrap; margin-top: 48px; }
+      .services { padding: 64px 20px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .philosophy { padding: 64px 20px; }
+      .philosophy-inner { grid-template-columns: 1fr; gap: 32px; }
+      .phil-label { font-size: 72px; }
+      .company { padding: 64px 20px; }
+      .company-layout { grid-template-columns: 1fr; gap: 40px; }
+      .contact-band { padding: 64px 20px; }
+      footer { padding: 40px 20px 24px; }
+      .footer-inner { flex-direction: column; gap: 28px; }
     }
-</style>
+  </style>
 </head>
 <body>
+
+  <!-- HEADER -->
   <header>
-    <div class="logo-area">
-      <a href="index.html" class="logo-link">
-        <div class="logo-icon"><svg viewBox="0 0 24 24"><polygon points="12,2 22,20 2,20"/></svg></div>
-        <div class="logo-text"><span class="main">KABUTO</span><span class="sub">株式会社KABUTO</span></div>
-      </a>
-    </div>
+    <a href="index.html" class="logo-link">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24"><polygon points="12,2 22,20 2,20"/></svg>
+      </div>
+      <div class="logo-text">
+        <span class="main">KABUTO</span>
+        <span class="sub">株式会社KABUTO</span>
+      </div>
+    </a>
     <nav class="header-nav">
-      <a href="index.html">Home</a>
-      <a href="mailto:kabuto.co.ltd@gmail.com">Contact</a>
+      <a href="yorisoi.html">YORISOI</a>
+      <a href="representative.html">代表</a>
+      <a href="mailto:kabuto.co.ltd@gmail.com" class="nav-cta">Contact</a>
     </nav>
   </header>
-  
-<style>
-    .hero { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; padding: 80px 48px; max-width: 1400px; margin: 0 auto; align-items: center; }
-    .hero-badge { display: inline-block; background: rgba(230,126,34,0.1); color: var(--orange); font-size: 11px; font-weight: 700; letter-spacing: 3px; padding: 6px 16px; border-radius: 20px; margin-bottom: 20px; }
-    .hero h1 { font-weight: 900; font-size: clamp(32px,5vw,58px); line-height: 1.2; margin-bottom: 20px; }
-    .hero h1 .accent { color: var(--orange); }
-    .hero-sub { font-family: 'Oswald', sans-serif; font-size: 18px; font-weight: 500; color: #333; letter-spacing: 1px; }
-    .hero-desc { font-size: 14px; color: #666; margin-top: 14px; }
-    .hero-visual { background: var(--black); border-radius: 20px; padding: 48px; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 420px; position: relative; overflow: hidden; }
-    .hero-visual::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 60% 40%, rgba(230,126,34,0.15), transparent 60%); }
-    .robot { position: relative; z-index: 1; text-align: center; }
-    .robot .helmet { width: 100px; height: 50px; background: var(--orange); border-radius: 50px 50px 0 0; margin: 0 auto; position: relative; }
-    .robot .ant-l, .robot .ant-r { position: absolute; top: -18px; width: 4px; height: 26px; background: var(--orange); border-radius: 2px; }
-    .robot .ant-l { left: 18px; transform: rotate(-30deg); }
-    .robot .ant-r { right: 18px; transform: rotate(30deg); }
-    .robot .face { width: 84px; height: 42px; background: var(--black); border: 3px solid var(--orange); border-radius: 10px; margin: -4px auto 0; display: flex; align-items: center; justify-content: center; gap: 14px; }
-    .robot .eye { width: 8px; height: 8px; background: var(--orange); border-radius: 50%; }
-    .robot .body-tri { width: 0; height: 0; border-left: 58px solid transparent; border-right: 58px solid transparent; border-top: 130px solid var(--orange); margin: 8px auto 0; border-radius: 0 0 8px 8px; }
-    .hero-tag { position: relative; z-index: 1; color: #666; font-family: 'Bebas Neue', sans-serif; font-size: 16px; letter-spacing: 6px; margin-top: 28px; text-align: center; }
-    .hero-tag-jp { position: relative; z-index: 1; color: white; font-weight: 900; font-size: 20px; margin-top: 6px; text-align: center; }
-    .section-label { font-size: 11px; font-weight: 700; letter-spacing: 3px; color: var(--orange); margin-bottom: 6px; }
-    .section-title { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: clamp(36px,5vw,64px); line-height: 1.05; margin-bottom: 12px; }
-    .section-title .orange { color: var(--orange); }
-    .section-sub { font-size: 14px; color: #666; max-width: 600px; }
-    .services { padding: 80px 48px; max-width: 1400px; margin: 0 auto; }
-    .services-header { margin-bottom: 48px; }
-    .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
-    .svc-card { background: var(--white); border-radius: 14px; padding: 32px 28px; border: 1px solid var(--gray-light); transition: transform 0.3s, box-shadow 0.3s; }
-    .svc-card:hover { transform: translateY(-3px); box-shadow: 0 8px 32px rgba(0,0,0,0.07); }
-    .svc-icon { width: 40px; height: 40px; color: var(--orange); margin-bottom: 18px; }
-    .svc-card h3 { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 17px; letter-spacing: 1px; margin-bottom: 3px; }
-    .svc-card .jp-label { font-size: 11px; color: var(--orange); font-weight: 700; margin-bottom: 12px; }
-    .svc-card p { font-size: 13px; color: #666; line-height: 1.7; }
-    .svc-card .tag { display: inline-block; margin-top: 16px; font-family: 'Oswald', sans-serif; font-size: 10px; letter-spacing: 2px; color: var(--orange); border-top: 2px solid var(--orange); padding-top: 6px; }
-    .philosophy { padding: 80px 48px; max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-    .phil-images { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    .phil-img { border-radius: 14px; aspect-ratio: 1; }
-    .phil-img.circuit { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); }
-    .phil-img.dark { background: var(--black); display: flex; align-items: center; justify-content: center; }
-    .phil-img.dark svg { width: 50px; height: 50px; fill: white; }
-    .phil-img.orange-block { background: var(--orange); display: flex; align-items: center; justify-content: center; padding: 16px; }
-    .phil-img.orange-block span { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 24px; color: white; text-align: center; line-height: 1.2; }
-    .phil-img.earth { background: linear-gradient(180deg, #0a0a0a 0%, #1a1a2e 100%); }
-    .phil-text h2 { font-weight: 900; font-size: clamp(28px,4vw,46px); line-height: 1.2; margin-bottom: 20px; }
-    .phil-text h2 .script { font-style: italic; color: var(--orange); }
-    .phil-text p { font-size: 13px; color: #666; line-height: 1.8; margin-bottom: 10px; }
-    .profile { padding: 80px 48px; max-width: 900px; margin: 0 auto; }
-    .profile-card { background: var(--white); border-radius: 16px; padding: 48px; border: 1px solid var(--gray-light); }
-    .profile-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 32px; padding-top: 32px; border-top: 1px solid var(--gray-light); }
-    .profile-item .label { font-size: 10px; font-weight: 700; letter-spacing: 2px; color: var(--orange); margin-bottom: 4px; }
-    .profile-item .value { font-size: 14px; font-weight: 500; line-height: 1.6; }
-    @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; padding: 40px 20px; gap: 32px; }
-      .services { padding: 48px 20px; } .services-grid { grid-template-columns: 1fr; }
-      .philosophy { grid-template-columns: 1fr; padding: 48px 20px; }
-      .profile { padding: 48px 20px; } .profile-card { padding: 28px 20px; } .profile-grid { grid-template-columns: 1fr; }
-    }
-</style>
+
+  <!-- HERO -->
   <section class="hero">
-    <div>
-      <div class="hero-badge">INNOVATION HUB</div>
-      <h1>テクノロジーと商取引で、<span class="accent">日本と世界を繋ぐ</span></h1>
-      <div class="hero-sub">Global E-commerce & AI Solutions</div>
-      <p class="hero-desc">eBay輸出事業とAI開発を通じて、国境を越えた価値の創造とデジタルトランスフォーメーションを推進します。</p>
-    </div>
-    <div class="hero-visual">
-      <div class="robot">
-        <div class="helmet"><div class="ant-l"></div><div class="ant-r"></div></div>
-        <div class="face"><div class="eye"></div><div class="eye"></div></div>
-        <div class="body-tri"></div>
-      </div>
-      <div class="hero-tag">CHALLENGE THE FUTURE</div>
-      <div class="hero-tag-jp">未来を切り拓く。</div>
-    </div>
-  </section>
-
-  <section class="services">
-    <div class="services-header">
-      <div class="section-label">OUR CORE BUSINESS PILLARS</div>
-      <div class="section-title">STRATEGIC <span class="orange">SERVICES</span></div>
-      <p class="section-sub">貿易と知性、そして人間性を融合させた戦略的サービスを提供。</p>
-    </div>
-    <div class="services-grid">
-      <div class="svc-card">
-        <svg class="svc-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 12 L12 6 L24 6 L24 18 L18 24 L6 12Z"/><circle cx="14" cy="14" r="2"/><path d="M26 22 L42 22 L42 42 L26 42Z"/><path d="M34 22 L34 16 L40 16"/></svg>
-        <h3>GLOBAL E-COMMERCE DIVISION</h3>
-        <div class="jp-label">グローバル・コマース事業部</div>
-        <p>Specializing in the export of high-quality Japanese products to global markets via eBay. / 日本の高品質な商品を世界中のユーザーへ届ける輸出事業。</p>
-        <div class="tag">E-COMMERCE EXPORT</div>
-      </div>
-      <div class="svc-card">
-        <svg class="svc-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="10" y="14" width="28" height="20" rx="4"/><circle cx="20" cy="24" r="2" fill="currentColor"/><circle cx="28" cy="24" r="2" fill="currentColor"/><path d="M24 6 L24 14"/><circle cx="24" cy="5" r="2"/><path d="M16 34 L16 42"/><path d="M32 34 L32 42"/></svg>
-        <h3>AI SOLUTIONS DIVISION</h3>
-        <div class="jp-label">AIソリューション事業部</div>
-        <p>Development and operation of AI-powered communication assistance tools leveraging the latest LLM technology. / 最新のLLM技術を活用した、AIコミュニケーション支援ツールの開発・運営。</p>
-        <div class="tag">AI DEVELOPMENT</div>
-      </div>
-      <div class="svc-card">
-        <svg class="svc-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="24" cy="14" r="6"/><circle cx="12" cy="20" r="4"/><circle cx="36" cy="20" r="4"/><path d="M6 38 C6 30 18 28 24 28 C30 28 42 30 42 38"/></svg>
-        <h3>COMMUNICATION SUPPORT</h3>
-        <div class="jp-label">コミュニケーション支援事業部</div>
-        <p>Providing AI-powered communication support tools and educational content for improving interpersonal skills. / AIを活用したコミュニケーション支援ツールの提供。</p>
-        <div class="tag">COMMUNICATION SUPPORT</div>
+    <div class="hero-inner">
+      <div class="hero-eyebrow">TECHNOLOGY × COMMERCE × SUPPORT</div>
+      <h1 class="hero-title">
+        テクノロジーと商取引で、<br><em>日本と世界を繋ぐ。</em>
+      </h1>
+      <p class="hero-sub">
+        eBay輸出・AI開発・業務支援SaaSの3軸で、<br>
+        事業の可能性を拡張するテクノロジーカンパニー。
+      </p>
+      <a href="#services" class="hero-cta">
+        サービスを見る
+        <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+      </a>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-num">3</div>
+          <div class="hero-stat-label">BUSINESS AREAS</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">2024</div>
+          <div class="hero-stat-label">FOUNDED</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">JP</div>
+          <div class="hero-stat-label">NAGASAKI, JAPAN</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="philosophy">
-    <div class="phil-images">
-      <div class="phil-img circuit"></div>
-      <div class="phil-img dark"><svg viewBox="0 0 48 48"><path d="M24 4 C24 4 36 12 36 28 L28 36 L24 32 L20 36 L12 28 C12 12 24 4 24 4Z"/></svg></div>
-      <div class="phil-img orange-block"><span>TRY<br>NEW<br>THINGS</span></div>
-      <div class="phil-img earth"></div>
-    </div>
-    <div class="phil-text">
-      <div class="section-label">PHILOSOPHY / 理念</div>
-      <h2>未知の可能性を、<br><span class="script">形にする。</span></h2>
-      <p>KABUTO's practice is built on the bold philosophy of constant evolution. We believe that innovation is not just about technology, but about a mindset that welcomes the unknown.</p>
-      <p>株式会社KABUTOの活動は、絶え間ない進化という大胆な理念に基づいています。イノベーションとは単なる技術の問題ではなく、未知を歓迎するマインドセットであると考えています。</p>
-    </div>
-  </section>
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="services-inner">
+      <div class="services-head">
+        <div class="section-eyebrow">OUR SERVICES</div>
+        <h2 class="section-title">3つの事業で、<br>社会に価値を届ける。</h2>
+        <p class="section-sub">グローバルEC・最先端AI・業務支援SaaS。<br>異なる領域の知見を掛け合わせ、独自の価値を生み出します。</p>
+      </div>
+      <div class="services-grid">
 
-  <section class="profile">
-    <div class="profile-card">
-      <div class="section-label">REGISTRATION INFORMATION</div>
-      <div class="section-title" style="font-size:32px;">COMPANY PROFILE</div>
-      <p style="color:#888;font-size:13px;">会社概要</p>
-      <div class="profile-grid">
-        <div class="profile-item"><div class="label">REPRESENTATIVE / 代表者</div><div class="value">Akihiro Nakayama / 中山 章裕</div></div>
-        <div class="profile-item"><div class="label">BUSINESS TYPE / 事業形態</div><div class="value">Global Trade / IT Services / Communication Support</div></div>
-        <div class="profile-item"><div class="label">OFFICIAL ADDRESS / 本店所在地</div><div class="value">〒852-8047 長崎県長崎市若竹町40-17</div></div>
-        <div class="profile-item"><div class="label">CONTACT PHONE / 電話番号</div><div class="value">080-6118-7696</div></div>
-        <div class="profile-item"><div class="label">CONTACT EMAIL</div><div class="value">kabuto.co.ltd@gmail.com</div></div>
+        <div class="service-card">
+          <div class="service-num">01</div>
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          </div>
+          <div class="service-tag">GLOBAL E-COMMERCE</div>
+          <h3>eBay輸出事業</h3>
+          <p>日本国内の商品をeBayを通じてグローバル市場に展開。越境ECのノウハウで、あなたの商品を世界中のバイヤーへ届けます。</p>
+          <span class="service-link">
+            詳しく見る
+            <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+          </span>
+        </div>
+
+        <div class="service-card">
+          <div class="service-num">02</div>
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M20 3H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h3l-1 1v2h12v-2l-1-1h3c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 13H4V5h16v11z"/></svg>
+          </div>
+          <div class="service-tag">AI &amp; WEB DEVELOPMENT</div>
+          <h3>AI＆Webサービス開発</h3>
+          <p>LLMを活用した業務効率化システム・Webアプリケーション開発。最新のAI技術で御社の課題を解決し、競争力を高めます。</p>
+          <span class="service-link">
+            詳しく見る
+            <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+          </span>
+        </div>
+
+        <div class="service-card featured">
+          <div class="service-num">03</div>
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm1 14h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 10.9 13 11.5 13 13h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg>
+          </div>
+          <div class="service-tag">AI SaaS</div>
+          <h3>YORISOI</h3>
+          <p>結婚相談所・カウンセラー向けAI業務支援SaaS。面談記録の要約から提案文の自動生成まで、日常業務をAIがサポートします。</p>
+          <a href="yorisoi.html" class="service-link">
+            詳しく見る
+            <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+          </a>
+        </div>
+
       </div>
     </div>
   </section>
+
+  <!-- PHILOSOPHY -->
+  <section class="philosophy" id="philosophy">
+    <div class="philosophy-inner">
+      <div>
+        <div class="phil-label">PHI<br>LO<br>SO<br>PHY</div>
+      </div>
+      <div class="phil-content">
+        <div class="section-eyebrow">OUR PHILOSOPHY</div>
+        <h2 class="section-title">未知の可能性を、<br>形にする。</h2>
+        <p>テクノロジーの力を活かし、既存の枠を超えた新しい価値を創出します。変化を恐れず、常に新しいことに挑戦し続けることが私たちの文化です。</p>
+        <p>一つひとつの事業を通じて、人の生活をより豊かに、より便利に。そして世界中の人々をより近くに繋げることを目指しています。</p>
+        <div class="phil-values">
+          <div class="phil-value">
+            <div class="phil-value-num">01</div>
+            <div>
+              <div class="phil-value-text">テクノロジーで事業の可能性を拡張する</div>
+              <div class="phil-value-sub">Expand possibilities through technology</div>
+            </div>
+          </div>
+          <div class="phil-value">
+            <div class="phil-value-num">02</div>
+            <div>
+              <div class="phil-value-text">日本と世界市場を繋ぐ架け橋になる</div>
+              <div class="phil-value-sub">Bridge Japan and the global market</div>
+            </div>
+          </div>
+          <div class="phil-value">
+            <div class="phil-value-num">03</div>
+            <div>
+              <div class="phil-value-text">人の幸福を支えるサービスを創り続ける</div>
+              <div class="phil-value-sub">Build services that support human wellbeing</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPANY -->
+  <section class="company" id="company">
+    <div class="company-inner">
+      <div class="company-head">
+        <div class="section-eyebrow">COMPANY PROFILE</div>
+        <h2 class="section-title">会社概要</h2>
+      </div>
+      <div class="company-layout">
+        <div class="company-intro">
+          <p>長崎を拠点に、グローバルEC・AI開発・業務支援SaaSの3事業を展開しています。テクノロジーと人をつなぐことで、新しい価値を創出し続けます。</p>
+          <p>代表の中山章裕が、日本と世界の可能性を信じ、2024年に創業。スピードと質を大切に、挑戦し続けるチームです。</p>
+          <a href="representative.html" class="company-rep">
+            <div class="rep-avatar">
+              <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+            </div>
+            <div>
+              <div class="rep-name-en">AKIHIRO NAKAYAMA</div>
+              <div class="rep-name-jp">代表取締役 中山 章裕</div>
+            </div>
+            <span class="rep-arrow">→</span>
+          </a>
+        </div>
+        <div>
+          <table class="company-table">
+            <tr>
+              <th>COMPANY NAME</th>
+              <td>株式会社KABUTO<br><span style="font-size:11px;color:#aaa">KABUTO Inc.</span></td>
+            </tr>
+            <tr>
+              <th>REPRESENTATIVE</th>
+              <td>中山 章裕</td>
+            </tr>
+            <tr>
+              <th>ESTABLISHED</th>
+              <td>2024年</td>
+            </tr>
+            <tr>
+              <th>ADDRESS</th>
+              <td>〒852-8047<br>長崎県長崎市若竹町40-17</td>
+            </tr>
+            <tr>
+              <th>BUSINESS</th>
+              <td>グローバルEC事業 / AI・Web開発<br>業務支援SaaS</td>
+            </tr>
+            <tr>
+              <th>EMAIL</th>
+              <td><a href="mailto:kabuto.co.ltd@gmail.com" style="color:var(--orange)">kabuto.co.ltd@gmail.com</a></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT BAND -->
+  <section class="contact-band">
+    <div class="contact-band-inner">
+      <h2>お気軽にご相談ください</h2>
+      <p>サービスに関するご質問・お見積り・その他のお問い合わせは、<br>メールにてお気軽にどうぞ。</p>
+      <a href="mailto:kabuto.co.ltd@gmail.com" class="contact-btn">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        kabuto.co.ltd@gmail.com
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
       <div class="footer-brand">
         <div class="icon"><svg viewBox="0 0 24 24"><polygon points="12,2 22,20 2,20"/></svg></div>
-        <div><div class="name">KABUTO</div><div class="name-sub">KABUTO INC.</div></div>
+        <div>
+          <div class="name">KABUTO</div>
+          <div class="name-sub">KABUTO INC.</div>
+        </div>
       </div>
       <div class="footer-links">
+        <a href="yorisoi.html">YORISOI</a>
+        <a href="representative.html">代表紹介</a>
         <a href="tokusho.html">特定商取引法に基づく表記</a>
         <a href="privacy.html">プライバシーポリシー</a>
         <a href="terms.html">利用規約</a>
@@ -217,7 +476,8 @@
         <a href="mailto:kabuto.co.ltd@gmail.com">お問い合わせ</a>
       </div>
     </div>
-    <div class="footer-copy">&copy; 2026 KABUTO Inc. All rights reserved.</div>
+    <div class="footer-copy">&copy; 2024 KABUTO Inc. All rights reserved.</div>
   </footer>
+
 </body>
 </html>

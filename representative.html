@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>代表紹介 | 中山 章裕 — 株式会社KABUTO</title>
+  <meta name="description" content="株式会社KABUTO代表取締役 中山章裕のプロフィール。原体験・ビジョン・事業への想いをご紹介します。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Oswald:wght@400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --orange: #E67E22;
+      --orange-dark: #D35400;
+      --black: #1a1a1a;
+      --white: #FFFFFF;
+      --gray-bg: #F5F5F3;
+      --gray-light: #E8E8E6;
+      --gray-text: #888;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Noto Sans JP', sans-serif; color: var(--black); background: var(--gray-bg); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ─── HEADER ─── */
+    header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 48px;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--gray-light);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .logo-link { display: flex; align-items: center; gap: 12px; }
+    .logo-icon { width: 42px; height: 42px; background: var(--orange); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+    .logo-icon svg { width: 22px; height: 22px; fill: white; }
+    .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+    .logo-text .main { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 21px; letter-spacing: 2px; }
+    .logo-text .sub { font-size: 9px; color: var(--orange); font-weight: 700; letter-spacing: 1px; }
+    nav.header-nav a { color: var(--black); font-size: 13px; font-weight: 500; margin-left: 28px; letter-spacing: 0.5px; transition: color 0.2s; }
+    nav.header-nav a:hover { color: var(--orange); }
+    .nav-cta { display: inline-block; margin-left: 28px; background: var(--orange); color: white; padding: 8px 18px; border-radius: 6px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; transition: background 0.2s; }
+    .nav-cta:hover { background: var(--orange-dark); }
+
+    /* ─── PAGE HERO ─── */
+    .page-hero {
+      background: var(--black); padding: 80px 48px 100px;
+      position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content: 'REPRESENT';
+      position: absolute; right: -20px; bottom: -10px;
+      font-family: 'Bebas Neue', sans-serif; font-size: 180px;
+      color: rgba(255,255,255,0.025); line-height: 1; pointer-events: none; white-space: nowrap;
+    }
+    .page-hero-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+    .page-eyebrow { font-family: 'Oswald', sans-serif; font-size: 11px; letter-spacing: 4px; color: var(--orange); font-weight: 600; margin-bottom: 16px; }
+    .page-hero h1 { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: clamp(36px, 5vw, 60px); color: white; line-height: 1.1; margin-bottom: 16px; }
+    .page-hero-sub { font-size: 15px; color: #888; max-width: 480px; }
+
+    /* ─── SECTION COMMON ─── */
+    .section-eyebrow { font-family: 'Oswald', sans-serif; font-size: 11px; letter-spacing: 4px; color: var(--orange); font-weight: 600; margin-bottom: 12px; }
+    .section-title { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: clamp(26px, 3.5vw, 40px); line-height: 1.15; margin-bottom: 16px; }
+
+    /* ─── ORIGIN ─── */
+    .origin { padding: 100px 48px; background: var(--white); }
+    .origin-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 80px; align-items: start; }
+    .origin-label {
+      font-family: 'Bebas Neue', sans-serif; font-size: 100px;
+      line-height: 0.85; color: var(--gray-light); letter-spacing: -2px;
+      position: sticky; top: 120px;
+    }
+    .origin-content {}
+    .origin-content .section-title { margin-bottom: 32px; }
+    .origin-block { margin-bottom: 40px; }
+    .origin-block h3 {
+      font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 13px;
+      letter-spacing: 3px; color: var(--orange); margin-bottom: 14px;
+    }
+    .origin-block p { font-size: 14px; color: #444; line-height: 1.95; margin-bottom: 14px; }
+    .origin-quote {
+      margin: 28px 0; padding: 24px 28px;
+      background: var(--gray-bg); border-radius: 12px;
+      border-left: 4px solid var(--orange);
+    }
+    .origin-quote p {
+      font-size: 16px; font-weight: 700; color: var(--black); line-height: 1.7;
+      margin-bottom: 0;
+    }
+    .origin-quote cite { display: block; margin-top: 10px; font-size: 12px; color: var(--gray-text); font-style: normal; }
+
+    /* ─── VISION ─── */
+    .vision { padding: 100px 48px; background: var(--black); }
+    .vision-inner { max-width: 1200px; margin: 0 auto; }
+    .vision-head { margin-bottom: 64px; }
+    .vision-head .section-title { color: white; }
+    .vision-head .section-eyebrow { color: var(--orange); }
+    .vision-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .vision-card {
+      padding: 40px 32px; background: #1e1e1e;
+      border-radius: 16px; border: 1px solid #2a2a2a;
+      position: relative; overflow: hidden;
+      transition: border-color 0.25s;
+    }
+    .vision-card:hover { border-color: var(--orange); }
+    .vision-card::before {
+      content: attr(data-num);
+      position: absolute; right: 20px; top: 16px;
+      font-family: 'Bebas Neue', sans-serif; font-size: 80px;
+      color: rgba(255,255,255,0.04); line-height: 1; pointer-events: none;
+    }
+    .vision-card-icon {
+      width: 52px; height: 52px; border-radius: 12px;
+      background: rgba(230,126,34,0.12); border: 1px solid rgba(230,126,34,0.2);
+      display: flex; align-items: center; justify-content: center; margin-bottom: 24px;
+    }
+    .vision-card-icon svg { width: 26px; height: 26px; fill: var(--orange); }
+    .vision-card-en {
+      font-family: 'Oswald', sans-serif; font-size: 11px; letter-spacing: 3px;
+      color: var(--orange); font-weight: 600; margin-bottom: 10px;
+    }
+    .vision-card h3 { font-size: 17px; font-weight: 700; color: white; margin-bottom: 14px; line-height: 1.5; }
+    .vision-card p { font-size: 13px; color: #777; line-height: 1.8; }
+
+    /* ─── PROFILE TABLE ─── */
+    .profile { padding: 100px 48px; background: var(--gray-bg); }
+    .profile-inner { max-width: 1200px; margin: 0 auto; }
+    .profile-head { margin-bottom: 56px; }
+    .profile-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    .profile-intro p { font-size: 14px; color: #555; line-height: 1.9; margin-bottom: 16px; }
+    .profile-table-wrap {
+      background: var(--white); border-radius: 16px; overflow: hidden;
+      border: 1px solid var(--gray-light); box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+    }
+    .profile-table { width: 100%; border-collapse: collapse; }
+    .profile-table tr { border-bottom: 1px solid var(--gray-light); }
+    .profile-table tr:last-child { border-bottom: none; }
+    .profile-table th {
+      text-align: left; padding: 18px 24px;
+      font-size: 10px; font-weight: 700; letter-spacing: 2px;
+      color: var(--orange); width: 38%; background: #fafaf8;
+      vertical-align: top;
+    }
+    .profile-table td { padding: 18px 24px; font-size: 13px; color: #444; line-height: 1.7; }
+    .profile-table td a { color: var(--orange); }
+
+    /* ─── MESSAGE ─── */
+    .message { padding: 100px 48px; background: var(--white); }
+    .message-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+    .message-inner .section-eyebrow { margin-bottom: 16px; }
+    .message-inner .section-title { margin-bottom: 40px; }
+    .message-body {
+      background: var(--gray-bg); border-radius: 20px;
+      padding: 48px 56px; text-align: left;
+      border: 1px solid var(--gray-light); position: relative;
+    }
+    .message-body::before {
+      content: '\201C';
+      position: absolute; top: 20px; left: 32px;
+      font-family: 'Oswald', sans-serif; font-size: 80px;
+      color: var(--orange); opacity: 0.2; line-height: 1;
+    }
+    .message-body p { font-size: 14px; color: #444; line-height: 2; margin-bottom: 20px; }
+    .message-body p:last-child { margin-bottom: 0; }
+    .message-sig { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--gray-light); display: flex; align-items: center; gap: 16px; }
+    .message-sig-avatar { width: 44px; height: 44px; background: var(--black); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+    .message-sig-avatar svg { width: 22px; height: 22px; fill: var(--orange); }
+    .message-sig-name { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 1px; }
+    .message-sig-title { font-size: 11px; color: var(--gray-text); }
+
+    /* ─── FOOTER ─── */
+    footer { background: #111; color: #999; padding: 56px 48px 32px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 40px; }
+    .footer-brand { display: flex; align-items: center; gap: 12px; }
+    .footer-brand .icon { width: 36px; height: 36px; background: var(--orange); border-radius: 6px; display: flex; align-items: center; justify-content: center; }
+    .footer-brand .icon svg { width: 20px; height: 20px; fill: white; }
+    .footer-brand .name { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 2px; color: white; }
+    .footer-brand .name-sub { font-size: 9px; color: #555; letter-spacing: 1px; }
+    .footer-links { display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a { color: #777; font-size: 12px; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--orange); }
+    .footer-copy { max-width: 1200px; margin: 32px auto 0; text-align: center; font-size: 11px; color: #444; padding-top: 24px; border-top: 1px solid #222; }
+
+    /* ─── MOBILE ─── */
+    @media (max-width: 768px) {
+      header { padding: 14px 20px; }
+      nav.header-nav { display: none; }
+      .page-hero { padding: 56px 20px 72px; }
+      .page-hero::before { display: none; }
+      .origin { padding: 64px 20px; }
+      .origin-inner { grid-template-columns: 1fr; gap: 32px; }
+      .origin-label { font-size: 64px; position: static; }
+      .vision { padding: 64px 20px; }
+      .vision-grid { grid-template-columns: 1fr; }
+      .profile { padding: 64px 20px; }
+      .profile-layout { grid-template-columns: 1fr; gap: 36px; }
+      .message { padding: 64px 20px; }
+      .message-body { padding: 32px 24px; }
+      footer { padding: 40px 20px 24px; }
+      .footer-inner { flex-direction: column; gap: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <a href="index.html" class="logo-link">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24"><polygon points="12,2 22,20 2,20"/></svg>
+      </div>
+      <div class="logo-text">
+        <span class="main">KABUTO</span>
+        <span class="sub">株式会社KABUTO</span>
+      </div>
+    </a>
+    <nav class="header-nav">
+      <a href="index.html">Home</a>
+      <a href="yorisoi.html">YORISOI</a>
+      <a href="mailto:kabuto.co.ltd@gmail.com" class="nav-cta">Contact</a>
+    </nav>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="page-eyebrow">REPRESENTATIVE</div>
+      <h1>代表紹介<br>AKIHIRO NAKAYAMA</h1>
+      <p class="page-hero-sub">株式会社KABUTO 代表取締役<br>中山 章裕のプロフィール</p>
+    </div>
+  </section>
+
+  <!-- ORIGIN -->
+  <section class="origin">
+    <div class="origin-inner">
+      <div>
+        <div class="origin-label">ORI<br>GIN</div>
+      </div>
+      <div class="origin-content">
+        <div class="section-eyebrow">MY ORIGIN</div>
+        <h2 class="section-title">原体験</h2>
+
+        <div class="origin-block">
+          <h3>STARTING POINT</h3>
+          <p>長崎で生まれ育った私は、幼い頃から「外の世界」への強い関心を持っていました。地方にいながらも、インターネットを通じて世界中の人々と繋がれることの可能性を肌で感じていました。</p>
+          <p>学生時代にeBayで海外取引を始めたことが、すべての原点です。長崎の小さな部屋から、世界中のバイヤーに商品を届けられる——この体験が、「テクノロジーは地理的な壁を溶かす」という確信に変わりました。</p>
+        </div>
+
+        <div class="origin-quote">
+          <p>「場所は関係ない。テクノロジーがあれば、どこにいても世界と繋がれる。」</p>
+          <cite>— 中山 章裕</cite>
+        </div>
+
+        <div class="origin-block">
+          <h3>THE TURNING POINT</h3>
+          <p>越境ECの経験を重ねるなかで、AIの急速な進化を目の当たりにしました。単純作業の自動化だけでなく、人の思考や提案を支援できるAIの可能性に気づき、「これは産業の構造を変える」と直感しました。</p>
+          <p>特に強く感じたのは、AIが「人と人の間に立つ仕事」に革命をもたらすということ。相談業務・カウンセリング・コーディネーターといった職種に、テクノロジーの恩恵が届いていない現状を変えたいと思い、YORASOIの開発へと舵を切りました。</p>
+        </div>
+
+        <div class="origin-block">
+          <h3>FOUNDING KABUTO</h3>
+          <p>2024年、株式会社KABUTOを設立。社名の「KABUTO（兜）」には、武士が戦場で身を守り、前線に立ち続けるという意志を込めています。ビジネスの最前線で挑戦し続け、テクノロジーで新しい価値を生み出すという決意の表れです。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISION -->
+  <section class="vision">
+    <div class="vision-inner">
+      <div class="vision-head">
+        <div class="section-eyebrow">MY VISION</div>
+        <h2 class="section-title">ビジョン — 3つの柱</h2>
+      </div>
+      <div class="vision-grid">
+
+        <div class="vision-card" data-num="01">
+          <div class="vision-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h3l-1 1v2h12v-2l-1-1h3c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 13H5V5h14v11z"/></svg>
+          </div>
+          <div class="vision-card-en">PILLAR 01</div>
+          <h3>テクノロジーで事業の可能性を拡張する</h3>
+          <p>AIやWebテクノロジーを活用し、既存のビジネスが持つ潜在的な可能性を最大限に引き出す。テクノロジーは目的ではなく、人の可能性を広げるための手段であるべきだと考えています。</p>
+        </div>
+
+        <div class="vision-card" data-num="02">
+          <div class="vision-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          </div>
+          <div class="vision-card-en">PILLAR 02</div>
+          <h3>日本と世界市場を繋ぐ架け橋になる</h3>
+          <p>日本が持つ品質・文化・技術を世界に届け、逆に世界のトレンドやチャンスを日本にもたらす。グローバルECで培った知見を活かし、国境を超えた価値の流通を加速します。</p>
+        </div>
+
+        <div class="vision-card" data-num="03">
+          <div class="vision-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.27 2 8.5 2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.53L12 21.35z"/></svg>
+          </div>
+          <div class="vision-card-en">PILLAR 03</div>
+          <h3>人の幸福を支えるサービスを創り続ける</h3>
+          <p>最終的にテクノロジーが向かうべき先は、人の幸せです。YORASOIのようなサービスを通じて、人と人が繋がり、支え合う場をより豊かにしていく。それが私たちの使命だと考えています。</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROFILE TABLE -->
+  <section class="profile">
+    <div class="profile-inner">
+      <div class="profile-head">
+        <div class="section-eyebrow">PROFILE</div>
+        <h2 class="section-title">プロフィール</h2>
+      </div>
+      <div class="profile-layout">
+        <div class="profile-intro">
+          <p>長崎県出身。越境ECおよびAI・Webサービス開発を軸に、株式会社KABUTOを2024年に設立。</p>
+          <p>eBayを通じたグローバルEC事業の実績を持ちながら、AI技術の事業応用を積極的に推進。結婚相談所・カウンセラー向けAI業務支援SaaS「YORISOI」を開発・運営しています。</p>
+          <p>「テクノロジーで人を支える」という信念のもと、長崎から日本と世界を繋ぐ事業を展開しています。</p>
+        </div>
+        <div class="profile-table-wrap">
+          <table class="profile-table">
+            <tr>
+              <th>NAME</th>
+              <td>中山 章裕<br><span style="font-size:11px;color:#aaa">Akihiro Nakayama</span></td>
+            </tr>
+            <tr>
+              <th>TITLE</th>
+              <td>代表取締役<br><span style="font-size:11px;color:#aaa">Representative Director</span></td>
+            </tr>
+            <tr>
+              <th>COMPANY</th>
+              <td>株式会社KABUTO（KABUTO Inc.）</td>
+            </tr>
+            <tr>
+              <th>ESTABLISHED</th>
+              <td>2024年</td>
+            </tr>
+            <tr>
+              <th>LOCATION</th>
+              <td>長崎県長崎市</td>
+            </tr>
+            <tr>
+              <th>BUSINESS</th>
+              <td>グローバルEC事業（eBay輸出）<br>AI・Webサービス開発<br>業務支援SaaS（YORISOI）</td>
+            </tr>
+            <tr>
+              <th>EMAIL</th>
+              <td><a href="mailto:kabuto.co.ltd@gmail.com">kabuto.co.ltd@gmail.com</a></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MESSAGE -->
+  <section class="message">
+    <div class="message-inner">
+      <div class="section-eyebrow">MESSAGE</div>
+      <h2 class="section-title">代表メッセージ</h2>
+      <div class="message-body">
+        <p>テクノロジーが急速に進化するこの時代において、大切なのは「何のために使うか」だと私は考えています。私たちKABUTOは、技術を追い求めるのではなく、人の生活をより豊かにするための手段としてテクノロジーを捉えています。</p>
+        <p>eBay輸出事業で世界市場と日本を繋ぎ、AIサービス開発で人の可能性を拡張し、YORASOIでカウンセラーの方々を支援する——それぞれの事業に共通しているのは、「人と人の間にある価値」を大切にするという姿勢です。</p>
+        <p>長崎という地方から、世界と繋がる事業を作り続けることで、「場所は関係ない」という証明をしていきたい。そして、テクノロジーの恩恵が届いていない産業や人々に、新しい可能性をお届けしていきます。</p>
+        <div class="message-sig">
+          <div class="message-sig-avatar">
+            <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+          </div>
+          <div>
+            <div class="message-sig-name">AKIHIRO NAKAYAMA / 中山 章裕</div>
+            <div class="message-sig-title">代表取締役 — 株式会社KABUTO</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="icon"><svg viewBox="0 0 24 24"><polygon points="12,2 22,20 2,20"/></svg></div>
+        <div>
+          <div class="name">KABUTO</div>
+          <div class="name-sub">KABUTO INC.</div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="yorisoi.html">YORISOI</a>
+        <a href="tokusho.html">特定商取引法に基づく表記</a>
+        <a href="privacy.html">プライバシーポリシー</a>
+        <a href="terms.html">利用規約</a>
+        <a href="refund.html">解約・返金ポリシー</a>
+        <a href="mailto:kabuto.co.ltd@gmail.com">お問い合わせ</a>
+      </div>
+    </div>
+    <div class="footer-copy">&copy; 2024 KABUTO Inc. All rights reserved.</div>
+  </footer>
+
+</body>
+</html>
