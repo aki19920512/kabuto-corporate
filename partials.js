@@ -51,7 +51,7 @@
             <h5>Contact</h5>
             <ul>
               <li>長崎県長崎市</li>
-              <li><a href="mailto:kabuto.co.ltd@gmail.com">kabuto.co.ltd@gmail.com</a></li>
+              <li><a href="mailto:info@kabuto-corp.com">info@kabuto-corp.com</a></li>
             </ul>
           </div>
         </div>
