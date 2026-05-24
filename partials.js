@@ -9,7 +9,7 @@
         </a>
         <nav class="nav-links" aria-label="Primary">
           <a href="index.html"           class="${active==='home'?'is-active':''}">Home<small>トップ</small></a>
-          <a href="yorisoi.html"         class="${active==='yorisoi'?'is-active':''}">Yorisoi<small>プロダクト</small></a>
+          <a href="nakadachi.html"        class="${active==='nakadachi'?'is-active':''}">Nakadachi<small>プロダクト</small></a>
           <a href="representative.html"  class="${active==='ceo'?'is-active':''}">Message<small>代表挨拶</small></a>
           <a href="index.html#company"   class="${active==='company'?'is-active':''}">Company<small>会社情報</small></a>
         </nav>
@@ -33,7 +33,7 @@
             <h5>Sitemap</h5>
             <ul>
               <li><a href="index.html">トップ</a></li>
-              <li><a href="yorisoi.html">YORISOI</a></li>
+              <li><a href="nakadachi.html">ナカダチ</a></li>
               <li><a href="representative.html">代表挨拶</a></li>
               <li><a href="index.html#company">会社情報</a></li>
             </ul>
