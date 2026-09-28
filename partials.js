@@ -1,16 +1,14 @@
-/* Shared header + footer + nav scroll behavior across all 3 pages */
+/* Shared header + footer + nav scroll behavior across all pages */
 (function () {
   const header = (active) => `
     <header class="site-header" id="siteHeader">
       <div class="container nav">
         <a href="index.html" class="brand" aria-label="KABUTO">
-          <span class="brand-mark">KABUTO</span>
           <span class="brand-jp">株式会社</span>
+          <span class="brand-mark">KABUTO</span>
         </a>
         <nav class="nav-links" aria-label="Primary">
           <a href="index.html"           class="${active==='home'?'is-active':''}">Home<small>トップ</small></a>
-          <a href="nakadachi.html"        class="${active==='nakadachi'?'is-active':''}">Nakadachi<small>プロダクト</small></a>
-          <a href="representative.html"  class="${active==='ceo'?'is-active':''}">Message<small>代表挨拶</small></a>
           <a href="index.html#company"   class="${active==='company'?'is-active':''}">Company<small>会社情報</small></a>
         </nav>
         <a href="index.html#contact" class="nav-cta">Contact</a>
@@ -24,8 +22,8 @@
         <div class="footer-grid">
           <div class="footer-brand">
             <div class="brand">
-              <span class="brand-mark">KABUTO</span>
               <span class="brand-jp">株式会社</span>
+              <span class="brand-mark">KABUTO</span>
             </div>
             <p>対人支援の現場に、テクノロジーで余白を。<br/>長崎から、ケアする人を支える仕組みをつくります。</p>
           </div>
@@ -33,16 +31,15 @@
             <h5>Sitemap</h5>
             <ul>
               <li><a href="index.html">トップ</a></li>
-              <li><a href="nakadachi.html">ナカダチ</a></li>
-              <li><a href="representative.html">代表挨拶</a></li>
               <li><a href="index.html#company">会社情報</a></li>
             </ul>
           </div>
           <div class="footer-col">
             <h5>Legal</h5>
             <ul>
-              <li><a href="tokusho.html">特定商取引法に基づく表記</a></li>
+              <li><a href="tokushoho.html">特定商取引法に基づく表記</a></li>
               <li><a href="privacy.html">プライバシーポリシー</a></li>
+              <li><a href="privacy-counseling.html">プライバシーポリシー（相談・コーチングサービス）</a></li>
               <li><a href="terms.html">利用規約</a></li>
               <li><a href="refund.html">返金ポリシー</a></li>
             </ul>
@@ -56,7 +53,7 @@
           </div>
         </div>
         <div class="footer-bottom">
-          <span>© 2024 KABUTO Inc.</span>
+          <span>© 2024 株式会社KABUTO</span>
           <span>Nagasaki, Japan</span>
         </div>
       </div>

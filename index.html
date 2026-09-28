@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>KABUTO株式会社 — 対人支援の現場に、テクノロジーで余白を。</title>
-<meta name="description" content="KABUTO株式会社は、AIと人間の力を掛け合わせ、ケアする人が本来の仕事に集中できる仕組みをつくる、長崎発のテクノロジー企業です。" />
+<title>株式会社KABUTO —対人支援の現場に、テクノロジーで余白を。</title>
+<meta name="description" content="株式会社KABUTOは、AIと人間の力を掛け合わせ、ケアする人が本来の仕事に集中できる仕組みをつくる、長崎発のテクノロジー企業です。" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
@@ -69,7 +69,7 @@
     border-top: 1px solid var(--rule-soft);
     padding-top: 28px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 32px;
   }
   .hero-meta-bar .item .k {
@@ -97,275 +97,8 @@
   }
 
   /* ---- Business ---- */
-  .biz-yorisoi {
-    background: var(--paper);
-    border: 1px solid var(--rule-soft);
-    display: grid;
-    grid-template-columns: 1fr 1.05fr;
-    overflow: hidden;
-  }
-  .biz-yorisoi .left {
-    padding: clamp(36px, 5vw, 72px);
-    border-right: 1px solid var(--rule-soft);
-  }
-  .biz-yorisoi .num-tag {
-    font-family: var(--serif-en);
-    font-style: italic;
-    font-size: 13px;
-    letter-spacing: 0.06em;
-    color: var(--accent-deep);
-    margin-bottom: 16px;
-  }
-  .biz-yorisoi .product-name {
-    display: flex;
-    align-items: baseline;
-    gap: 16px;
-    margin-bottom: 22px;
-  }
-  .biz-yorisoi .product-name .en {
-    font-family: var(--serif-en);
-    font-weight: 500;
-    font-size: clamp(40px, 5vw, 60px);
-    letter-spacing: 0.04em;
-    color: var(--ink);
-    line-height: 1;
-  }
-  .biz-yorisoi .product-name .jp {
-    font-family: var(--serif-jp);
-    font-size: 16px;
-    color: var(--ink-mute);
-    letter-spacing: 0.1em;
-  }
-  .biz-yorisoi .tag-line {
-    font-family: var(--serif-jp);
-    font-size: 17px;
-    line-height: 1.9;
-    color: var(--ink);
-    margin-bottom: 24px;
-  }
-  .biz-yorisoi .desc {
-    font-family: var(--sans-jp);
-    font-size: 14px;
-    line-height: 2;
-    color: var(--ink-2);
-    margin-bottom: 32px;
-  }
-  .biz-yorisoi .features {
-    display: grid;
-    gap: 14px;
-    margin-bottom: 36px;
-    border-top: 1px solid var(--rule-soft);
-    padding-top: 28px;
-  }
-  .biz-yorisoi .features .f {
-    display: grid;
-    grid-template-columns: 26px 1fr;
-    gap: 14px;
-    align-items: baseline;
-    font-family: var(--sans-jp);
-    font-size: 14px;
-    color: var(--ink-2);
-  }
-  .biz-yorisoi .features .f span:first-child {
-    font-family: var(--serif-en);
-    font-style: italic;
-    color: var(--accent-deep);
-    font-size: 13px;
-  }
-  .biz-yorisoi .features .f b {
-    font-weight: 500;
-    color: var(--ink);
-    margin-right: 8px;
-  }
-
-  /* product mock — chat */
-  .biz-yorisoi .right {
-    background: linear-gradient(180deg, #f6efe1 0%, #efe6d2 100%);
-    padding: clamp(28px, 4vw, 56px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .browser {
-    width: 100%;
-    max-width: 540px;
-    background: #fbf8f1;
-    border: 1px solid #e2d8c0;
-    box-shadow: 0 30px 60px -30px rgba(26,34,54,0.25),
-                0 4px 14px -4px rgba(26,34,54,0.08);
-    border-radius: 8px;
-    overflow: hidden;
-    font-family: var(--sans-jp);
-  }
-  .browser .bar {
-    height: 36px;
-    background: #f0e8d4;
-    border-bottom: 1px solid #e2d8c0;
-    display: flex;
-    align-items: center;
-    padding: 0 14px;
-    gap: 8px;
-  }
-  .browser .dots { display: flex; gap: 6px; }
-  .browser .dots i {
-    width: 10px; height: 10px; border-radius: 50%;
-    background: #d8caa6; display: inline-block;
-  }
-  .browser .url {
-    margin-left: 12px;
-    flex: 1;
-    background: #fbf8f1;
-    border: 1px solid #e2d8c0;
-    border-radius: 4px;
-    height: 22px;
-    display: flex;
-    align-items: center;
-    padding: 0 10px;
-    font-family: var(--serif-en);
-    font-size: 11px;
-    color: #8b8164;
-    letter-spacing: 0.04em;
-  }
-  .browser .url::before {
-    content: "🔒";
-    font-size: 9px;
-    margin-right: 6px;
-    filter: grayscale(1);
-    opacity: 0.5;
-  }
-  .browser .app-head {
-    padding: 14px 22px;
-    border-bottom: 1px solid #ece2c9;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #fbf8f1;
-  }
-  .browser .app-head .brand-y {
-    display: flex;
-    align-items: baseline;
-    gap: 10px;
-  }
-  .browser .app-head .brand-y .y-en {
-    font-family: var(--serif-en);
-    font-weight: 600;
-    font-size: 18px;
-    letter-spacing: 0.18em;
-    color: #5b4a2a;
-  }
-  .browser .app-head .brand-y .y-jp {
-    font-family: var(--serif-jp);
-    font-size: 11px;
-    color: #8b7a55;
-    letter-spacing: 0.16em;
-  }
-  .browser .app-head .who {
-    font-size: 11px;
-    color: #8b7a55;
-    font-family: var(--sans-jp);
-  }
-  .browser .chat {
-    padding: 22px;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    background: #fdfbf5;
-    min-height: 280px;
-  }
-  .msg {
-    max-width: 78%;
-    padding: 11px 15px;
-    font-size: 13px;
-    line-height: 1.65;
-    border-radius: 14px;
-    font-family: var(--sans-jp);
-  }
-  .msg.member {
-    background: #f0e8d4;
-    color: #4d3f23;
-    border-bottom-left-radius: 4px;
-    align-self: flex-start;
-  }
-  .msg.member .who {
-    display: block;
-    font-size: 10px;
-    color: #8b7a55;
-    margin-bottom: 4px;
-    letter-spacing: 0.06em;
-  }
-  .msg.counselor {
-    background: #1a2236;
-    color: #fbf8f1;
-    border-bottom-right-radius: 4px;
-    align-self: flex-end;
-  }
-  .draft-panel {
-    margin: 4px 0 0;
-    border-top: 1px dashed #d8caa6;
-    padding-top: 14px;
-    font-family: var(--sans-jp);
-  }
-  .draft-panel .draft-head {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 8px;
-  }
-  .draft-panel .draft-head .lbl {
-    font-family: var(--serif-en);
-    font-style: italic;
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    color: #a88b48;
-    white-space: nowrap;
-  }
-  .draft-panel .draft-head .lbl .dot {
-    display: inline-block; width: 6px; height: 6px; border-radius: 50%;
-    background: #c9a961; margin-right: 6px; vertical-align: middle;
-  }
-  .draft-panel .draft-head .ts {
-    font-size: 9px;
-    color: #8b7a55;
-    font-family: var(--serif-en);
-    letter-spacing: 0.04em;
-    white-space: nowrap;
-    margin-left: 12px;
-  }
-  .draft-box {
-    background: #fbf6e8;
-    border: 1px solid #e8dcb8;
-    border-radius: 8px;
-    padding: 12px 14px;
-    font-size: 12.5px;
-    line-height: 1.75;
-    color: #4d3f23;
-  }
-  .draft-actions {
-    display: flex;
-    gap: 8px;
-    margin-top: 10px;
-    justify-content: flex-end;
-  }
-  .draft-actions .a {
-    font-family: var(--sans-jp);
-    font-size: 11px;
-    padding: 6px 12px;
-    border-radius: 4px;
-    border: 1px solid #d8caa6;
-    color: #5b4a2a;
-    background: transparent;
-    letter-spacing: 0.04em;
-    white-space: nowrap;
-  }
-  .draft-actions .a.primary {
-    background: #1a2236;
-    color: #fbf8f1;
-    border-color: #1a2236;
-  }
-
   /* small biz cards */
   .biz-small {
-    margin-top: 64px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1px;
@@ -384,18 +117,12 @@
     margin-bottom: 14px;
   }
   .biz-small .card h3 {
-    font-family: var(--serif-en);
-    font-weight: 500;
-    font-size: 24px;
-    letter-spacing: 0.04em;
-    color: var(--ink);
-    margin-bottom: 4px;
-  }
-  .biz-small .card .jp {
     font-family: var(--serif-jp);
-    font-size: 14px;
-    color: var(--ink-2);
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1.5;
     letter-spacing: 0.06em;
+    color: var(--ink);
     margin-bottom: 18px;
   }
   .biz-small .card p {
@@ -577,15 +304,18 @@
   /* ---- responsive ---- */
   @media (max-width: 980px) {
     .hero-grid { grid-template-columns: 1fr; gap: 32px; }
-    .biz-yorisoi { grid-template-columns: 1fr; }
-    .biz-yorisoi .left { border-right: 0; border-bottom: 1px solid var(--rule-soft); }
-    .biz-yorisoi .right { display: none; }
     .biz-small { grid-template-columns: 1fr; }
     .philosophy-grid { grid-template-columns: 1fr; }
     .philosophy-grid .aside { border-left: 0; border-top: 1px solid var(--rule); padding-left: 0; padding-top: 24px; }
     .company-grid { grid-template-columns: 1fr; gap: 48px; }
     .contact .container { grid-template-columns: 1fr; gap: 32px; }
     .hero-meta-bar { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 560px) {
+    .info-table th, .info-table td { padding: 16px 0; }
+    .info-table th { width: 104px; padding-right: 12px; }
+    .info-table td { overflow-wrap: anywhere; }
+    .biz-small .card { padding: 32px 24px; }
   }
 </style>
 </head>
@@ -598,7 +328,7 @@
     <div class="container">
       <div class="hero-grid">
         <aside class="meta">
-          <span class="label-en">Kabuto, Inc.</span>
+          <span class="label-en">株式会社KABUTO</span>
           <span class="stamp"></span>
           <span class="established">Est. 2021, Nagasaki, Japan</span>
         </aside>
@@ -619,10 +349,6 @@
           <div class="v">対人支援 × AI<em>Care × Technology</em></div>
         </div>
         <div class="item">
-          <div class="k">Product</div>
-          <div class="v">ナカダチ<em>B2B SaaS for counselors</em></div>
-        </div>
-        <div class="item">
           <div class="k">Approach</div>
           <div class="v">人間が、最終決定する。<em>Humans decide, AI assists.</em></div>
         </div>
@@ -641,81 +367,19 @@
         </div>
         <div class="heading">
           <h2 class="h-section">対人支援の現場で、<br/>静かに働くテクノロジー。</h2>
-          <p class="body-jp" style="margin-top:18px;max-width:620px;">主力事業のナカダチを軸に、対人支援業界に特化したAI開発と、越境ECの3事業を展開しています。</p>
         </div>
       </div>
 
-      <!-- ナカダチ big card -->
-      <article class="biz-yorisoi">
-        <div class="left">
-          <div class="num-tag">— Flagship Product</div>
-          <div class="product-name">
-            <span class="en">Nakadachi</span>
-            <span class="jp">仲立ち</span>
-          </div>
-          <p class="tag-line">結婚相談所カウンセラー向け<br/>AI業務支援SaaS。</p>
-          <p class="desc">カウンセラーの返信業務をAIが支援し、確認・編集・承認のプロセスを経て会員に届けるB2B SaaSです。応援する側の時間を、本来の仕事に取り戻すために。</p>
-
-          <div class="features">
-            <div class="f"><span>i.</span><span><b>AIが下書き作成</b>会話履歴を読み解き、文脈に沿った返信案を自動生成。</span></div>
-            <div class="f"><span>ii.</span><span><b>人間が最終判断</b>送信前にカウンセラーが必ず確認・編集・承認。</span></div>
-            <div class="f"><span>iii.</span><span><b>24時間対応</b>深夜の問い合わせにも、翌朝までに必ず返事が届く。</span></div>
-          </div>
-
-          <a href="nakadachi.html" class="btn">View Product <span class="arr">→</span></a>
-        </div>
-
-        <div class="right">
-          <!-- Browser-chrome chat mock -->
-          <div class="browser" role="img" aria-label="ナカダチのチャット画面モックアップ">
-            <div class="bar">
-              <span class="dots"><i></i><i></i><i></i></span>
-              <span class="url">nakadachi.com/dashboard</span>
-            </div>
-            <div class="app-head">
-              <div class="brand-y">
-                <span class="y-en">ナカダチ</span>
-                <span class="y-jp">カウンセラー画面</span>
-              </div>
-              <div class="who">山本さん（55歳・男性会員）</div>
-            </div>
-            <div class="chat">
-              <div class="msg member">
-                <span class="who">山本さんより · 23:42</span>
-                先日のお話、少し不安になってしまって…明日のお見合い、行くべきか迷っています。
-              </div>
-
-              <div class="draft-panel">
-                <div class="draft-head">
-                  <span class="lbl"><span class="dot"></span>AIによる下書き生成</span>
-                  <span class="ts">23:43 · 確認待ち</span>
-                </div>
-                <div class="draft-box">
-                  山本さん、夜分にメッセージありがとうございます。<br/>不安に感じられるお気持ち、自然なことだと思います。明日の件、まずは深呼吸して、ご自身のペースを大切に──
-                </div>
-                <div class="draft-actions">
-                  <button class="a">編集する</button>
-                  <button class="a primary">確認して送信</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- Smaller business cards -->
       <div class="biz-small">
         <div class="card">
-          <div class="num-tag">— 02</div>
-          <h3>AI Solutions</h3>
-          <div class="jp">対人支援業界向けAI開発</div>
-          <p>結婚相談所、介護、教育、医療など、ケアを職業にする人々のために。現場の声を起点に、業務に溶け込むAIを設計・開発しています。</p>
+          <div class="num-tag">— 01</div>
+          <h3>恋愛・婚活カウンセリング事業</h3>
+          <p>電話・チャットによる個別カウンセリングを提供しています。セッションは担当カウンセラーが直接対応します。</p>
         </div>
         <div class="card">
-          <div class="num-tag">— 03</div>
-          <h3>Global E-Commerce</h3>
-          <div class="jp">越境EC事業</div>
-          <p>日本の良質なプロダクトを、海外市場へ。長崎という地理的特性を活かし、東アジアを中心とした越境EC事業を展開しています。</p>
+          <div class="num-tag">— 02</div>
+          <h3>AIサービスの研究開発</h3>
+          <p>対人支援・恋愛相談の領域におけるAI活用の研究開発を行っています。</p>
         </div>
       </div>
     </div>
@@ -779,29 +443,40 @@
         <table class="info-table">
           <tr>
             <th>会社名<em>Company</em></th>
-            <td>KABUTO株式会社<br/><span style="color:var(--ink-mute);font-family:var(--serif-en);font-style:italic;">KABUTO, Inc.</span></td>
+            <td>株式会社KABUTO</td>
           </tr>
           <tr>
             <th>代表取締役<em>CEO</em></th>
-            <td>中山 章裕<br/><span style="color:var(--ink-mute);font-family:var(--serif-en);font-style:italic;">Akihiro Nakayama</span></td>
+            <td>中山 章裕</td>
           </tr>
           <tr>
-            <th>所在地<em>Location</em></th>
-            <td>長崎県長崎市<br/><span style="color:var(--ink-mute);font-family:var(--serif-en);font-style:italic;">Nagasaki, Japan</span></td>
+            <th>設立<em>Founded</em></th>
+            <td>2021年9月</td>
+          </tr>
+          <tr>
+            <th>本店所在地<em>Head Office</em></th>
+            <td>〒852-8047<br/>長崎県長崎市若竹町40番17号</td>
+          </tr>
+          <tr>
+            <th>大阪オフィス<em>Osaka Office</em></th>
+            <td>〒530-0001<br/>大阪府大阪市北区梅田1-1-3<br/>大阪駅前第3ビル29階</td>
+          </tr>
+          <tr>
+            <th>電話<em>Tel</em></th>
+            <td>080-6118-7696</td>
+          </tr>
+          <tr>
+            <th>メール<em>Email</em></th>
+            <td>info@kabuto-corp.com</td>
           </tr>
           <tr>
             <th>事業内容<em>Business</em></th>
             <td>
               <ul class="biz-list">
-                <li>ナカダチ 結婚相談所向けAI業務支援SaaS</li>
-                <li>対人支援業界向けAIソリューション開発</li>
-                <li>越境EC事業</li>
+                <li>恋愛・婚活カウンセリング事業</li>
+                <li>AIサービスの研究開発</li>
               </ul>
             </td>
-          </tr>
-          <tr>
-            <th>設立<em>Founded</em></th>
-            <td>2021年</td>
           </tr>
         </table>
 
@@ -809,10 +484,6 @@
           <p class="pull">
             ケアする人を、<br/>テクノロジーが、<br/>静かに支える。
           </p>
-          <div style="display:flex;flex-direction:column;gap:14px;align-items:flex-start;">
-            <a href="representative.html" class="btn">代表挨拶を読む <span class="arr">→</span></a>
-            <a href="nakadachi.html" class="btn">ナカダチの詳細 <span class="arr">→</span></a>
-          </div>
         </div>
       </div>
     </div>
