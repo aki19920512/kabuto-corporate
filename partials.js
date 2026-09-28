@@ -25,7 +25,6 @@
               <span class="brand-jp">株式会社</span>
               <span class="brand-mark">KABUTO</span>
             </div>
-            <p>対人支援の現場に、テクノロジーで余白を。<br/>長崎から、ケアする人を支える仕組みをつくります。</p>
           </div>
           <div class="footer-col">
             <h5>Sitemap</h5>
@@ -38,10 +37,7 @@
             <h5>Legal</h5>
             <ul>
               <li><a href="tokushoho.html">特定商取引法に基づく表記</a></li>
-              <li><a href="privacy.html">プライバシーポリシー</a></li>
               <li><a href="privacy-counseling.html">プライバシーポリシー（相談・コーチングサービス）</a></li>
-              <li><a href="terms.html">利用規約</a></li>
-              <li><a href="refund.html">返金ポリシー</a></li>
             </ul>
           </div>
           <div class="footer-col">
@@ -53,7 +49,7 @@
           </div>
         </div>
         <div class="footer-bottom">
-          <span>© 2024 株式会社KABUTO</span>
+          <span>© 2026 株式会社KABUTO</span>
           <span>Nagasaki, Japan</span>
         </div>
       </div>

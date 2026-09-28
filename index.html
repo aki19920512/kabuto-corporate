@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>株式会社KABUTO —対人支援の現場に、テクノロジーで余白を。</title>
-<meta name="description" content="株式会社KABUTOは、AIと人間の力を掛け合わせ、ケアする人が本来の仕事に集中できる仕組みをつくる、長崎発のテクノロジー企業です。" />
+<title>株式会社KABUTO</title>
+<meta name="description" content="株式会社KABUTOは、長崎を拠点に、恋愛・婚活カウンセリング事業とAIサービスの研究開発を行う会社です。" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
@@ -47,7 +47,6 @@
   .hero h1.h-display {
     margin-bottom: 36px;
   }
-  .hero h1 .accent { color: var(--accent-deep); font-style: italic; font-family: var(--serif-en); font-weight: 500; }
   .hero .sub-jp {
     font-family: var(--serif-jp);
     font-size: clamp(15px, 1.3vw, 18px);
@@ -56,20 +55,12 @@
     max-width: 640px;
     margin: 0 0 20px;
   }
-  .hero .sub-en {
-    font-family: var(--serif-en);
-    font-style: italic;
-    font-size: clamp(14px, 1.15vw, 17px);
-    line-height: 1.75;
-    color: var(--ink-mute);
-    max-width: 620px;
-  }
   .hero-meta-bar {
     margin-top: clamp(60px, 9vw, 110px);
     border-top: 1px solid var(--rule-soft);
     padding-top: 28px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 32px;
   }
   .hero-meta-bar .item .k {
@@ -133,72 +124,15 @@
     margin: 0;
   }
 
-  /* ---- Philosophy ---- */
-  .philosophy {
-    background: var(--bg-alt);
-    text-align: left;
-  }
-  .philosophy .quote-mark {
-    font-family: var(--serif-en);
-    font-style: italic;
-    font-size: 80px;
-    color: var(--accent);
-    line-height: 1;
-    opacity: 0.7;
-  }
-  .philosophy h2 {
-    font-family: var(--serif-jp);
-    font-weight: 500;
-    font-size: clamp(32px, 4.4vw, 56px);
-    line-height: 1.55;
-    letter-spacing: 0.04em;
-    margin: 24px 0 48px;
-    max-width: 820px;
-  }
-  .philosophy .body-jp {
-    max-width: 640px;
-    font-family: var(--serif-jp);
-    font-size: 17px;
-    line-height: 2.1;
-    color: var(--ink-2);
-  }
-  .philosophy .body-en {
-    margin-top: 24px;
-    max-width: 600px;
-  }
-  .philosophy-grid {
-    display: grid;
-    grid-template-columns: 1fr 320px;
-    gap: 64px;
-    align-items: start;
-  }
-  .philosophy-grid .aside {
-    border-left: 1px solid var(--rule);
-    padding-left: 32px;
-  }
-  .philosophy-grid .aside h4 {
-    font-family: var(--serif-en);
-    font-style: italic;
-    font-size: 14px;
-    letter-spacing: 0.08em;
-    color: var(--accent-deep);
-    margin-bottom: 18px;
-  }
-  .philosophy-grid .aside p {
-    font-family: var(--serif-jp);
-    font-size: 14px;
-    line-height: 2;
-    color: var(--ink-2);
-  }
-
   /* ---- Company ---- */
   .company-grid {
     display: grid;
-    grid-template-columns: 1.1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 96px;
   }
   .info-table {
     width: 100%;
+    max-width: 760px;
     border-top: 1px solid var(--rule-soft);
     border-collapse: collapse;
   }
@@ -238,22 +172,6 @@
     color: var(--accent);
     margin-right: 12px;
   }
-  .company-cta {
-    align-self: end;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
-  .company-cta .pull {
-    font-family: var(--serif-jp);
-    font-size: 22px;
-    line-height: 1.85;
-    color: var(--ink);
-    margin-bottom: 24px;
-    border-left: 1px solid var(--accent);
-    padding-left: 24px;
-  }
-
   /* ---- Contact ---- */
   .contact {
     background: var(--ink);
@@ -305,8 +223,6 @@
   @media (max-width: 980px) {
     .hero-grid { grid-template-columns: 1fr; gap: 32px; }
     .biz-small { grid-template-columns: 1fr; }
-    .philosophy-grid { grid-template-columns: 1fr; }
-    .philosophy-grid .aside { border-left: 0; border-top: 1px solid var(--rule); padding-left: 0; padding-top: 24px; }
     .company-grid { grid-template-columns: 1fr; gap: 48px; }
     .contact .container { grid-template-columns: 1fr; gap: 32px; }
     .hero-meta-bar { grid-template-columns: 1fr 1fr; }
@@ -333,9 +249,8 @@
           <span class="established">Est. 2021, Nagasaki, Japan</span>
         </aside>
         <div>
-          <h1 class="h-display">対人支援の現場に、<br/>テクノロジーで<span class="accent">余白</span>を。</h1>
-          <p class="sub-jp">AIと人間の力を掛け合わせ、ケアする人が本来の仕事に<br/>集中できる仕組みをつくります。</p>
-          <p class="sub-en">We build AI-powered tools that give care professionals the time to do what they do best — care.</p>
+          <h1 class="h-display">一人ひとりの悩みに、<br/>人が向き合う。</h1>
+          <p class="sub-jp">恋愛・婚活のお悩みに、担当カウンセラーが電話とチャットで寄り添います。</p>
         </div>
       </div>
 
@@ -346,11 +261,7 @@
         </div>
         <div class="item">
           <div class="k">Focus</div>
-          <div class="v">対人支援 × AI<em>Care × Technology</em></div>
-        </div>
-        <div class="item">
-          <div class="k">Approach</div>
-          <div class="v">人間が、最終決定する。<em>Humans decide, AI assists.</em></div>
+          <div class="v">恋愛・婚活カウンセリング</div>
         </div>
       </div>
     </div>
@@ -366,7 +277,7 @@
           <span class="lab-jp">事業内容</span>
         </div>
         <div class="heading">
-          <h2 class="h-section">対人支援の現場で、<br/>静かに働くテクノロジー。</h2>
+          <h2 class="h-section">私たちの事業</h2>
         </div>
       </div>
 
@@ -385,52 +296,12 @@
     </div>
   </section>
 
-  <!-- =================== PHILOSOPHY =================== -->
-  <section class="section philosophy" id="philosophy">
-    <div class="container">
-      <div class="section-head">
-        <div class="meta">
-          <span class="num">— 02</span>
-          <span class="lab">Philosophy</span>
-          <span class="lab-jp">私たちの考え</span>
-        </div>
-        <div class="heading">
-          <span class="quote-mark">"</span>
-          <h2>未知の可能性を、<br/>形にする。</h2>
-        </div>
-      </div>
-
-      <div class="philosophy-grid">
-        <div>
-          <p class="body-jp">テクノロジーは、人間の温度を奪うためにあるのではなく、取り戻すためにある。</p>
-          <p class="body-jp" style="margin-top:18px;">深夜まで返信に追われ、機械的になっていく自分に気付く──そんな夜を、私たちはなくしたい。AIは判断を肩代わりする道具ではなく、人が人と向き合うための時間を生む装置であるべきだと、私たちは考えています。</p>
-          <p class="body-en">Technology should give back the warmth it once seemed to take. We build tools that return time, attention, and care to the humans who do the work.</p>
-        </div>
-        <aside class="aside">
-          <h4>Three Beliefs</h4>
-          <p>
-            <b style="color:var(--ink);font-weight:500;">応援する側に、余白を。</b><br/>
-            <span style="opacity:.75;">Make space for those who care.</span>
-          </p>
-          <p style="margin-top:24px;">
-            <b style="color:var(--ink);font-weight:500;">最終決定は、必ず人間に。</b><br/>
-            <span style="opacity:.75;">Humans hold the final say.</span>
-          </p>
-          <p style="margin-top:24px;">
-            <b style="color:var(--ink);font-weight:500;">業界の現場から、世界へ。</b><br/>
-            <span style="opacity:.75;">From the field, to the world.</span>
-          </p>
-        </aside>
-      </div>
-    </div>
-  </section>
-
   <!-- =================== COMPANY =================== -->
   <section class="section" id="company">
     <div class="container">
       <div class="section-head">
         <div class="meta">
-          <span class="num">— 03</span>
+          <span class="num">— 02</span>
           <span class="lab">Company</span>
           <span class="lab-jp">会社情報</span>
         </div>
@@ -479,12 +350,6 @@
             </td>
           </tr>
         </table>
-
-        <div class="company-cta">
-          <p class="pull">
-            ケアする人を、<br/>テクノロジーが、<br/>静かに支える。
-          </p>
-        </div>
       </div>
     </div>
   </section>
@@ -499,7 +364,7 @@
         </h2>
       </div>
       <div class="right">
-        <p>事業に関するお問い合わせ、メディア取材、採用に関するご相談など、まずはメールにてご連絡ください。営業日2日以内に、担当者よりご返信いたします。</p>
+        <p>事業に関するお問い合わせ、サービスに関するご質問など、まずはメールにてご連絡ください。営業日2日以内に、担当者よりご返信いたします。</p>
         <a href="mailto:info@kabuto-corp.com" class="btn">info@kabuto-corp.com <span class="arr">→</span></a>
       </div>
     </div>
